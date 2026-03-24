@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+body{
+    color: #222222;
+    background-color: #fbf8f4;
+    font-family: sans-serif,Verdana, Geneva, Tahoma;
+}
+
+img{
+    object-fit: cover;
+    /*display: block;*/
+    /*display: block;，这个元素就会变成“块级元素”。块级元素有一个霸道的特性：
+    它会独占一行。哪怕你把宽度设得很小（比如 224px），它右边的剩余空间也不允许其他元素并排*/
+}
+
+p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.clearfix::after{
+    display: block;
+    content: "";
+    clear:both;
+}
+
+h1,main,aside{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+.box800{
+    width: 800px;
+    margin: 0 auto;
+    /*border:1px solid pink;*/
+}
+
+header nav{
+    background-color: #a67926;
+}
+
+header nav li{
+    /*border: 1px solid pink;*/
+    width:160px;
+    line-height:3;
+    text-align: center;
+    float:left;
+}
+
+.box800 a{
+       display: block;
+       text-decoration: none;
+       color:#ffffff;
+}
+.box800 a:hover{
+    opacity: 0.8;
+}
+.box800 a:active{
+    color: rgb(247, 180, 228);
+}
+
+.contents{
+    padding: 30px 20px;
+}
+
+.ttl{
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+.sec01{
+    background-color: #f2e9e9;
+}
+
+.sec02{
+    background-color: #f6f2fa;
+}
+
+.sec03{
+    background-color: #ece0cc;
+}
+
+.sec04{
+    background-color: #ffffff;
+}
+
+.promise_list{
+    position: relative;
+    margin-right: 15px;
+    float:left;
+    width: 310px;
+}
+.promise_list:last-child{
+    margin-right: 0;
+}
+
+.promise_txt{
+    position: absolute;/*一旦你给元素设置了 position: absolute;，
+    它就脱离了文档流，不再遵循“自动占满宽度”的规则。它的宽度会变成由内容决定——也就是说，
+    文字有多宽，背景色块就只有多宽。*/
+    bottom: -0.5em;
+    right: 0;
+    background-color: #bf8665;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.5em 1em;
+}
+
+.half_contents{
+    width: 49%;
+    margin-right: 2%;
+    float:left;
+}
+.half_contents:last-child{
+    margin-right: 0;
+}
+
+.half_contents p{
+    padding: 0 1em 0 2em;
+    font-size: 1rem;
+}
+
+.left_contents{
+    color: #a65858;
+    border-bottom: 1px solid #a65858;
+}
+
+.right_contents{
+    color: #594d4c;
+    border-bottom: 1px solid #594d4c;
+}
+
+.half_contents span{
+    background-image: url("../Image/sakura.png");
+    background-size: 23px;
+    background-repeat: no-repeat;
+    /*border: 0.1px dotted #ccbcba;*/
+    padding-left: 2em;
+}
+
+aside{
+    padding: 20px;
+}
+
+footer,footer p{
+    background-color: #e0dac6;
+    text-align: center;
+    font-size: 0.8rem;
+}

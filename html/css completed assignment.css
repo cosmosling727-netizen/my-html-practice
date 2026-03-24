@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+            header{
+                height:400px;
+                background-image: url("Image/travel.jpg");
+                background-repeat: repeat-x;
+                /*background-attachment: fixed;*/
+                background-position:top right;
+                background-size: auto;
+            }
+
+            nav{
+                position: sticky;
+                top: 0;
+                background-color: rgba(241, 248, 240, 0.6);
+                z-index: 1000;/*数字越大，元素就越靠前（离你的眼睛越近）*/
+            }
+
+            .text_hint{
+                text-align: left;
+                color: grey;
+                font-size: 30px;
+            }
+
+            .margin_top{
+                margin-top: 0px;
+            }
+
+            .padding1{
+                padding-left: 5px;
+            }
+
+            .margin_bottom{
+                margin-bottom: 0px;
+            }
+
+            .title_color{
+                width:200px;
+                color: brown;
+                background-color: #d3bcbc90;/*最后的两位数字是透明度，80是一半*/
+                
+            }
+
+            .size1{
+                width: 270px;
+                font-size:13px;
+                color:#555;
+                background-color: #d3bcbc90;
+            }
+
+            .size2{
+                font-size: 35px;
+            }
+
+            nav ul{
+                display:flex;
+                font-size: large; 
+                list-style-type: square;
+                list-style-image: url("Image/plane.png");
+            }
+
+            nav li{
+                width: 100%;
+                margin: 20px;
+            }
+
+            li:hover{
+                color: #047291;
+                opacity: 0.6;
+            }
+
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                background-color: rgba(255, 255, 255, 0.3);
+            }
+
+            td{
+                padding:10px 12px;
+                vertical-align: top;
+               /*border-bottom: 1px solid #e6e6e6;*/
+            }
+
+            td:first-child{
+                width: 20px;
+                font-weight: 700;
+                white-space: nowrap;
+            }
+
+            td[colspan="2"]{
+                color: #555;
+                padding-top:0;
+                padding-bottom: 14px;
+                font-size: small;
+                font-weight: 500;
+                border-bottom: 1px solid #d3bcbc;
+            }
+
+            tr:hover td{
+                color: #047291;
+                background-color: rgb(212, 237, 238);
+            }
+
+
+            .photo_grid{
+                display: grid;
+                /*grid-template-columns: repeat(4,1fr);88行の結果はこの行と同じです*/
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 20px;
+            }
+
+            /*.photo_grid_img{
+                width: 100%;
+                display:block;
+                aspect-ratio: 16/9;
+                border-radius: 6px;
+            }*/
+
+            .photo_card{
+                display: flex;
+                flex-direction:column;
+                border-radius: 4px;
+                overflow: hidden;
+                transition: transform 0.5s ease;
+            } 
+            .photo_card:hover{
+                transform: scale(1.07);
+            }
+
+            .photo_card img{  
+                display:block;
+                width:100%;
+                aspect-ratio: 16/9;
+                border-radius: 1px;
+            }
+  
+
+            .photo_text{
+                margin-top: 15px;
+                font-size: 14px;
+                color: #555;
+                line-height:1.3;
+                overflow-wrap: break-word;
+                word-break: break-all;
+                text-align: center;    
+            }
+
+            .photo_card:hover{
+                background-color: rgb(212, 237, 238);
+                opacity: 0.85;
+            }
+
+                aside li a:link{color: blue;}
+                aside li a:visited{color: brown;}
+                aside li a:hover{color: rgb(10, 121, 185);}
+                aside li a:active{color: black;}s           
+
+            .toiawa{
+                display:inline-block;
+                width:230px;
+                margin-bottom: 25px;
+                font-size: 20px;
+                animation: myBlink 2s ease-in-out infinite;
+            }
+            @keyframes myBlink{
+                0%{opacity: 1;}
+                50%{opacity: 0.3;}
+                100%{opacity: 1;}
+            }
+
+            .toiawa:hover{
+               background-color: rgb(212, 237, 238);
+            }
+

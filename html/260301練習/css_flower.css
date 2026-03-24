@@ -1,0 +1,52 @@
+@charset "utf-8";
+ body{
+                margin: auto;
+                width: 600px;
+                border: 1px solid pink;
+            }
+            .title{
+                width: 90%;/*百分比宽度（%）通常是相对于它的“父容器”来计算*/
+                margin:auto;
+                font-size: 2rem;
+                background-color: rgb(243, 241, 239);
+                text-align: center;
+                border-bottom:3px solid rgb(10, 117, 6) ;
+                padding: 0.5em;
+            }
+
+            .subtitle{
+                font-size: 1.2rem;
+                padding: 0.5em 1em;
+                clear:both;
+                border: 1px solid pink;
+                margin: 1em;
+                border-left: 2px solid rgb(10, 117, 6)
+            }
+
+            .flower_list{
+                float:left;
+                margin: 0 4em;
+                border: 1px solid pink;
+            }
+
+            .flower_list:last-child{
+                margin: 0;
+            }
+
+            .clearfix::after{
+                display: block;
+                content: "";
+                clear:both;
+            }
+            /*clearfix 是一种 CSS 技巧，它的作用是：强制父元素包裹住
+              内部所有浮动的子元素。
+              作用：让父元素重新获得高度。
+              效果：一旦父元素有了高度，它就会把下面的 subtitle 正常地“推”下去，
+              你的 margin 也就生效了。*/
+
+              .flower_list figcaption{
+                text-align: center;
+                font-size:1.2rem;
+                border-left: 2px solid rgb(10, 117, 6);
+                border-right: 2px solid rgb(10, 117, 6);
+              }
