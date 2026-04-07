@@ -1,0 +1,994 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,*::before, *::after { 
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; /*全ての要素のデフォルト余白を消し、
+    box-sizing: border-box を適用します。これにより、パディング
+    やボーダーを含めても幅が計算しやすくなり、レイアウト崩れを防ぎます。*/
+}
+
+body {
+    font-family: "Hiragino Mincho ProN", "serif"; 
+    /* 日本高端设计首选明朝体 */
+    background-color: #fff;
+    color: #333;
+    line-height: 1.8;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%; 
+    background-color: rgba(255, 255, 255, 0.75); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    backdrop-filter: blur(10px); /*背景模糊*/
+    -webkit-backdrop-filter: blur(10px);        /* 兼容 Safari 浏览器 */
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-container img{
+    width:130px ;
+    height: auto;
+    object-fit: cover;
+}
+
+.menu { 
+    display: flex; 
+    list-style: none; 
+}
+.menu li { 
+    margin-left: 30px; 
+}
+
+.menu a { 
+    display: block;
+    text-decoration: none; 
+    color: #333; 
+    font-size: 13px; 
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover{
+    color: #999;
+}
+
+.brand-story {
+    margin-top: 130px;
+    padding: 100px 0;
+}
+
+.story-container {
+    display: flex; 
+    align-items: flex-start; 
+    justify-content: space-between;
+    width: 85%;     /* 容器占父容器宽度的 85% */
+    max-width: 1200px;
+    margin: 0 auto;         /* 在父容器里居中 */
+}
+
+.story-text-wrap { 
+    writing-mode: vertical-rl;
+    border-left: 1px solid #eee;
+    margin-top: -50px;
+}
+
+.vertical-title {
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: 0.9em;
+    margin-left: 10px;
+    white-space: nowrap;/*强制标题不换行*/
+}
+.vertical-description {
+    font-size: 1rem;
+    color: #666;
+    letter-spacing: 0.9em;
+}
+
+.story-image-box {
+    position: relative;
+    width: 75%;
+    height: 600px; /* 固定高度，保持画面比例 */
+    background-color: #f5f5f5; /* 没图时的占位色 */
+    overflow: hidden;
+}
+.story-image-box .slideshow-img{
+    position: absolute; /* 关键：让图片脱离文档流，全部重叠在父盒子里 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;/* 图片沾满的盒子 */
+    object-fit: cover; /* 保持图片不缩放变形 */
+    opacity: 0; /* 默认先隐藏 */
+    animation: fadeAnimation 20s infinite; /* 20秒一个大循环。infinite是循环意思 */
+}
+
+
+@keyframes fadeAnimation {
+    0% { opacity: 0; }
+    5% { opacity: 1; }  /* 慢慢变清晰 */
+    20% { opacity: 1; }  /* 停顿展示 */
+    25% { opacity: 0; }  /* 慢慢消失 */
+    100% { opacity: 0; } /* 剩下的时间（15秒）一直隐身，等下一轮 */
+}
+
+.slideshow-img:nth-child(1) { animation-delay: 0s; }/*动画延迟时间*/
+
+.slideshow-img:nth-child(2) { animation-delay: 5s; }
+
+.slideshow-img:nth-child(3) { animation-delay: 10s; }
+
+.slideshow-img:nth-child(4) { animation-delay: 15s; }
+
+
+
+/* 2. 产品网格*/
+.products-section { 
+    padding: 120px 8%; 
+}
+.section-title {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: #999;
+    margin-bottom: 80px;
+}
+.product-grid {
+    display: grid;/*タイル状のレイアウトを作るため*/
+    grid-template-columns: repeat(3, 1fr);/*3つの列を均等な幅で並べます*/
+    gap: 40px;
+}
+
+.product-grid a{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.img-box {
+    display: flex; 
+    aspect-ratio: 1 / 1; /* 宽和高的比例。强制图片容器为正方形 */
+    background-color: #f9f9f9;
+    margin-bottom: 25px;
+    overflow:hidden;
+}
+
+.img-box img { 
+    width: 80%; 
+    height: 80%;
+    margin: auto;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.img-box:hover{
+    background-color: #f5f2f2;
+}
+.img-box:hover img{
+    transform:scale(1.1)
+}
+
+.card-info h3 { 
+    font-size: 15px; 
+    font-weight: 500; 
+    margin-bottom: 5px; 
+}
+.card-info p { 
+    font-size: 10px; 
+    color: #bbb; 
+    letter-spacing: 0.2em; 
+}
+
+.strength-item h3 {
+    font-size: 18px;     
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.strength-item .en-sub {
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 0.1em;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 10px;
+}
+
+.strength-item .desc {
+    font-size: 14px;
+    line-height: 2;     
+    color: #666;
+}
+
+/* Our Strengths */
+.strengths-section{
+    padding: 120px 8%;
+    background-color: #fff;
+}
+
+.strengths-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.strengths-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.strength-item{
+    text-align: left;
+    padding: 40px;
+    background-color: #fcfcfc;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+.strength-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.strength-item .number{
+    font-size: 12px;
+    color:#999;
+    display: block;
+    margin-bottom: 20px;
+    font-family: Arial,sans-serif;
+}
+
+/* 3. topic */
+.topic_section{
+    padding: 100px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.topic_header{
+    display: flex;/*变成了一个横向的容器。里面有两个box。
+    <h2> 看作 Box A。(VIEW ALL) 看作 Box B。*/
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+.topic_title{
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.viewall{
+    font-size: 11px;
+    text-decoration: none;
+    color: #999;
+    letter-spacing: 0.1em;
+    transition: color 0.5s ease;
+}
+
+.viewall:hover{
+    color: #333;
+}
+
+.topic_list{
+    list-style: none;
+    /*list-style-position: inside;如果前面有圆点或方块，可以显示出list前面的圆点*/
+}
+
+.topic_list a{
+    display: flex;
+    /*默认情况下，<a> 标签是 inline（行内） 元素开启 display: 
+    flex 后，<a> 变成了一个 Flex Container（弹性容器）。每一个a里面的box
+    默认横向排列。这里的a里面有三个box。可以进行宽度，高度，flex的设置*/
+    padding: 25px 10px;
+    text-decoration: none;
+    color: #333;
+    align-items: center;
+    transition: background-color 0.35s ease;
+    border-bottom: 1px solid #eee;
+}
+
+.topic_list a:hover{
+    background-color: #f9f9f9;
+    padding-left: 13px;
+}
+
+.topic_list .date{
+    font-size: 13px;
+    color:#999;
+    width:120px;
+    margin-right: 30px;
+    font-family: Arial,sans-serif;
+}
+
+.topic_list .category{
+    font-size: 10px;
+    background: #f0f0f0;
+    padding: 2px 8px;
+    margin-right: 30px;
+    color: #666;
+    letter-spacing: 0.1em;
+    width:120px;
+    text-align: center;
+}
+
+.topic_list .title{
+    width:700px;
+    font-size: 14px;
+    /*flex: 1;日期和分类占完地方后，
+             剩下的所有空间都给标题”。这样无论标题长短，它都会填满右侧剩余部分*/
+
+    /* 1. 强制文字在一行内显示，不许换行 */
+    white-space: nowrap; 
+    
+    /* 2. 超出的部分隐藏起来 */
+    overflow: hidden; 
+    
+    /* 3. 重点：超出的部分用省略号代替 */
+    text-overflow: ellipsis;
+}
+
+
+/* 4. access*/
+.access_section{
+    padding: 100px 8%;
+    max-width: 1400px;
+    margin: 100px auto 0;
+    border-top: 1px solid #eee;
+}
+
+.access_title{
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: #999;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.access_container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 80px 40px;
+}
+
+.access_card{
+    display: flex;
+    flex-direction: column;/* 格子里改为“上下排列”，文字在上，地图在下 */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.access_info{
+    padding:0 0 20px 0;
+    height: 250px;
+}
+
+.access_info h3{
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.3em;
+    border-left: 3px solid #333;
+    padding-left: 15px;
+}
+
+.access_info p{
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+    margin-bottom: 5px;
+}
+
+.access_info .tel{
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.access_map{
+    width: 100%;
+    height: 300px;
+    background-color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+    border-radius: 11px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.access_card:hover .access_map{
+    transform: translateY(-7px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+    /*
+    width: 100%;
+    height: 100%; 照片我要长得和外面的相框（）一样大
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    直接告诉格子，让它里面的东西居中。
+    方案 A（最现代）：保持 display: flex，
+    使用 justify-content: center 和 align-items: center。
+    这是目前最主流、最稳的写法。
+    */
+
+.access_map iframe{
+    width: 100%;
+    height: 100%;/* 让地图本人填满 .access_map */
+    display: block; /* 消除图片或框架下方的小缝隙 */
+}
+
+
+/* 5. contact*/
+.contact_section{
+    padding: 120px 8%;
+    background: #fafafa;
+}
+
+.contact_container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    gap: 80px;
+}
+
+.contact_lead{
+    flex:1;
+}
+
+.contact_title{
+    font-size: 24px;
+    letter-spacing: 0.3em;
+    margin-bottom: 10px;
+}
+
+.contact_subtitle{
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.contact_text1, .contact_text2{
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+}
+
+.contact_form{
+    flex:1.5;
+}
+
+.form_group{
+    margin-bottom: 30px;
+}
+
+.form_group label{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form_group label span{
+    font-size: 10px;
+    color: #bbb;
+    margin-left: 10px;
+}
+
+input,textarea{
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;/*继承.默认会给 input 和 textarea（输入框）设定一个很丑的系统自带字体.
+                           加了继承，字就会变得和网页其他地方一模一样，保持视觉统一*/
+    outline: none;/*默认情况下，当你点进一个输入框，浏览器会粗暴地给它加一个“框圈”（Outline）。*/
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #333; /* ユーザーが入力欄をクリックしたり、タブキーで
+    移動したりして「入力可能な状態」になった瞬間のことです。边框变深 */
+}
+
+.submit_btn{
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit_btn:hover{
+    background-color: #000;
+}
+
+/*rakuten online shop*/
+.online-store-section{
+    padding: 100px 8%;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+}
+
+.store-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.store-title{
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.store-intro{
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.store-buttons-wrap{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.store-buttons-wrap img{
+    height: 27px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.store-buttons-wrap a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 80px;
+    color: #333;
+    background-color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 0 30px;
+    transition: all 0.3s ease;
+}
+
+.store-buttons-wrap a:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.btn-text{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+}
+
+/*footer*/
+footer {
+    background-color: #fff;
+    padding: 100px 8% 60px;
+    border-top: 1px solid #eee;
+}
+
+.footer-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.footer-group h4{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    margin-bottom: 25px;
+}
+
+.footer-group ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-group li{
+    margin-bottom: 15px;
+}
+
+.footer-group a{
+    text-decoration: none;
+    color:#888;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.footer-group a:hover{
+    color: #333;
+}
+
+.footer-info{
+    border-top: 1px solid #f5f5f5;
+    padding-top: 40px;
+}
+
+.footer-logo{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+address{
+    font-size: 13px;
+    font-style: normal;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+small{
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 0.1em;
+}
+
+/*back to the top*/
+.back-to-top{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover{
+    background-color: #000;
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+/* ==========================================
+   プライバシーポリシー　スタイル (Privacy Policy)
+   ========================================= */
+
+.privacy-page{
+    padding-top: 150px;
+    background-color: #fff;
+    padding-bottom: 100px;
+}
+
+.content-container{
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.content-container h1{
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+}
+
+.content-container h1::after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #333;
+    margin: 20px auto 0;
+}
+
+.content-container h2{
+    font-size: 18px;
+    margin: 50px 0 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.content-container p{
+    font-size: 15px;
+    line-height: 2.2;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.content-container p:last-child{
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 40px;
+    border: 1px solid #eee;
+}
+
+/* --- スマートフォン用設定 (画面幅 767px 以下) --- */
+
+@media screen and (max-width: 767px) {
+
+/* ナビゲーション全体の調整 */
+.nav-container {
+    flex-direction: column; /* ロゴとメニューを上下に並べる */
+    padding: 10px 0;        /* 上下の余白をスッキリさせる */
+}
+
+.menu {
+    width: 85%;
+    margin:5px auto;       /* ロゴとの間隔 */
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li {
+    margin-left: 7px;      /* メニュー同士の間隔を半分（30px→15px）にする */
+    margin-right: 7px;     /* 右側にも同じだけ空ける */
+}
+
+.menu a{
+    font-size:11px;
+}
+
+.nav-container img{
+    width:90px ;
+    height: auto;
+}
+
+/* Storyと写真の調整 */
+.brand-story {
+    margin-top: 80px;       /* 130pxから80pxに減らす */
+    padding: 40px 0;        /* 上下のパディングも少し減らす */
+}
+
+.story-container{
+    flex-direction: column; /* 横並びから「縦並び」に変更 */
+    width: 90%;
+    align-items: center;
+}
+
+.story-text-wrap {
+    writing-mode: horizontal-tb; /* 縦書きを「横書き」に戻す（スマホは横の方が読みやすいため） */
+    border-left: none;           /* 横書きになるので左の線を消す */
+    border-bottom: 1px solid #eee; /* 代わりに下に線を引く */
+    margin-top: 0;
+    margin-bottom: 30px;         /* 下の画像との間に隙間を作る */
+    padding-bottom: 10px;
+    width: 100%;                 /* 横幅いっぱい使う */
+    text-align: center;          /* 文字を真ん中に */
+}
+
+.vertical-title {
+    font-size: 2rem;       /* 文字をスマホサイズに小さくする（3.5remは大きすぎるため） */
+    letter-spacing: 0.3em; /* 字間も少し詰めないと画面を突き抜けます */
+    margin-left: 0;
+    text-indent: 1.3em;    /* 一行目の字下げ,右側の余白と同じ分だけ、左側も空ける */
+}
+
+.vertical-description {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+}
+
+.story-image-box {
+    height: 300px;         /* 高さを少し低くして、画面に収まりやすくする */
+}
+
+
+/* --- 商品グリッドの調整 --- */
+.product-grid {
+    grid-template-columns: 1fr; /* 3列から「1列」に変更 */
+    gap: 50px;                 /* 縦に並ぶカード同士の間隔 */
+}
+
+.products-section {
+    padding: 60px 8%;          /* 上下の余白（120px）をスマホ用に半分に */
+}
+
+.section-title {
+    margin-bottom: 40px;       /* タイトル下の余白を調整 */
+}
+
+/* --- TOPICS一覧の調整 --- */
+.topic_section {
+    padding: 60px 8%; /* 余白をスマホサイズに */
+}
+
+.topic_list a {
+    flex-wrap: wrap;    /* 中身が入りきらない時に自動的に次の行へ移動させる */
+    padding: 20px 5px;
+}
+
+.topic_list .date {
+    width: auto;        /* 固定幅(120px)を解除して、文字の長さに合わせる */
+    margin-right: 15px;
+    font-size: 12px;
+}
+
+.topic_list .category {
+    width: auto;        /* 固定幅(120px)を解除 */
+    margin-right: 0;
+    font-size: 9px;
+}
+
+.topic_list .title {
+    width: 100%;        /* 100%にすることで、日付たちの下の行（2行目）に強制移動 */
+    margin-top: 10px;   /* 日付との間に少し隙間を作る */
+    font-size: 14px;
+    white-space: normal; /* 【重要】改行を許可して、長いタイトルも全部見せる */
+    overflow: visible;   /* 省略（...）を解除 */
+    text-overflow: clip; /*PC版の ...（ellipsis）を完全に無効化する。*/
+}
+
+/* --- ACCESSセクションの調整 --- */
+.access_section {
+    padding: 60px 8%;  /* 余白をスマホサイズに */
+    margin-top: 50px;  /* PC版の100pxから半分に */
+}
+
+.access_container {
+    grid-template-columns: repeat(1,1fr); /* 2列から「1列」に変更 */
+    gap: 40px;                 /* 拠点ごとの間隔を調整 */
+}
+
+.access_info {
+    height: auto;              /* 固定高さ(250px)を解除して、文字量に合わせる */
+    padding-bottom: 20px;
+}
+
+.access_info h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.access_map {
+    height: 250px;             /* 地図の高さをスマホで見やすいサイズに */
+}
+
+/* --- CONTACTセクションの調整 --- */
+.contact_section {
+    padding: 60px 8%;  /* 余白をスマホサイズに */
+}
+
+.contact_container {
+    flex-direction: column; /* 横並びから「縦並び」に変更 */
+    gap: 40px;             /* 説明文とフォームの間の距離 */
+}
+
+.contact_lead {
+    margin: 0 auto;
+    text-align: center;    /* スマホでは文章を中央に寄せると綺麗に見えます */
+}
+
+.contact_title {
+    font-size: 20px;       /* タイトルを少し小さく */
+}
+
+.contact_text1, .contact_text2 {
+    font-size: 13px;       /* 文字サイズを微調整 */
+}
+
+/* フォーム部分の調整 */
+.contact_form {
+    width: 100%;           /* フォームを横幅いっぱいに使う */
+}
+
+.submit_btn {
+    padding: 15px;         /* ボタンを押しやすいサイズに（PCより少しスリムに） */
+    font-size: 14px;
+}
+
+/* フッターの調整 */
+footer {
+    padding: 40px 8%;      /* フッターの余白もスッキリさせる */
+}
+
+}
+
+
+
+
+
+
+/* --- タブレット用設定 (画面幅 768px 〜 1024px) --- */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+/* Storyと写真の調整*/
+.story-container {
+    width: 95%;           /* 画面いっぱいまで使う */
+}
+
+.story-text-wrap {
+    margin-top: -30px;        /* PC版のマイナス余白をリセット */
+}
+
+.vertical-title {
+    font-size: 2.8rem;    /* PC(3.5rem)より少し小さくして、ぶつかるのを防ぐ */
+    letter-spacing: 0.6em; /* 字間も少し詰めてコンパクトに */
+}
+
+.vertical-description {
+    font-size: 0.9rem;
+    letter-spacing: 0.7em;
+}
+
+.story-image-box {
+    width: 70%;           /* 画像の幅をPC(75%)より少し削って、文字の場所を作る */
+    height: 500px;        /* 高さを少し抑える */
+}
+
+/* 商品カードを2列にする*/
+.product-grid {
+    grid-template-columns: repeat(2, 1fr); /* パソコンの3列から「2列」に変更 */
+    gap: 30px;                             /* カード同士の間隔を少し調整 */
+}
+
+.products-section {
+    padding: 80px 5%;                      /* 上下の余白を少しスリムに */
+}
+
+/* --- TOPICSのタイトルを少し広げる --- */
+.topic_list .title {
+    width: 500px; /* PC版(700px)から少し縮めて、iPadの幅にフィットさせる */
+    font-size: 13px; /* 文字を1pxだけ小さくして、一行に入る量を増やす */
+    white-space: normal; /* 【重要】入りきらない場合は「改行」して全部見せる */
+    overflow: visible;
+    text-overflow: clip;
+}
+
+/*map調整*/
+.access_section {
+    padding: 60px 5%;   /* PC(100px 8%)より余白を削って、中身を広く使う */
+    margin-top: 60px;   /* セクション間の距離を調整 */
+}
+
+.access_info {
+    height: auto;       /* 固定高さ(250px)を解除して、文字がはみ出ないようにする */
+    padding-bottom: 15px;
+}
+
+.access_map {
+    height: 280px;      /* 地図の高さを少しだけ低くしてバランスを取る */
+}
+}
