@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/* ==========================================
+   TOPICS (新着情報) 列表页样式
+   ========================================= */
+.page-header{
+    padding: 180px 8% 100px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-sub{
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 0.6em;
+    margin-bottom: 25px;
+}
+
+.header-title{
+    font-size: 60px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 0.2em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.header-jp{
+    font-size: 23px;
+    color: #888;
+    letter-spacing: 0.3em;
+}
+
+.topics-main-section{
+    padding: 100px 8% 150px;
+    background-color: #fff;
+}
+
+.year-block{
+    font-weight: 200;
+    color: #222;
+    letter-spacing: 0.1em;
+    margin-bottom: 80px;
+    padding-bottom: 15px;
+}
+
+.year-block .year-title{
+    display: inline-block;
+    font-size: 32px;
+    border-left: 3px solid #777;
+    background-color:  #fafafa;
+    padding: 5px 15px;
+    margin-bottom: 30px;
+}
+
+.topic-item{
+    border-bottom: 1px solid #eee;
+}
+
+.topic-link{
+    display: flex;
+    align-items: center;
+    padding: 35px 15px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+.topic-link:hover{
+    background-color: #fafafa;
+    padding-left: 25px;
+}
+
+.topic-meta{
+    display: flex;
+    align-items: center;
+    width: 320px;
+    flex-shrink: 0;/*不管右边多长，左边这块320px不准缩*/
+}
+
+.topic-meta .date{
+    font-size: 15px;
+    color: #999;
+    font-family: Arial,sans-serif;
+    letter-spacing: 0.05em;
+    width: 100px;
+}
+
+.topic-meta .category-label{
+    font-size: 13px;
+    background-color: #f2f2f2;
+    color: #666;
+    padding: 5px 10px;
+    min-width: 110px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-left: 20px;
+}
+
+.topic-content{
+    flex: 1;
+    padding-left: 40px;
+}
+
+.topic-title{
+    font-size: 17px;
+    font-weight:400;
+    line-height: 2;
+    color: #444;
+}

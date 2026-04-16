@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* ==========================================
+   FLOW (业务流程) 专用样式
+   ========================================= */
+
+.page-header{
+    padding: 180px 8% 100px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-sub{
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 0.6em;
+    margin-bottom: 25px;
+}
+
+.header-title{
+    font-size: 60px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 0.2em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.header-jp {
+    font-size: 23px;
+    color: #888;
+    letter-spacing: 0.3em;
+}
+
+.flow-main-section{
+    padding: 100px 8% 150px;
+}

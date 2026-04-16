@@ -58,11 +58,13 @@ body {
     color: #333; 
     font-size: 13px; 
     letter-spacing: 0.1em;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .menu a:hover{
     color: #999;
+    transform:translateY(-1px);
+    text-decoration: underline;
 }
 
 .brand-story {
@@ -134,8 +136,192 @@ body {
 .slideshow-img:nth-child(4) { animation-delay: 15s; }
 
 
+/* --- Philosophy Section --- */
 
-/* 2. 产品网格*/
+.philosophy-section{
+    padding: 120px 8%;
+    background-color: #fff;
+}
+
+.philosophy-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 90px;
+}
+
+.philosophy-content {
+    flex: 1.2;
+}
+
+.philosophy-label{
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 0.4em;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 45px;
+}
+
+.philosophy-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 45%;
+    width: 35px;
+    height: 2px;
+    background-color: #999;
+}
+
+.philosophy-title{
+    font-size: 2.4rem;
+    font-weight: 200;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    letter-spacing: 0.25em;
+}
+
+.philosophy-text {
+    font-size: 14px;
+    color: #777;
+    line-height: 2.4;
+    margin-bottom: 25px;
+}
+
+.philosophy-visual {
+    flex: 1;
+    height: 450px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: solid 1px #f0f0f0;
+}
+
+.visual-bg-text {
+    font-size: 280px;
+    color: #999;
+    opacity: 0.5;
+    line-height: 1;
+    user-select: none;/* 防止用户误选这个背景字 */
+    transition: all 1.3s ease;
+}
+
+.philosophy-section:hover .visual-bg-text{
+    opacity: 1;
+    color: #ccc;
+    transform: scale(1.3) translateY(-10px);
+}
+
+.visual-sub-text {
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 0.3em;
+    line-height: 1.8;
+    text-align: right;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Partners Section --- */
+.partners-section{
+    padding: 100px 8%;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.partners-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partners-label{
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 0.4em;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.partners-grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px 60px;
+    flex-wrap: wrap;
+}
+
+.logo-item{
+    border-left: #ccc 2px solid;
+    width: 300px;
+    padding: 5px 0 5px 15px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    transition: all 0.4s ease;
+    cursor: default;
+    /* 增加一个 display: flex，确保 span 里的日语和英文在垂直方向绝对居中 */
+    display: flex;
+    align-items: center;
+}
+.logo-item:hover{
+    color: #111;
+    transform: translateX(5px);
+    border-left: #111 2px solid;
+}
+
+.logo-item span{
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 8px;
+    letter-spacing: 0;
+    color: #777;
+}
+.logo-item:hover span {
+    color: #222; 
+}
+
+.partners-footer{
+    margin-top: 70px;
+    text-align: center;
+}
+
+.view-all-link {
+    display: inline-block;
+    font-size: 11px;
+    color: #999;
+    text-decoration: none;
+    letter-spacing: 0.3em;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+.view-all-link:hover{
+    color: #333;
+    border-bottom: 1px solid #333;
+}
+
+.view-all-link .arrow{
+    font-size: 13px;
+    margin-left: 7px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.view-all-link:hover .arrow{
+    transform: translateX(5px);
+}
+
+/* 产品网格*/
 .products-section { 
     padding: 120px 8%; 
 }
@@ -148,7 +334,7 @@ body {
 }
 .product-grid {
     display: grid;/*タイル状のレイアウトを作るため*/
-    grid-template-columns: repeat(3, 1fr);/*3つの列を均等な幅で並べます*/
+    grid-template-columns: repeat(4, 1fr);/*3つの列を均等な幅で並べます*/
     gap: 40px;
 }
 
@@ -192,6 +378,26 @@ body {
     letter-spacing: 0.2em; 
 }
 
+.product-viewmore{
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #888;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding-right: 20px;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.product-grid a:hover .product-viewmore{
+    color: #333;
+    border-bottom: 1px solid #333;
+    padding-left: 5px;
+}
+
+/* Our Strengths */
 .strength-item h3 {
     font-size: 18px;     
     font-weight: 600;
@@ -214,10 +420,9 @@ body {
     color: #666;
 }
 
-/* Our Strengths */
 .strengths-section{
     padding: 120px 8%;
-    background-color: #fff;
+    background-color: #fafafa;
 }
 
 .strengths-container{
@@ -346,11 +551,11 @@ body {
 }
 
 
-/* 4. access*/
+/*  access*/
 .access_section{
-    padding: 100px 8%;
+    padding: 120px 8%;
     max-width: 1400px;
-    margin: 100px auto 0;
+    margin: 0 auto;
     border-top: 1px solid #eee;
 }
 
@@ -437,7 +642,7 @@ body {
 }
 
 
-/* 5. contact*/
+/*  contact*/
 .contact_section{
     padding: 120px 8%;
     background: #fafafa;
@@ -558,7 +763,7 @@ input:focus, textarea:focus {
 }
 
 .store-buttons-wrap img{
-    height: 27px;
+    height: 50px;
     width: auto;
     margin-right: 20px;
 }
@@ -685,65 +890,8 @@ small{
     transform: translateY(-5px);
 }
 
-/* ==========================================
-   プライバシーポリシー　スタイル (Privacy Policy)
-   ========================================= */
 
-.privacy-page{
-    padding-top: 150px;
-    background-color: #fff;
-    padding-bottom: 100px;
-}
 
-.content-container{
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 0 20px;
-}
-
-.content-container h1{
-    font-size: 27px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    margin-bottom: 60px;
-    text-align: center;
-    position: relative;
-}
-
-.content-container h1::after{
-    content: "";
-    display: block;
-    width: 50px;
-    height: 2px;
-    background: #333;
-    margin: 20px auto 0;
-}
-
-.content-container h2{
-    font-size: 18px;
-    margin: 50px 0 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    font-weight: 600;
-}
-
-.content-container p{
-    font-size: 15px;
-    line-height: 2.2;
-    color: #555;
-    margin-bottom: 25px;
-}
-
-.content-container p:last-child{
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: 8px;
-    font-size: 14px;
-    line-height: 1.8;
-    margin-top: 40px;
-    border: 1px solid #eee;
-}
 
 /* --- スマートフォン用設定 (画面幅 767px 以下) --- */
 
