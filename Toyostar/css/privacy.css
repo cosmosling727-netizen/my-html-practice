@@ -1,0 +1,59 @@
+/* ==========================================
+   プライバシーポリシー　スタイル (Privacy Policy)
+   ========================================= */
+@charset "utf-8";
+.privacy-page{
+    padding-top: 150px;
+    background: linear-gradient(to right, #ddd 0%, #fff 40%);
+    padding-bottom: 100px;
+}
+
+.content-container{
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.content-container h1{
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+}
+
+.content-container h1::after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #333;
+    margin: 20px auto 0;
+}
+
+.content-container h2{
+    font-size: 18px;
+    margin: 50px 0 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.content-container p{
+    font-size: 15px;
+    line-height: 2.2;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.content-container p:last-child{
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 40px;
+    border: 1px solid #eee;
+}

@@ -1,0 +1,1410 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,*::before, *::after { 
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; /*全ての要素のデフォルト余白を消し、
+    box-sizing: border-box を適用します。これにより、パディング
+    やボーダーを含めても幅が計算しやすくなり、レイアウト崩れを防ぎます。*/
+}
+
+body {
+    font-family: "Hiragino Mincho ProN", "serif"; 
+    /* 日本高端设计首选明朝体 */
+    background-color: #fff;
+    color: #333;
+    line-height: 1.8;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%; 
+    background-color: rgba(255, 255, 255, 0.75); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    backdrop-filter: blur(10px); /*背景模糊*/
+    -webkit-backdrop-filter: blur(10px);        /* 兼容 Safari 浏览器 */
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-container img{
+    width:130px ;
+    height: auto;
+    object-fit: cover;
+}
+
+.menu { 
+    display: flex; 
+    list-style: none; 
+}
+.menu li { 
+    margin-left: 30px; 
+}
+
+.menu a { 
+    display: block;
+    text-decoration: none; 
+    color: #333; 
+    font-size: 13px; 
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover{
+    color: #777;
+    transform:translateY(-1px);
+    text-decoration: underline;
+}
+
+.brand-story {
+    margin-top: 75px;
+}
+
+.vertical-title {
+    font-size: 3.5rem;
+    font-weight: 200;
+    letter-spacing: 0.9em;
+    white-space: nowrap;
+}
+.vertical-description {
+    font-size: 1rem;
+    color: #666;
+    letter-spacing: 0.9em;
+}
+
+.story-image-section {
+    position: relative;
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+}
+
+.story-image-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.story-image-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 70%, transparent 100%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.story-text-overlay {
+    position: absolute;
+    top: 80px;
+    left: 6%;
+    z-index: 10;
+    writing-mode: vertical-rl;
+    border-left: 1px solid rgba(255,255,255,0.25);
+    padding: 0 18px 80px 0;
+    color: #fff;
+}
+
+.story-text-overlay .vertical-title {
+    color: #fff;
+}
+
+.story-text-overlay .vertical-description {
+    color: rgba(255,255,255,0.8);
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    text-decoration: none;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.slide.active {
+    opacity: 1;
+}
+
+#slideshow-area .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 25;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    color: rgba(255,255,255,0.8);
+    font-size: 22px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+#slideshow-area .arrow:hover {
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+#slideshow-area .arrow-left {
+    left: 22%;
+}
+#slideshow-area .arrow-right {
+    right: 22%;
+}
+
+
+/* --- Philosophy Section --- */
+
+.philosophy-section{
+    padding: 120px 8%;
+    border-top: 1px solid #eee;
+}
+
+.philosophy-container{
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.section-label{
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.4em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-main-title{
+    font-size: 2.4rem;
+    font-weight: 200;
+    line-height: 1.6;
+    margin-bottom: 60px;
+    letter-spacing: 0.25em;
+    text-align: center;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.case-card {
+    background: #fafafa;
+    border: 1px solid #eee;
+    padding: 40px 35px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.case-card:hover {
+    background: #f5f5f5;
+    border-color: #ddd;
+    transform: translateY(-4px);
+}
+
+.case-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #999;
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.case-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.case-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    flex: 1;
+}
+
+.case-link {
+    font-size: 11px;
+    color: #777;
+    letter-spacing: 0.15em;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 3px;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+}
+
+.case-card:hover .case-link {
+    color: #333;
+    border-color: #333;
+}
+
+.visual-sub-text {
+    margin-top: 80px;
+    font-size: 10px;
+    color: #555;
+    letter-spacing: 0.3em;
+    line-height: 1.8;
+    text-align: right;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Partners Section --- */
+.partners-section{
+    padding: 100px 8%;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.partners-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partners-label{
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 0.4em;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.partners-grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px 60px;
+    flex-wrap: wrap;
+}
+
+.logo-item{
+    border-left: #ccc 2px solid;
+    width: 300px;
+    padding: 5px 0 5px 15px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #555;
+    transition: all 0.4s ease;
+    cursor: default;
+    /* 增加一个 display: flex，确保 span 里的日语和英文在垂直方向绝对居中 */
+    display: flex;
+    align-items: center;
+}
+.logo-item:hover{
+    color: #111;
+    transform: translateX(5px);
+    border-left: #111 2px solid;
+}
+
+.logo-item span{
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 8px;
+    letter-spacing: 0;
+    color: #777;
+}
+.logo-item:hover span {
+    color: #222; 
+}
+
+.partners-footer{
+    margin-top: 70px;
+    text-align: center;
+}
+
+.view-all-link {
+    display: inline-block;
+    font-size: 11px;
+    color: #777;
+    text-decoration: none;
+    letter-spacing: 0.3em;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+.view-all-link:hover{
+    color: #333;
+    border-bottom: 1px solid #333;
+}
+
+.view-all-link .arrow{
+    font-size: 13px;
+    margin-left: 7px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.view-all-link:hover .arrow{
+    transform: translateX(5px);
+}
+
+/* 产品网格*/
+.products-section { 
+    padding: 120px 8%; 
+    border-top: 1px solid #eee;
+}
+.section-title {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: #777;
+    margin-bottom: 80px;
+}
+.product-grid {
+    display: grid;/*タイル状のレイアウトを作るため*/
+    grid-template-columns: repeat(4, 1fr);/*3つの列を均等な幅で並べます*/
+    gap: 40px;
+}
+
+.product-grid a{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.img-box {
+    display: flex; 
+    aspect-ratio: 1 / 1; /* 宽和高的比例。强制图片容器为正方形 */
+    background-color: #f9f9f9;
+    margin-bottom: 25px;
+    overflow:hidden;
+}
+
+.img-box img { 
+    width: 80%; 
+    height: 80%;
+    margin: auto;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.img-box:hover{
+    background-color: #f5f2f2;
+}
+.img-box:hover img{
+    transform:scale(1.1)
+}
+
+.card-info h3 { 
+    font-size: 15px; 
+    font-weight: 500; 
+    margin-bottom: 5px; 
+}
+.card-info p { 
+    font-size: 10px; 
+    color: #777; 
+    letter-spacing: 0.2em; 
+}
+
+.product-viewmore{
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #666;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding-right: 20px;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.product-grid a:hover .product-viewmore{
+    color: #333;
+    border-bottom: 1px solid #333;
+    padding-left: 5px;
+}
+
+/* Our Strengths */
+.strength-item h3 {
+    font-size: 18px;     
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.strength-item .en-sub {
+    font-size: 10px;
+    color: #777;
+    letter-spacing: 0.1em;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 10px;
+}
+
+.strength-item .desc {
+    font-size: 14px;
+    line-height: 2;     
+    color: #666;
+}
+
+.strengths-section{
+    padding: 120px 8%;
+    background-color: #fafafa;
+}
+
+.strengths-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.strengths-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 60px;
+    margin-top: 50px;
+}
+
+.strength-item{
+    text-align: left;
+    padding: 40px;
+    background-color: #fcfcfc;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+.strength-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.strength-item .number{
+    font-size: 12px;
+    color:#777;
+    display: block;
+    margin-bottom: 20px;
+    font-family: Arial,sans-serif;
+}
+
+/* 3. topic */
+.topic_section{
+    padding: 100px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #eee;
+}
+
+.topic_header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+.viewall{
+    font-size: 11px;
+    text-decoration: none;
+    color: #777;
+    letter-spacing: 0.1em;
+    transition: color 0.5s ease;
+}
+
+.viewall:hover{
+    color: #333;
+}
+
+.topic_list{
+    list-style: none;
+    /*list-style-position: inside;如果前面有圆点或方块，可以显示出list前面的圆点*/
+}
+
+.topic_list a{
+    display: flex;
+    /*默认情况下，<a> 标签是 inline（行内） 元素开启 display: 
+    flex 后，<a> 变成了一个 Flex Container（弹性容器）。每一个a里面的box
+    默认横向排列。这里的a里面有三个box。可以进行宽度，高度，flex的设置*/
+    padding: 25px 10px;
+    text-decoration: none;
+    color: #333;
+    align-items: center;
+    transition: background-color 0.35s ease;
+    border-bottom: 1px solid #eee;
+}
+
+.topic_list a:hover{
+    background-color: #f9f9f9;
+    padding-left: 13px;
+}
+
+.topic_list .date{
+    font-size: 13px;
+    color:#777;
+    width:120px;
+    margin-right: 30px;
+    font-family: Arial,sans-serif;
+}
+
+.topic_list .category{
+    font-size: 10px;
+    background: #f0f0f0;
+    padding: 2px 8px;
+    margin-right: 30px;
+    color: #666;
+    letter-spacing: 0.1em;
+    width:120px;
+    text-align: center;
+}
+
+.topic_list .title{
+    width:700px;
+    font-size: 14px;
+    /*flex: 1;日期和分类占完地方后，
+             剩下的所有空间都给标题”。这样无论标题长短，它都会填满右侧剩余部分*/
+
+    /* 1. 强制文字在一行内显示，不许换行 */
+    white-space: nowrap; 
+    
+    /* 2. 超出的部分隐藏起来 */
+    overflow: hidden; 
+    
+    /* 3. 重点：超出的部分用省略号代替 */
+    text-overflow: ellipsis;
+}
+
+
+/*  access*/
+.access_section{
+    padding: 120px 8%;
+    max-width: 1400px;
+    border-top: 1px solid #eee;
+    margin: 0 auto;
+    border-top: 1px solid #eee;
+}
+
+.access_title{
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: #777;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.access_container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 80px 40px;
+}
+
+.access_card{
+    display: flex;
+    flex-direction: column;/* 格子里改为“上下排列”，文字在上，地图在下 */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.access_info{
+    padding:0 0 20px 0;
+    height: 250px;
+}
+
+.access_info h3{
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.3em;
+    border-left: 3px solid #333;
+    padding-left: 15px;
+}
+
+.access_info p{
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+    margin-bottom: 5px;
+}
+
+.access_info .tel{
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.access_map{
+    width: 100%;
+    height: 300px;
+    background-color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+    border-radius: 11px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.access_card:hover .access_map{
+    transform: translateY(-7px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+    /*
+    width: 100%;
+    height: 100%; 照片我要长得和外面的相框（）一样大
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    直接告诉格子，让它里面的东西居中。
+    方案 A（最现代）：保持 display: flex，
+    使用 justify-content: center 和 align-items: center。
+    这是目前最主流、最稳的写法。
+    */
+
+.access_map iframe{
+    width: 100%;
+    height: 100%;/* 让地图本人填满 .access_map */
+    display: block; /* 消除图片或框架下方的小缝隙 */
+}
+
+
+/*  contact*/
+.contact_section{
+    padding: 120px 8%;
+    background: #fafafa;
+}
+
+.contact_container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    gap: 80px;
+}
+
+.contact_lead{
+    flex:1;
+}
+
+.contact_title{
+    font-size: 24px;
+    letter-spacing: 0.3em;
+    margin-bottom: 10px;
+}
+
+.contact_subtitle{
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.contact_text1, .contact_text2{
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+}
+
+.contact_form{
+    flex:1.5;
+}
+
+.form_group{
+    margin-bottom: 30px;
+}
+
+.form_group label{
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form_group label span{
+    font-size: 10px;
+    color: #777;
+    margin-left: 10px;
+}
+
+input,textarea{
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;/*继承.默认会给 input 和 textarea（输入框）设定一个很丑的系统自带字体.
+                           加了继承，字就会变得和网页其他地方一模一样，保持视觉统一*/
+    outline: none;/*默认情况下，当你点进一个输入框，浏览器会粗暴地给它加一个“框圈”（Outline）。*/
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #333; /* ユーザーが入力欄をクリックしたり、タブキーで
+    移動したりして「入力可能な状態」になった瞬間のことです。边框变深 */
+}
+
+.submit_btn{
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit_btn:hover{
+    background-color: #000;
+}
+
+.qa-guide-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 32px;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: #555;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.qa-guide-btn:hover {
+    color: #000;
+    border-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+/*rakuten online shop*/
+.online-store-section{
+    padding: 100px 8%;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+}
+
+.store-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.store-title{
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.store-intro{
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.store-buttons-wrap{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.store-buttons-wrap img{
+    height: 50px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.store-buttons-wrap a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 80px;
+    color: #333;
+    background-color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 0 30px;
+    transition: all 0.3s ease;
+}
+
+.store-buttons-wrap a:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.btn-text{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+}
+
+/*footer*/
+footer {
+    background-color: #fff;
+    padding: 100px 8% 60px;
+    border-top: 1px solid #eee;
+}
+
+.footer-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.footer-group h4{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    margin-bottom: 25px;
+}
+
+.footer-group ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-group li{
+    margin-bottom: 15px;
+}
+
+.footer-group a{
+    text-decoration: none;
+    color:#666;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.footer-group a:hover{
+    color: #333;
+}
+
+.footer-info{
+    border-top: 1px solid #f5f5f5;
+    padding-top: 40px;
+}
+
+.footer-logo{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+address{
+    font-size: 13px;
+    font-style: normal;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+small{
+    font-size: 10px;
+    color: #777;
+    letter-spacing: 0.1em;
+}
+
+/* --- 導入事例 詳細ページ --- */
+.case-detail {
+    padding: 100px 8%;
+}
+
+.case-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.case-overview {
+    margin-bottom: 80px;
+}
+
+.case-label {
+    font-size: 11px;
+    color: #777;
+    letter-spacing: 0.4em;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 45px;
+}
+
+.case-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 45%;
+    width: 35px;
+    height: 2px;
+    background-color: #999;
+}
+
+.case-company {
+    font-size: 2rem;
+    font-weight: 200;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    letter-spacing: 0.2em;
+}
+
+.case-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background: #f8f8f8;
+    padding: 30px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.meta-key {
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 0.15em;
+}
+
+.meta-value {
+    font-size: 14px;
+    color: #333;
+}
+
+.case-section {
+    margin-bottom: 60px;
+}
+
+.case-section-label {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 0.4em;
+    margin-bottom: 15px;
+}
+
+.case-section-title {
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-bottom: 25px;
+    letter-spacing: 0.15em;
+}
+
+.case-section-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 2.2;
+}
+
+.result-list {
+    list-style: none;
+}
+
+.result-list li {
+    font-size: 14px;
+    color: #555;
+    line-height: 2;
+    padding-left: 20px;
+    position: relative;
+}
+
+.result-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #999;
+}
+
+.case-nav {
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.back-link {
+    font-size: 12px;
+    color: #777;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #333;
+}
+
+/*back to the top*/
+.back-to-top{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover{
+    background-color: #000;
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+/* --- Dropdown Menu --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 5px 0;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    text-align: left;
+    border-bottom: 1px solid #f5f5f5;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+
+.dropdown-menu li {
+    margin-left: 0;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f9f9f9;
+    color: #777;
+}
+
+
+
+/* --- スマートフォン用設定 (画面幅 767px 以下) --- */
+
+@media screen and (max-width: 767px) {
+
+/* ナビゲーション全体の調整 */
+.nav-container {
+    flex-direction: column; /* ロゴとメニューを上下に並べる */
+    padding: 10px 0;        /* 上下の余白をスッキリさせる */
+}
+
+.menu {
+    width: 85%;
+    margin:5px auto;       /* ロゴとの間隔 */
+    padding: 0px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu li {
+    margin-left: 7px;      /* メニュー同士の間隔を半分（30px→15px）にする */
+    margin-right: 7px;     /* 右側にも同じだけ空ける */
+}
+
+.menu a{
+    font-size:11px;
+}
+
+.nav-container img{
+    width:90px ;
+    height: auto;
+}
+
+/* Storyと写真の調整 */
+.brand-story {
+    margin-top: 75px;
+}
+
+.story-image-section {
+    height: auto;
+}
+
+.story-image-box {
+    height: 300px;
+}
+
+.story-image-section::after {
+    display: none;
+}
+
+.story-text-overlay {
+    position: static;
+    writing-mode: horizontal-tb;
+    border-left: none;
+    border-bottom: 1px solid #eee;
+    padding: 20px 8% 10px;
+    text-align: center;
+    color: #333;
+    transform: none;
+}
+
+.story-text-overlay .vertical-title {
+    color: #333;
+    font-size: 2rem;
+    letter-spacing: 0.3em;
+    margin-left: 0;
+    text-indent: 1.3em;
+}
+
+.story-text-overlay .vertical-description {
+    color: #666;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+}
+
+
+/* --- Philosophyセクションの調整 --- */
+.philosophy-section {
+    padding: 80px 8%;
+}
+
+.section-main-title {
+    font-size: 1.8rem;
+}
+
+.cases-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.case-card {
+    padding: 30px 25px;
+}
+
+.visual-sub-text {
+    margin-top: 50px;
+}
+
+/* --- 商品グリッドの調整 --- */
+.product-grid {
+    grid-template-columns: 1fr; /* 3列から「1列」に変更 */
+    gap: 50px;                 /* 縦に並ぶカード同士の間隔 */
+}
+
+.products-section {
+    padding: 60px 8%;          /* 上下の余白（120px）をスマホ用に半分に */
+}
+
+.section-title {
+    margin-bottom: 40px;       /* タイトル下の余白を調整 */
+}
+
+/* --- TOPICS一覧の調整 --- */
+.topic_section {
+    padding: 60px 8%; /* 余白をスマホサイズに */
+}
+
+.topic_list a {
+    flex-wrap: wrap;    /* 中身が入りきらない時に自動的に次の行へ移動させる */
+    padding: 20px 5px;
+}
+
+.topic_list .date {
+    width: auto;        /* 固定幅(120px)を解除して、文字の長さに合わせる */
+    margin-right: 15px;
+    font-size: 12px;
+}
+
+.topic_list .category {
+    width: auto;        /* 固定幅(120px)を解除 */
+    margin-right: 0;
+    font-size: 9px;
+}
+
+.topic_list .title {
+    width: 100%;        /* 100%にすることで、日付たちの下の行（2行目）に強制移動 */
+    margin-top: 10px;   /* 日付との間に少し隙間を作る */
+    font-size: 14px;
+    white-space: normal; /* 【重要】改行を許可して、長いタイトルも全部見せる */
+    overflow: visible;   /* 省略（...）を解除 */
+    text-overflow: clip; /*PC版の ...（ellipsis）を完全に無効化する。*/
+}
+
+/* --- ACCESSセクションの調整 --- */
+.access_section {
+    padding: 60px 8%;  /* 余白をスマホサイズに */
+    margin-top: 50px;  /* PC版の100pxから半分に */
+}
+
+.access_container {
+    grid-template-columns: repeat(1,1fr); /* 2列から「1列」に変更 */
+    gap: 40px;                 /* 拠点ごとの間隔を調整 */
+}
+
+.access_info {
+    height: auto;              /* 固定高さ(250px)を解除して、文字量に合わせる */
+    padding-bottom: 20px;
+}
+
+.access_info h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.access_map {
+    height: 250px;             /* 地図の高さをスマホで見やすいサイズに */
+}
+
+/* --- CONTACTセクションの調整 --- */
+.contact_section {
+    padding: 60px 8%;
+    border-top: 1px solid #eee;
+}
+
+.contact_container {
+    flex-direction: column; /* 横並びから「縦並び」に変更 */
+    gap: 40px;             /* 説明文とフォームの間の距離 */
+}
+
+.contact_lead {
+    margin: 0 auto;
+    text-align: center;    /* スマホでは文章を中央に寄せると綺麗に見えます */
+}
+
+.contact_title {
+    font-size: 20px;       /* タイトルを少し小さく */
+}
+
+.contact_text1, .contact_text2 {
+    font-size: 13px;       /* 文字サイズを微調整 */
+}
+
+/* フォーム部分の調整 */
+.contact_form {
+    width: 100%;           /* フォームを横幅いっぱいに使う */
+}
+
+.submit_btn {
+    padding: 15px;         /* ボタンを押しやすいサイズに（PCより少しスリムに） */
+    font-size: 14px;
+}
+
+/* フッターの調整 */
+footer {
+    padding: 40px 8%;      /* フッターの余白もスッキリさせる */
+}
+
+}
+
+
+
+
+
+
+/* --- タブレット用設定 (画面幅 768px 〜 1024px) --- */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+/* Storyと写真の調整*/
+.story-image-section {
+    height: 600px;
+}
+
+.story-text-overlay {
+    top: 50px;
+    padding: 0 15px 50px 0;
+}
+
+.story-text-overlay .vertical-title {
+    font-size: 2.8rem;
+    letter-spacing: 0.6em;
+}
+
+.story-text-overlay .vertical-description {
+    font-size: 0.9rem;
+    letter-spacing: 0.7em;
+}
+
+/* 商品カードを2列にする*/
+.product-grid {
+    grid-template-columns: repeat(2, 1fr); /* パソコンの3列から「2列」に変更 */
+    gap: 30px;                             /* カード同士の間隔を少し調整 */
+}
+
+.products-section {
+    padding: 80px 5%;                      /* 上下の余白を少しスリムに */
+}
+
+/* --- TOPICSのタイトルを少し広げる --- */
+.topic_list .title {
+    width: 500px; /* PC版(700px)から少し縮めて、iPadの幅にフィットさせる */
+    font-size: 13px; /* 文字を1pxだけ小さくして、一行に入る量を増やす */
+    white-space: normal; /* 【重要】入りきらない場合は「改行」して全部見せる */
+    overflow: visible;
+    text-overflow: clip;
+}
+
+/*map調整*/
+.access_section {
+    padding: 60px 5%;   /* PC(100px 8%)より余白を削って、中身を広く使う */
+    margin-top: 60px;   /* セクション間の距離を調整 */
+}
+
+.access_info {
+    height: auto;       /* 固定高さ(250px)を解除して、文字がはみ出ないようにする */
+    padding-bottom: 15px;
+}
+
+.access_map {
+    height: 280px;      /* 地図の高さを少しだけ低くしてバランスを取る */
+}
+}

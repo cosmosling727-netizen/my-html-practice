@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+/* ==========================================
+   FLOW (业务流程) 专用样式
+   ========================================= */
+
+.page-header{
+    padding: 180px 8% 100px;
+    background: linear-gradient(to right, #ddd 0%, #fff 40%);
+    text-align: center;
+    position: relative;
+}
+
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-sub{
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0.6em;
+    margin-bottom: 25px;
+}
+
+.header-title{
+    font-size: 60px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 0.2em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.header-jp {
+    font-size: 23px;
+    color: #666;
+    letter-spacing: 0.3em;
+}
+
+.flow-main-section{
+    padding: 100px 8% 150px;
+    background-color: #fff;
+}
+
+.company-container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.flow-group {
+    margin-bottom: 120px;
+}
+
+.flow-group-header {
+    margin-bottom: 60px;
+    border-left: 3px solid #777;
+    padding: 15px 0 15px 25px;
+    background-color: #fafafa;
+}
+
+.flow-group-header .en-title {
+    font-size: 14px;
+    color: #777;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+}
+
+.flow-group-header .jp-title {
+    font-size: 26px;
+    color: #222;
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+}
+
+.flow-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.flow-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.flow-item:hover{
+    background-color: #fcfcfc;
+    padding-left: 20px;
+}
+
+.flow-num {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.flow-num span {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 200;
+    color: #333;
+    position: relative;
+    display: inline-block;
+}
+
+.flow-num span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    background: #333;
+}
+
+.flow-content {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.flow-content h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.flow-content p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+}
+
+/*没有空格连在一起写意味着：这个元素必须同时具备这两个身份*/
+.flow-item.sub-step {
+    margin-left: 50px; 
+    border-bottom: 1px solid #eee; 
+}
+
+.flow-item.sub-step .flow-num {
+    width: 120px;
+}
+
+.flow-item.sub-step .flow-num span {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666;
+}
+
+.flow-item.sub-step .flow-num span::after {
+    background: #888; 
+}
+
+.flow-item.sub-step .flow-content h3 {
+    font-size: 16px;
+    margin-bottom: 0; 
+}
