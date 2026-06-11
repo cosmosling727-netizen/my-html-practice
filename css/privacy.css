@@ -4,7 +4,7 @@
 @charset "utf-8";
 .privacy-page{
     padding-top: 150px;
-    background-color: #fff;
+    background: linear-gradient(to right, #ddd 0%, #fff 40%);
     padding-bottom: 100px;
 }
 

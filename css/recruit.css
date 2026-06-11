@@ -1,0 +1,242 @@
+@charset "utf-8";
+
+.page-header{
+    padding: 180px 8% 100px;
+    background: linear-gradient(to right, #ddd 0%, #fff 40%);
+    text-align: center;
+    position: relative;
+}
+
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-sub{
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0.6em;
+    margin-bottom: 25px;
+}
+
+.header-title{
+    font-size: 60px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 0.2em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.header-jp{
+    font-size: 23px;
+    color: #666;
+    letter-spacing: 0.3em;
+}
+
+.recruit-main-section{
+    padding: 100px 8% 150px;
+    background-color: #fff;
+}
+
+.recruit-container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.recruit-message{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.section-ttl{
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    margin-bottom: 40px;
+}
+
+.section-text{
+    font-size: 15px;
+    color: #666;
+    line-height: 2.2;
+}
+
+.recruit-category{
+    margin-bottom: 100px;
+}
+
+.recruit-category-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    letter-spacing: 0.15em;
+    margin-bottom: 50px;
+    border-left: 3px solid #777;
+    padding: 12px 0 12px 20px;
+    background-color: #fafafa;
+}
+
+.recruit-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.recruit-item{
+    border: 1px solid #eee;
+    padding: 35px;
+    transition: all 0.3s ease;
+}
+
+.recruit-item:hover{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transform: translateY(-3px);
+}
+
+.recruit-head{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.recruit-badge{
+    display: inline-block;
+    padding: 4px 14px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: #fff;
+    background-color: #555;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.recruit-badge-blue{
+    background-color: #4a7c9b;
+}
+
+.recruit-badge-green{
+    background-color: #6b8f6b;
+}
+
+.recruit-badge-orange{
+    background-color: #c4884a;
+}
+
+.recruit-job{
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.recruit-dl div{
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px dotted #eee;
+}
+
+.recruit-dl dt{
+    width: 120px;
+    font-size: 13px;
+    color: #666;
+    flex-shrink: 0;
+}
+
+.recruit-dl dd{
+    font-size: 14px;
+    color: #555;
+    margin-left: 0;
+}
+
+.recruit-flow{
+    margin-bottom: 100px;
+}
+
+.recruit-flow-grid{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.recruit-flow-item{
+    flex: 1;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.recruit-flow-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.recruit-flow-num{
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 200;
+    color: #777;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.recruit-flow-item h4{
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-bottom: 15px;
+}
+
+.recruit-flow-item p{
+    font-size: 13px;
+    color: #777;
+    line-height: 1.8;
+}
+
+.recruit-contact{
+    text-align: center;
+    padding: 60px;
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.recruit-contact-text{
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+}
+
+.recruit-contact-btn{
+    display: inline-block;
+    padding: 18px 50px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.recruit-contact-btn:hover{
+    background-color: #000;
+}
+
+@media screen and (max-width: 767px){
+    .recruit-list{
+        grid-template-columns: 1fr;
+    }
+
+    .recruit-flow-grid{
+        flex-direction: column;
+    }
+
+    .recruit-main-section{
+        padding: 60px 8% 100px;
+    }
+}

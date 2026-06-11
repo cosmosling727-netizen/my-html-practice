@@ -6,8 +6,9 @@
 
 .page-header{
     padding: 180px 8% 100px;
-    background-color: #fff;
+    background: linear-gradient(to right, #ddd 0%, #fff 40%);
     text-align: center;
+    position: relative;
 }
 
 .header-container{
@@ -17,7 +18,7 @@
 
 .header-sub{
     font-size: 13px;
-    color: #888;
+    color: #666;
     letter-spacing: 0.6em;
     margin-bottom: 25px;
     font-family: "Helvetica Neue", Arial, sans-serif;
@@ -34,7 +35,7 @@
 
 .header-jp {
     font-size: 23px;
-    color: #888;    
+    color: #666;    
     letter-spacing: 0.3em;
     font-weight: 400;
 }
@@ -53,7 +54,7 @@
 
 .sub-section-title {
     font-size: 19px;
-    color: #999; 
+    color: #777; 
     letter-spacing: 0.3em;
     margin-bottom: 50px;
     text-align: left;
@@ -116,7 +117,7 @@
 
 .loc-tag {
     font-size: 10px;
-    color: #999;
+    color: #777;
     letter-spacing: 0.15em;
     font-family: Arial, sans-serif;
 }
@@ -134,7 +135,7 @@
 
 .loc-detail .contact-info {
     font-size: 14px;
-    color: #888;
+    color: #666;
     line-height: 1.8;
 }
 
@@ -156,7 +157,7 @@
     width: 150px;
     font-size: 14px;
     font-weight: 600;
-    color: #999;
+    color: #777;
     font-family: Arial,sans-serif;
 }
 

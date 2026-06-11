@@ -5,8 +5,9 @@
    ========================================= */
 .page-header{
     padding: 180px 8% 100px;
-    background-color: #fff;
+    background: linear-gradient(to right, #ddd 0%, #fff 40%);
     text-align: center;
+    position: relative;
 }
 
 .header-container{
@@ -16,7 +17,7 @@
 
 .header-sub{
     font-size: 13px;
-    color: #888;
+    color: #666;
     letter-spacing: 0.6em;
     margin-bottom: 25px;
 }
@@ -32,7 +33,7 @@
 
 .header-jp{
     font-size: 23px;
-    color: #888;
+    color: #666;
     letter-spacing: 0.3em;
 }
 
@@ -84,7 +85,7 @@
 
 .topic-meta .date{
     font-size: 15px;
-    color: #999;
+    color: #777;
     font-family: Arial,sans-serif;
     letter-spacing: 0.05em;
     width: 100px;

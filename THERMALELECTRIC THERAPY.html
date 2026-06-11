@@ -13,10 +13,19 @@
     <nav class="nav-container">
         <div><a href="index.html"><img src="product_photo/toyostar_logo.png" alt="TOYOSTAR Logo"></a></div>
         <ul class="menu">
-            <li><a href="#">PRODUCTS</a></li>
+            <li class="dropdown">
+                <a href="">PRODUCTS</a>
+                <ul class="dropdown-menu">
+                    <li><a href="product_wall_dimmer.html">壁型調光器</a></li>
+                    <li><a href="product_internal_dimmer.html">内蔵型調光器</a></li>
+                    <li><a href="THERMALELECTRIC THERAPY.html">温熱/電位治療</a></li>
+                    <li><a href="product_interior_lighting.html">インテリア照明</a></li>
+                </ul>
+            </li>
             <li><a href="flow.html">FLOW</a></li>
-            <li><a href="topics.html">TOPIC</a></li>
+            <li><a href="topic.html">TOPIC</a></li>
             <li><a href="company.html">COMPANY</a></li>
+            <li><a href="recruit.html">RECRUIT</a></li>
             <li><a href="index.html#contact">CONTACT</a></li>
         </ul>
     </nav>
@@ -35,7 +44,7 @@
             <div class="spec-grid">
 
                 <div class="spec-card">
-                    <div class="spec-image"><img src="product_photo/商品紹介/libhot.png" alt="リブホット"></div>
+                    <div class="spec-image"><img src="" alt="リブホット"></div>
                     <div class="spec-info">
                         <span class="label">温熱治療</span>
                         <h3>リブホット家庭用温熱治療器</h3>
@@ -44,7 +53,7 @@
                         <a href="#" class="pdf-link">商品データPDF</a>
 
                         <dl>
-                            <div><dt>消費電力</dt><dd>30W（AC100V时）</dd></div>
+                            <div><dt>消費電力</dt><dd>30W（AC100V時）</dd></div>
                             <div><dt>外形寸法</dt><dd>330×250×9.6mm</dd></div>
                             <div><dt>発熱体</dt><dd>線面発熱体</dd></div>
                             <div><dt>温度制御</dt><dd>電力制御方式（5%～100%）、15・30・60分タイマー機能付</dd></div>
@@ -56,7 +65,7 @@
                 </div>
 
                 <div class="spec-card">
-                    <div class="spec-image"><img src="product_photo/商品紹介/deni_mat.png" alt="電位治療用マット"></div>
+                    <div class="spec-image"><img src="" alt="電位治療用マット"></div>
                     <div class="spec-info">
                         <span class="label">電位治療</span>
                         <h3>電位治療用マット</h3>
@@ -72,16 +81,16 @@
                 </div>
 
                 <div class="spec-card">
-                    <div class="spec-image"><img src="product_photo/商品紹介/libmat.png" alt="リブマット"></div>
+                    <div class="spec-image"><img src="" alt="リブマット"></div>
                     <div class="spec-info">
-                        <span class="label">温熱治疗</span>
+                        <span class="label">温熱治療</span>
                         <h3>リブマット家庭用温熱治療器</h3>
-                        <p class="desc">電热の温热効果による温热治療用マット。(ココロカ㈱様向け仕様)</p>
+                        <p class="desc">電熱の温熱効果による温熱治療用マット。(ココロカ㈱様向け仕様)</p>
                         
                         <a href="#" class="pdf-link">商品データPDF</a>
 
                         <dl>
-                            <div><dt>消費電力</dt><dd>30W（AC100V时）</dd></div>
+                            <div><dt>消費電力</dt><dd>30W（AC100V時）</dd></div>
                             <div><dt>外形寸法</dt><dd>330×250×9.6mm</dd></div>
                             <div><dt>発熱体</dt><dd>線面発熱体</dd></div>
                             <div><dt>温度制御</dt><dd>サーミスタによるON/OFF制御</dd></div>
@@ -93,23 +102,25 @@
                 </div>
 
                 <div class="spec-card">
-                    <div class="spec-image"><img src="product_photo/商品紹介/kanki_fan.png" alt="換気ファン"></div>
+                    <div class="spec-image"><img src="" alt="換気ファン"></div>
                     <div class="spec-info">
                         <span class="label">換気システム</span>
                         <h3>排気型24時間換気システム</h3>
-                        <p class="desc">高性能DCモーター採用の省エネ换気ファン。換気ファン仕様。</p>
+                        <p class="desc">高性能DCモーター採用の省エネ換気ファン。換気ファン仕様。</p>
                         <dl>
-                            <div><dt>消費電力</dt><dd>3W～19W（AC100V时）</dd></div>
+                            <div><dt>消費電力</dt><dd>3W～19W（AC100V時）</dd></div>
                             <div><dt>外形寸法</dt><dd>230×260×H-155mm</dd></div>
                             <div><dt>最大風量</dt><dd>250㎥/h</dd></div>
-                            <div><dt>騒音</dt><dd>60-200㎥/h（20Pa-70Pa时）</dd></div>
+                            <div><dt>騒音</dt><dd>60-200㎥/h（20Pa-70Pa時）</dd></div>
                             <div><dt>コントローラー</dt><dd>無段階切り替え</dd></div>
                             <div><dt>重量</dt><dd>3.8Kg</dd></div>
                         </dl>
                     </div>
                 </div>
 
-            </div> </div> </main>
+            </div>
+        </div>
+    </main>
 
     <section class="oem-cta">
         <div class="company-container">
@@ -121,7 +132,56 @@
     </section>
 
     <footer>
-        </footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <div class="footer-group">
+                    <h4>PRODUCTS</h4>
+                    <ul>
+                        <li><a href="product_wall_dimmer.html">壁型調光器</a></li>
+                        <li><a href="product_internal_dimmer.html">内蔵型調光器</a></li>
+                        <li><a href="THERMALELECTRIC THERAPY.html">温熱/電位治療</a></li>
+                        <li><a href="product_interior_lighting.html">インテリア照明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-group">
+                     <h4>SUPPORT</h4>
+                      <ul>
+                          <li><a href="Q&A.html">よくある質問</a></li>
+                          <li><a href="index.html#contact">お問い合わせ</a></li>
+                         <li><a href="privacy.html">プライバシーポリシー</a></li>
+                         <li><a href="flow.html">OEMの流れ</a></li>
+                     </ul>
+                 </div>
+                 <div class="footer-group">
+                     <h4>CASES</h4>
+                     <ul>
+                         <li><a href="case_study_001.html">ホテル客室 調光システム</a></li>
+                         <li><a href="case_study_002.html">商業施設 照明リニューアル</a></li>
+                         <li><a href="case_study_003.html">照明メーカー OEM調光器</a></li>
+                     </ul>
+                 </div>
+                  <div class="footer-group">
+                     <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="company.html">会社概要</a></li>
+                        <li><a href="recruit.html">採用情報</a></li>
+                        <li><a href="topic.html">トピックス</a></li>
+                    </ul>
+                </div>
+            </div>
+             <div class="footer-info">
+                <p class="footer-logo">TOYOSTAR</p>
+                <address>
+                  トヨスター株式会社 | TOYOSTAR CO., LTD.<br>
+                  〒362-0001埼玉県上尾市大字上尾264-1<br>
+                  TEL:048-770-3531<br>
+                  FAX:048-770-2631<br>
+                  受付時間: 9:00～17:00（土・日・祝を除く）
+                </address>
+                <small>&copy; 2026 TOYOSTAR CO., LTD.</small>
+            </div>
+        </div>
+    </footer>
     <a href="#" class="back-to-top">↑</a>
 </body>
 </html>

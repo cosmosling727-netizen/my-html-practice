@@ -6,8 +6,9 @@
 
 .page-header{
     padding: 180px 8% 100px;
-    background-color: #fff;
+    background: linear-gradient(to right, #ddd 0%, #fff 40%);
     text-align: center;
+    position: relative;
 }
 
 .header-container{
@@ -17,7 +18,7 @@
 
 .header-sub{
     font-size: 13px;
-    color: #888;
+    color: #666;
     letter-spacing: 0.6em;
     margin-bottom: 25px;
 }
@@ -33,7 +34,7 @@
 
 .header-jp {
     font-size: 23px;
-    color: #888;
+    color: #666;
     letter-spacing: 0.3em;
 }
 
@@ -60,7 +61,7 @@
 
 .flow-group-header .en-title {
     font-size: 14px;
-    color: #999;
+    color: #777;
     letter-spacing: 0.2em;
     font-weight: 600;
 }
@@ -145,7 +146,7 @@
 .flow-item.sub-step .flow-num span {
     font-size: 18px;
     font-weight: 400;
-    color: #888;
+    color: #666;
 }
 
 .flow-item.sub-step .flow-num span::after {

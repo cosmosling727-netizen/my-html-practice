@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TOYOSTAR | 輝く未来を照らす、調光技術のスペシャリスト</title>
+    <title>TOYOSTAR | 輝く未来を照らす、調光技術と照明のスペシャリスト</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/toyostar.css">
+    
 </head>
 <body>
 
@@ -13,57 +14,117 @@
         <div><a href="index.html"><img src="product_photo/toyostar_logo.png" alt="TOYOSTAR Logo"></a></div>
         
         <ul class="menu">
-            <li><a href="http://toyostar.co.jp/cat/product01/">PRODUCTS</a></li>
+            <li class="dropdown">
+                <a href="">PRODUCTS</a>
+                <ul class="dropdown-menu">
+                    <li><a href="product_wall_dimmer.html">壁型調光器</a></li>
+                    <li><a href="product_internal_dimmer.html">内蔵型調光器</a></li>
+                    <li><a href="THERMALELECTRIC THERAPY.html">温熱/電位治療</a></li>
+                    <li><a href="product_interior_lighting.html">インテリア照明</a></li>
+                </ul>
+            </li>
             <li><a href="flow.html">FLOW</a></li>
-            <li><a href="topics.html">TOPIC</a></li>
+            <li><a href="topic.html">TOPIC</a></li>
             <li><a href="company.html">COMPANY</a></li>
+            <li><a href="recruit.html">RECRUIT</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
 
     <main>
         <section class="brand-story">
-            <div class="story-container">
-                <div class="story-text-wrap">
-                    <h2 class="vertical-title">光を、整える。</h2>
+            <div class="story-image-section">
+                <div class="story-image-box" id="slideshow-area">
+                    <a href="product_wall_dimmer.html" class="slide active">
+                        <img src="product_photo/リモコン逆位相2.jpg" alt="壁型調光器">
+                    </a>
+                    <a href="product_internal_dimmer.html" class="slide">
+                        <img src="product_photo/内臓型調光器.png" alt="内蔵型調光器">
+                    </a>
+                    <a href="THERMALELECTRIC THERAPY.html" class="slide">
+                        <img src="product_photo/リブホット.jpg" alt="温熱/電位治療">
+                    </a>
+                    <a href="product_interior_lighting.html" class="slide">
+                        <img src="product_photo/照明器具.png" alt="インテリア照明">
+                    </a>
+                    <span class="arrow arrow-left">&#8592;</span>
+                    <span class="arrow arrow-right">&#8594;</span>
+                </div>
+                <div class="story-text-overlay">
+                    <h2 class="vertical-title">光を 整える</h2>
                     <p class="vertical-description">
                         心地よい時間は、<br>
                         繊細な光の調整から生まれる。
                     </p>
                 </div>
-                <div class="story-image-box">
-                    <img class="slideshow-img" src="product_photo/リモコン逆位相2.jpg" alt="調光システム">
-                    <img class="slideshow-img" src="product_photo/照明器具.png" alt="インテリア照明">
-                    <img class="slideshow-img" src="product_photo/内臓型調光器.png" alt="内臓型調光器">
-                    <img class="slideshow-img" src="product_photo/リブホット.jpg" alt="温熱/電位治療">
+            </div>
+        </section>
+
+        <section class="strengths-section">
+            <div class="strengths-container">
+                <div class="section-label">OUR STRENGTHS</div>
+                <h2 class="section-main-title">私たちの強み</h2>
+                <div class="strengths-grid">
+                    <div class="strength-item">
+                        <span class="number">01</span>
+                        <h3>技術力</h3>
+                        <p class="en-sub">ADVANCED TECHNOLOGY</p>
+                         <p class="desc">半世紀にわたり培った調光技術とインテリア照明デザイン。
+                             繊細な光のコントロールで、理想の空間演出を実現します。</p>
+                    </div>
+
+                    <div class="strength-item">
+                       <span class="number">02</span>
+                       <h3>品質管理</h3>
+                       <p class="en-sub">MADE IN JAPAN QUALITY</p>
+                       <p class="desc">埼玉県上尾市の自社工場にて、開発から製造
+                        まで一貫体制。厳しい検査基準をクリアした製品をお届けします。</p>
+                   </div>
+
+                   <div class="strength-item">
+                      <span class="number">03</span>
+                      <h3>柔軟な対応</h3>
+                      <p class="en-sub">FLEXIBLE SOLUTIONS</p>
+                      <p class="desc">特注仕様やOEM開発など、お客様のニーズに
+                        合わせた柔軟なカスタマイズが可能です。</p>
+                   </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="philosophy-section">
+        <section class="philosophy-section" id="cases">
             <div class="philosophy-container">
-                <div class="philosophy-content">
-                    <div class="philosophy-label">PHILOSOPHY</div>
-                    <h2 class="philosophy-title">光の価値を、<br>再定義する。</h2>
-                    <p class="philosophy-text">
-                     私たちは半世紀以上、光と向き合ってきました。<br>
-                     ただ明るくするだけではなく、人の心に寄り添い、<br>
-                     暮らしの質を高める「心地よい光」を追求しています。</p>
-                    <p class="philosophy-text">
-                    埼玉県上尾市の自社工場から、<br>
-                    日本の繊細なものづくり精神を世界へ届けていきます。
-                    </p>
+                <div class="section-label">CASE STUDIES</div>
+                <h2 class="section-main-title">導入事例</h2>
+                <div class="cases-grid">
+                    <a href="case_study_001.html" class="case-card">
+                        <span class="case-number">01</span>
+                        <h3 class="case-title">ホテル客室　調光システム導入</h3>
+                        <p class="case-desc">全客室の照明を一括制御。ゲストの満足度向上と運用コスト削減を両立。</p>
+                        <span class="case-link">詳しく見る →</span>
+                    </a>
+                    <a href="case_study_002.html" class="case-card">
+                        <span class="case-number">02</span>
+                        <h3 class="case-title">商業施設　照明リニューアル</h3>
+                        <p class="case-desc">LED対応調光器への切り替えで、施設全体の消費電力を約30%削減。</p>
+                        <span class="case-link">詳しく見る →</span>
+                    </a>
+                    <a href="case_study_003.html" class="case-card">
+                        <span class="case-number">03</span>
+                        <h3 class="case-title">照明メーカー向け　OEM調光器</h3>
+                        <p class="case-desc">独自仕様の内蔵型調光器を共同開発。製品ラインアップの拡充に貢献。</p>
+                        <span class="case-link">詳しく見る →</span>
+                    </a>
                 </div>
-                <div class="philosophy-visual">
-                    <div class="visual-bg-text">光</div>
-                    <div class="visual-sub-text">CRAFTSMANSHIP<br> &amp; TECHNOLOGY</div>
-                </div>
+                <div class="visual-sub-text">CRAFTSMANSHIP<br> &amp; TECHNOLOGY</div>
             </div>
         </section>
 
         <section class="partners-section">
             <div class="partners-container">
-                <p class="partners-label">MAIN PARTNERS</p>
+                <div class="section-label">MAIN PARTNERS</div>
+                <h2 class="section-main-title">主要取引先</h2>
                 <div class="partners-grid">
                     <div class="logo-item">DAIKO <span>(大光電機)</span></div>
                     <div class="logo-item">KOIZUMI <span>(コイズミ照明)</span></div>
@@ -80,7 +141,8 @@
         </section>
 
         <section class="products-section">
-            <h2 class="section-title">SELECTED SOLUTIONS</h2>
+            <div class="section-label">SELECTED SOLUTIONS</div>
+            <h2 class="section-main-title">厳選ソリューション</h2>
             
             <div class="product-grid">
                 <a href="product_wall_dimmer.html">
@@ -116,12 +178,12 @@
                 </div>
                 </a>
 
-                <a href="#">
+                <a href="product_interior_lighting.html">
                 <div class="product-card">
-                    <div class="img-box"><img src="product_photo/照明器具.png" alt="Lighting Fixtures"></div>
+                    <div class="img-box"><img src="product_photo/照明器具.png" alt="INTERIOR LIGHTING"></div>
                     <div class="card-info">
                         <h3>インテリア照明</h3>
-                        <p>DESIGN FIXTURES</p>
+                        <p>INTERIOR LIGHTING</p>
                         <span class="product-viewmore">VIEW MORE</span>
                     </div>
                 </div>
@@ -132,49 +194,16 @@
 
         </section>
 
-        <section class="strengths-section">
-            <div class="strengths-container">
-                <h2 class="section-title">
-                    OUR STRENGTHS
-                </h2>
-                <div class="strengths-grid">
-                    <div class="strength-item">
-                        <span class="number">01</span>
-                        <h3>技術力</h3>
-                        <p class="en-sub">ADVANCED TECHNOLOGY</p>
-                        <p class="desc">半世紀にわたり培った調光技術。
-                            繊細な光のコントロールで、理想の空間演出を実現します。</p>
-                    </div>
-
-                    <div class="strength-item">
-                       <span class="number">02</span>
-                       <h3>品質管理</h3>
-                       <p class="en-sub">MADE IN JAPAN QUALITY</p>
-                       <p class="desc">埼玉県上尾市の自社工場にて、開発から製造
-                        まで一貫体制。厳しい検査基準をクリアした製品をお届けします。</p>
-                   </div>
-
-                   <div class="strength-item">
-                      <span class="number">03</span>
-                      <h3>柔軟な対応</h3>
-                      <p class="en-sub">FLEXIBLE SOLUTIONS</p>
-                      <p class="desc">特注仕様やOEM開発など、お客様のニーズに
-                        合わせた柔軟なカスタマイズが可能です。</p>
-                  </div>
-
-                </div>
-            </div>
-        </section>
-
         <section class="topic_section">
+            <div class="section-label">TOPICS</div>
+            <h2 class="section-main-title">お知らせ</h2>
             <div class="topic_header">
-                <h2 class="topic_title">TOPICS</h2>
-                <a class="viewall" href="topics.html">VIEW ALL</a>
+                <a class="viewall" href="topic.html">VIEW ALL</a>
             </div>
 
             <ul class="topic_list">
                 <li>
-                    <a href="https://www.yamajitsu.co.jp/">
+                    <a href="topic.html">
                 <span class="date">2025.06</span>
                 <span class="category">NEWS</span>
                 <span class="title">臨時休業のお知らせ<br>
@@ -183,7 +212,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.muji.com/jp/ja/store">
+                    <a href="topic.html">
                 <span class="date">2024.05</span>
                 <span class="category">EXHIBITION</span>
                 <span class="title">理想のすまいと建築フェア2024に出展します<br>
@@ -194,7 +223,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.adobe.com/jp/creativecloud.html">
+                    <a href="topic.html">
                 <span class="date">2023.08</span>
                 <span class="category">INFO</span>
                 <span class="title">臨時休業のお知らせ。当社では誠に勝手ながら
@@ -206,7 +235,8 @@
         </section>
 
         <section class="access_section">
-            <h2 class="access_title">ACCESS</h2>
+            <div class="section-label">ACCESS</div>
+            <h2 class="section-main-title">アクセス</h2>
             <div class="access_container">
 
               <div class="access_card">
@@ -279,12 +309,13 @@
         <section id="contact" class="contact_section">
             <div class="contact_container">
                 <div class="contact_lead">
-                    <h2 class="contact_title">CONTACT</h2>
-                    <p class="contact_subtitle">お問い合わせ</p>
+                    <div class="section-label">CONTACT</div>
+                    <h2 class="section-main-title">お問い合わせ</h2>
                     <p class="contact_text1">製品に関するご相談、見積もりのご依頼など、<br>
                        お気軽にお問い合わせください。
                     </p>
                     <p class="contact_text2">内容を確認次第、担当者より改めてご連絡いたします。</p>
+                    <a href="Q&A.html" class="qa-guide-btn">よくある質問を見る →</a>
                 </div>
 
                 <form class="contact_form">
@@ -315,14 +346,14 @@
     <section class="online-store-section">
         <div class="store-container">
             <h3 class="store-title">ONLINE STORE</h3>
-            <p class="store-intro">トヨスターの照明器具は、こちらの楽天公式ショップからご購入いただけます。</p>
+            <p class="store-intro">トヨスターのインテリア照明は、こちらの楽天公式ショップからご購入いただけます。</p>
             <div class="store-buttons-wrap">
                 <a href="http://www.rakuten.co.jp/toyostar">
                     <img src="product_photo/rakuten logo.png" alt="Rakuten Official Store">
                     <span class="btn-text">照明・インテリア雑貨のT-STYLE</span>
                 </a>
-            </div>       
-        </div>
+                </div>
+            </div>
     </section>
 
     <footer>
@@ -334,24 +365,32 @@
                         <li><a href="product_wall_dimmer.html">壁型調光器</a></li>
                         <li><a href="product_internal_dimmer.html">内蔵型調光器</a></li>
                         <li><a href="THERMALELECTRIC THERAPY.html">温熱/電位治療</a></li>
-                        <li><a href="#">インテリア照明</a></li>
+                        <li><a href="product_interior_lighting.html">インテリア照明</a></li>
                     </ul>
-                </div>
-                <div class="footer-group">
-                    <h4>SUPPORT</h4>
-                    <ul>
-                        <li><a href="#">納入事例</a></li>
-                        <li><a href="#contact">お問い合わせ</a></li>
-                        <li><a href="privacy.html">プライバシーポリシー</a></li>
-                        <li><a href="flow.html">FLOW</a></li>
-                    </ul>
-                </div>
+                 </div>
                  <div class="footer-group">
-                    <h4>COMPANY</h4>
+                     <h4>SUPPORT</h4>
+                     <ul>
+                         <li><a href="Q&A.html">よくある質問</a></li>
+                         <li><a href="#contact">お問い合わせ</a></li>
+                         <li><a href="privacy.html">プライバシーポリシー</a></li>
+                         <li><a href="flow.html">OEMの流れ</a></li>
+                     </ul>
+                 </div>
+                 <div class="footer-group">
+                     <h4>CASES</h4>
+                     <ul>
+                         <li><a href="case_study_001.html">ホテル客室 調光システム</a></li>
+                         <li><a href="case_study_002.html">商業施設 照明リニューアル</a></li>
+                         <li><a href="case_study_003.html">照明メーカー OEM調光器</a></li>
+                     </ul>
+                 </div>
+                  <div class="footer-group">
+                     <h4>COMPANY</h4>
                     <ul>
                         <li><a href="company.html">会社概要</a></li>
-                        <li><a href="#">採用情報</a></li>
-                        <li><a href="topics.html">トピックス</a></li>
+                        <li><a href="recruit.html">採用情報</a></li>
+                        <li><a href="topic.html">トピックス</a></li>
                     </ul>
                 </div>
             </div>
@@ -369,6 +408,36 @@
         </div>
     </footer>
     <a href="#" class="back-to-top">↑</a>
+    
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+$(function() {
+    let slides = $('.slide');
+    let current = 0;
+
+    $('.arrow-left').on('click', function(e) {
+        e.stopPropagation();
+        let prev = current - 1;
+        if (prev < 0){
+            prev = slides.length - 1;
+        }
+        slides.eq(current).removeClass('active');
+        slides.eq(prev).addClass('active');
+        current = prev;
+    });
+
+    $('.arrow-right').on('click', function(e) {
+        e.stopPropagation();
+        let next = current + 1;
+        if (next >= slides.length) {
+            next = 0;
+        }
+        slides.eq(current).removeClass('active');
+        slides.eq(next).addClass('active');
+        current = next;
+    });
+});
+</script>
 
 </body>
 </html>

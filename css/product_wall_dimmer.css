@@ -2,7 +2,7 @@
 
 .product-detail-main {
     padding-top: 150px;
-    background-color: #fff;
+    background: linear-gradient(to right, #ddd 0%, #fff 40%);
     padding-bottom: 50px;
 }
 
@@ -96,7 +96,7 @@
 
 .spec-info .desc {
     font-size: 15px;
-    color: #888;
+    color: #666;
     line-height: 1.6;
     margin-bottom: 30px;
     min-height: 3.2em; /* 确保卡片描述高度对齐 */
@@ -145,7 +145,7 @@
 
 .brand-partner {
     font-size: 13px;
-    color: #888;
+    color: #666;
     margin-bottom: 0;
 }
 
