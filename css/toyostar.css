@@ -67,6 +67,56 @@ body {
     text-decoration: underline;
 }
 
+
+/* Page Header (共通) */
+.page-header{
+    padding: 180px 8% 100px;
+    background: linear-gradient(to right, #ddd 0%, #fff 40%);
+    text-align: center;
+    position: relative;
+}
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header-sub{
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0.6em;
+    margin-bottom: 25px;
+}
+.header-title{
+    font-size: 60px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 0.2em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+.header-jp{
+    font-size: 23px;
+    color: #666;
+    letter-spacing: 0.3em;
+}
+
+
+.breadcrumb {
+    padding: 12px 8%;
+    font-size: 14px;
+    color: #555;
+    letter-spacing: 0.2em;
+    background: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+.breadcrumb a {
+    color: #555;
+    text-decoration: underline;
+}
+.breadcrumb a:hover {
+    color: #999;
+}
+
 .brand-story {
     margin-top: 75px;
 }
@@ -143,39 +193,40 @@ body {
     height: 100%;
     object-fit: contain;
 }
+.slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .slide.active {
     opacity: 1;
 }
 
-#slideshow-area .arrow {
+/* --- Slideshow Dots --- */
+.slideshow-dots {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 25;
-    width: 48px;
-    height: 48px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.2);
+    gap: 14px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    color: rgba(255,255,255,0.8);
-    font-size: 22px;
-    font-family: Arial, sans-serif;
+    background: #000;
+    opacity: 0.25;
     cursor: pointer;
-    user-select: none;
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, background 0.3s ease;
 }
-#slideshow-area .arrow:hover {
-    background: rgba(0,0,0,0.4);
-    color: #fff;
-    transform: translateY(-50%) scale(1.1);
+.dot.active {
+    opacity: 1;
+    background: #888;
 }
-#slideshow-area .arrow-left {
-    left: 22%;
-}
-#slideshow-area .arrow-right {
-    right: 22%;
+.dot:hover {
+    opacity: 0.6;
 }
 
 
@@ -380,6 +431,7 @@ body {
     padding: 120px 8%; 
     border-top: 1px solid #eee;
 }
+
 .section-title {
     text-align: center;
     font-size: 14px;
@@ -1345,6 +1397,11 @@ footer {
     padding: 40px 8%;      /* フッターの余白もスッキリさせる */
 }
 
+/* 製品一覧ページ導入文の調整 */
+.product-intro-section {
+    padding: 50px 8% 0;
+}
+
 }
 
 
@@ -1406,5 +1463,9 @@ footer {
 
 .access_map {
     height: 280px;      /* 地図の高さを少しだけ低くしてバランスを取る */
+}
+
+.product-intro-section {
+    padding: 60px 8% 0;
 }
 }

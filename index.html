@@ -15,7 +15,7 @@
         
         <ul class="menu">
             <li class="dropdown">
-                <a href="">PRODUCTS</a>
+                <a href="product.html">PRODUCTS</a>
                 <ul class="dropdown-menu">
                     <li><a href="product_wall_dimmer.html">壁型調光器</a></li>
                     <li><a href="product_internal_dimmer.html">内蔵型調光器</a></li>
@@ -31,11 +31,15 @@
         </ul>
     </nav>
 
+
     <main>
         <section class="brand-story">
             <div class="story-image-section">
                 <div class="story-image-box" id="slideshow-area">
-                    <a href="product_wall_dimmer.html" class="slide active">
+                    <div class="slide active">
+                        <video src="product_photo/壁型調光器.mp4" autoplay muted loop playsinline></video>
+                    </div>
+                    <a href="product_wall_dimmer.html" class="slide">
                         <img src="product_photo/リモコン逆位相2.jpg" alt="壁型調光器">
                     </a>
                     <a href="product_internal_dimmer.html" class="slide">
@@ -47,8 +51,13 @@
                     <a href="product_interior_lighting.html" class="slide">
                         <img src="product_photo/照明器具.png" alt="インテリア照明">
                     </a>
-                    <span class="arrow arrow-left">&#8592;</span>
-                    <span class="arrow arrow-right">&#8594;</span>
+                </div>
+                <div class="slideshow-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                    <span class="dot" data-index="4"></span>
                 </div>
                 <div class="story-text-overlay">
                     <h2 class="vertical-title">光を 整える</h2>
@@ -409,34 +418,40 @@
     </footer>
     <a href="#" class="back-to-top">↑</a>
     
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
-$(function() {
-    let slides = $('.slide');
+(function() {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
     let current = 0;
 
-    $('.arrow-left').on('click', function(e) {
-        e.stopPropagation();
-        let prev = current - 1;
-        if (prev < 0){
-            prev = slides.length - 1;
-        }
-        slides.eq(current).removeClass('active');
-        slides.eq(prev).addClass('active');
-        current = prev;
-    });
+    dots.forEach(function(dot) {
+        dot.onclick = function() {
+            const idx = parseInt(this.dataset.index);
+            if (idx === current) return;
 
-    $('.arrow-right').on('click', function(e) {
-        e.stopPropagation();
-        let next = current + 1;
-        if (next >= slides.length) {
-            next = 0;
-        }
-        slides.eq(current).removeClass('active');
-        slides.eq(next).addClass('active');
-        current = next;
+            const prevSlide = slides[current];
+            const nextSlide = slides[idx];
+
+            const prevVideo = prevSlide.querySelector('video');
+            if (prevVideo) {
+                prevVideo.pause();
+                prevVideo.currentTime = 0;
+            }
+
+            slides[current].classList.remove('active');
+            slides[idx].classList.add('active');
+
+            const nextVideo = nextSlide.querySelector('video');
+            if (nextVideo) {
+                nextVideo.play().catch(function() {});
+            }
+
+            dots[current].classList.remove('active');
+            dots[idx].classList.add('active');
+            current = idx;
+        };
     });
-});
+})();
 </script>
 
 </body>
