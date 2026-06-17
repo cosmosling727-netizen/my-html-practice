@@ -5,7 +5,7 @@
    ========================================= */
 .page-header{
     padding: 180px 8% 100px;
-    background: linear-gradient(to right, #ddd 0%, #fff 40%);
+    background: linear-gradient(to right, #f0ebe3 0%, #fff 40%);
     text-align: center;
     position: relative;
 }
@@ -53,8 +53,8 @@
 .year-block .year-title{
     display: inline-block;
     font-size: 32px;
-    border-left: 3px solid #777;
-    background-color:  #fafafa;
+    border-left: 3px solid var(--gold);
+    background-color: var(--gold-bg);
     padding: 5px 15px;
     margin-bottom: 30px;
 }

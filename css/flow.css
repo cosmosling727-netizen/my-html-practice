@@ -6,7 +6,7 @@
 
 .page-header{
     padding: 180px 8% 100px;
-    background: linear-gradient(to right, #ddd 0%, #fff 40%);
+    background: linear-gradient(to right, #f0ebe3 0%, #fff 40%);
     text-align: center;
     position: relative;
 }
@@ -48,15 +48,130 @@
     margin: 0 auto;
 }
 
+.flow-hero {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #4a4a4a;
+}
+
+.flow-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flow-hero-bg img {
+    width: auto;
+    height: 100%;
+    max-width: 55%;
+    object-fit: contain;
+    object-position: left center;
+    display: block;
+}
+
+.flow-hero-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 35%, #4a4a4a 55%);
+    pointer-events: none;
+}
+
+.flow-hero-text {
+    position: relative;
+    z-index: 1;
+    width: 42%;
+    padding: 40px 5%;
+    margin-right: 6%;
+    color: #fff;
+}
+
+.flow-hero-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    font-family: Arial, sans-serif;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    border-left: 2px solid var(--gold);
+    padding-left: 12px;
+}
+
+.flow-hero-title {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    line-height: 1.7;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.flow-hero-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 2;
+    letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 767px) {
+    .flow-hero {
+        min-height: auto;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #fff;
+    }
+    .flow-hero-bg {
+        position: relative;
+        height: 280px;
+        background-color: #4a4a4a;
+    }
+    .flow-hero-bg::after {
+        display: none;
+    }
+    .flow-hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        max-width: 100%;
+    }
+    .flow-hero-text {
+        width: 100%;
+        padding: 35px 8%;
+        margin-right: 0;
+        color: #333;
+    }
+    .flow-hero-title {
+        font-size: 20px;
+        color: #222;
+    }
+    .flow-hero-desc {
+        color: #666;
+    }
+}
+
 .flow-group {
     margin-bottom: 120px;
 }
 
 .flow-group-header {
     margin-bottom: 60px;
-    border-left: 3px solid #777;
+    border-left: 3px solid var(--gold);
     padding: 15px 0 15px 25px;
-    background-color: #fafafa;
+    background-color: var(--gold-bg);
 }
 
 .flow-group-header .en-title {
@@ -100,7 +215,7 @@
     font-family: Arial, sans-serif;
     font-size: 32px;
     font-weight: 200;
-    color: #333;
+    color: var(--gold);
     position: relative;
     display: inline-block;
 }
@@ -112,7 +227,7 @@
     bottom: -5px;
     height: 2px;
     width: 100%;
-    background: #333;
+    background: var(--gold);
 }
 
 .flow-content {
@@ -146,11 +261,11 @@
 .flow-item.sub-step .flow-num span {
     font-size: 18px;
     font-weight: 400;
-    color: #666;
+    color: var(--gold-dark);
 }
 
 .flow-item.sub-step .flow-num span::after {
-    background: #888; 
+    background: var(--gold-light);
 }
 
 .flow-item.sub-step .flow-content h3 {

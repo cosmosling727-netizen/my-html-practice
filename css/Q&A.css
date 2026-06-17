@@ -2,7 +2,7 @@
 
 .page-header{
     padding: 180px 8% 100px;
-    background: linear-gradient(to right, #ddd 0%, #fff 40%);
+    background: linear-gradient(to right, #f0ebe3 0%, #fff 40%);
     text-align: center;
     position: relative;
 }
@@ -64,9 +64,9 @@
     color: #222;
     letter-spacing: 0.15em;
     margin-bottom: 40px;
-    border-left: 3px solid #777;
+    border-left: 3px solid var(--gold);
     padding: 12px 0 12px 20px;
-    background-color: #fafafa;
+    background-color: var(--gold-bg);
 }
 
 .qa-list{
@@ -83,7 +83,7 @@
 .qa-q-marker{
     width: 40px;
     height: 40px;
-    background-color: #333;
+    background-color: var(--gold);
     color: #fff;
     font-size: 18px;
     font-weight: 700;
@@ -150,7 +150,7 @@
 #qa-toggle-btn{
     display: inline-block;
     padding: 16px 60px;
-    background-color: #333;
+    background-color: var(--gold);
     color: #fff;
     border: none;
     font-size: 13px;
@@ -161,7 +161,7 @@
 }
 
 #qa-toggle-btn:hover{
-    background-color: #000;
+    background-color: var(--gold-dark);
 }
 
 .qa-contact-box{
@@ -182,7 +182,7 @@
 .qa-contact-btn{
     display: inline-block;
     padding: 18px 50px;
-    background-color: #333;
+    background-color: var(--gold);
     color: #fff;
     text-decoration: none;
     font-size: 14px;
@@ -191,5 +191,5 @@
 }
 
 .qa-contact-btn:hover{
-    background-color: #000;
+    background-color: var(--gold-dark);
 }
