@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+/* ==========================================
+   Case Study Pages - 事例詳細ページ
+   ========================================= */
+
+.case-detail {
+    padding: 60px 8% 100px;
+}
+
+.case-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- Overview --- */
+
+.case-overview {
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.case-label {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: #B8944F;
+    margin-bottom: 20px;
+}
+
+.case-company {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: #222;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+.case-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-left: 3px solid #C8A96E;
+}
+
+.meta-item {
+    display: flex;
+    gap: 15px;
+    align-items: baseline;
+}
+
+.meta-key {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #B8944F;
+    white-space: nowrap;
+    min-width: 65px;
+}
+
+.meta-value {
+    font-size: 14px;
+    color: #333;
+}
+
+/* --- Content Sections --- */
+
+.case-section {
+    margin-bottom: 60px;
+}
+
+.case-section-label {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: #B8944F;
+    margin-bottom: 12px;
+}
+
+.case-section-title {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #222;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.case-section-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 2.2;
+}
+
+/* --- Result List --- */
+
+.result-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.result-list li {
+    font-size: 14px;
+    color: #555;
+    line-height: 2;
+    padding: 14px 0 14px 25px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.result-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #C8A96E;
+    font-weight: bold;
+}
+
+/* --- Navigation --- */
+
+.case-nav {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    color: #B8944F;
+}
+
+/* --- Responsive --- */
+
+@media screen and (max-width: 767px) {
+    .case-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .case-company {
+        font-size: 22px;
+    }
+
+    .case-detail {
+        padding: 40px 5% 80px;
+    }
+}

@@ -1,0 +1,322 @@
+@charset "utf-8";
+
+/* === 全局基础样式 === */
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,*::before, *::after { 
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hiragino Mincho ProN", "serif"; 
+    background-color: #fff;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* === 导航栏 === */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%; 
+    background-color: rgba(255, 255, 255, 0.75); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-container img{
+    width:130px ;
+    height: auto;
+    object-fit: cover;
+}
+
+.menu { 
+    display: flex; 
+    list-style: none; 
+}
+.menu li { 
+    margin-left: 30px; 
+}
+
+.menu a { 
+    display: block;
+    text-decoration: none; 
+    color: #333; 
+    font-size: 13px; 
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover{
+    color: #777;
+    transform:translateY(-1px);
+    text-decoration: underline;
+}
+
+/* === 下拉菜单 === */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 5px 0;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #333;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    text-align: left;
+    border-bottom: 1px solid #f5f5f5;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu li:last-child a {
+    border-bottom: none;
+}
+
+.dropdown-menu li {
+    margin-left: 0;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f9f9f9;
+    color: #777;
+}
+
+/* === 页面头部（Page Header） === */
+.page-header{
+    padding: 180px 8% 100px;
+    background: linear-gradient(to right, #f0ebe3 0%, #fff 40%);
+    text-align: center;
+    position: relative;
+}
+.page-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #C8A96E, #E8D5A8);
+}
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header-sub{
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0.6em;
+    margin-bottom: 25px;
+}
+.header-title{
+    font-size: 60px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 0.2em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+.header-jp{
+    font-size: 23px;
+    color: #666;
+    letter-spacing: 0.3em;
+}
+
+/* === 面包屑导航 === */
+.breadcrumb {
+    padding: 12px 8%;
+    font-size: 14px;
+    color: #555;
+    letter-spacing: 0.2em;
+    background: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+.breadcrumb a {
+    color: #555;
+    text-decoration: underline;
+}
+.breadcrumb a:hover {
+    color: #B8944F;
+}
+
+/* === 通用章节样式 === */
+.section-label{
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.4em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-main-title{
+    font-size: 2.4rem;
+    font-weight: 200;
+    line-height: 1.6;
+    margin-bottom: 60px;
+    letter-spacing: 0.25em;
+    text-align: center;
+}
+
+/* === 页脚 === */
+footer {
+    background-color: #fff;
+    padding: 100px 8% 60px;
+    border-top: 1px solid #eee;
+}
+
+.footer-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.footer-group h4{
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    margin-bottom: 25px;
+}
+
+.footer-group ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-group li{
+    margin-bottom: 15px;
+}
+
+.footer-group a{
+    text-decoration: none;
+    color:#666;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.footer-group a:hover{
+    color: #333;
+}
+
+.footer-info{
+    border-top: 1px solid #f5f5f5;
+    padding-top: 40px;
+}
+
+.footer-logo{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+address{
+    font-size: 13px;
+    font-style: normal;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+small{
+    font-size: 10px;
+    color: #777;
+    letter-spacing: 0.1em;
+}
+
+/* === 返回顶部按钮 === */
+.back-to-top{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover{
+    background-color: #000;
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+/* === 手机响应式 (767px以下) === */
+@media screen and (max-width: 767px) {
+
+    .nav-container {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .menu {
+        width: 85%;
+        margin:5px auto;
+        padding: 0px 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu li {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+
+    .menu a{
+        font-size:11px;
+    }
+
+    .nav-container img{
+        width:90px ;
+        height: auto;
+    }
+
+}

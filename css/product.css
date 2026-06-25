@@ -4,40 +4,6 @@
    PRODUCTS (製品一覧) 专用样式
    ========================================= */
 
-.page-header{
-    padding: 180px 8% 100px;
-    background: linear-gradient(to right, #f5efe8 0%, #fff 40%);
-    text-align: center;
-    position: relative;
-}
-
-.header-container{
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.header-sub{
-    font-size: 13px;
-    color: #666;
-    letter-spacing: 0.6em;
-    margin-bottom: 25px;
-}
-
-.header-title{
-    font-size: 60px;
-    font-weight: 300;
-    color: #222;
-    letter-spacing: 0.2em;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-.header-jp{
-    font-size: 23px;
-    color: #666;
-    letter-spacing: 0.3em;
-}
-
 .product-intro-section {
     padding: 80px 8% 0;
     text-align: center;
@@ -48,4 +14,90 @@
     font-size: 14px;
     color: #555;
     line-height: 2;
+}
+
+/* === 製品グリッド === */
+.products-section {
+    padding: 120px 8%;
+    border-top: 1px solid #eee;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.product-grid a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.img-box {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    background-color: #f9f9f9;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.img-box img {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.img-box:hover {
+    background-color: #f5f2f2;
+    box-shadow: 0 8px 25px rgba(200,169,110,0.15);
+}
+
+.img-box:hover img {
+    transform: scale(1.1);
+}
+
+.card-info h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    font-size: 10px;
+    color: #777;
+    letter-spacing: 0.2em;
+}
+
+.product-viewmore {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #666;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding-right: 20px;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.product-grid a:hover .product-viewmore {
+    color: #333;
+    border-bottom: 1px solid #333;
+    padding-left: 5px;
+}
+
+/* === レスポンシブ === */
+@media screen and (max-width: 767px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .products-section {
+        padding: 60px 5%;
+    }
 }

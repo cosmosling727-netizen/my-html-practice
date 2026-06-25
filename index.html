@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TOYOSTAR | 輝く未来を照らす、調光技術と照明のスペシャリスト</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/toyostar.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
     
 </head>
 <body>
@@ -36,28 +37,28 @@
         <section class="brand-story">
             <div class="story-image-section">
                 <div class="story-image-box" id="slideshow-area">
-                    <div class="slide active">
+                    <a href="product_wall_dimmer.html" class="slide-item active">
                         <video src="product_photo/壁型調光器.mp4" autoplay muted loop playsinline></video>
-                    </div>
-                    <a href="product_wall_dimmer.html" class="slide">
+                    </a>
+                    <a href="product_wall_dimmer.html" class="slide-item">
                         <img src="product_photo/リモコン逆位相2.jpg" alt="壁型調光器">
                     </a>
-                    <a href="product_internal_dimmer.html" class="slide">
-                        <img src="product_photo/内臓型調光器.png" alt="内蔵型調光器">
+                    <a href="product_internal_dimmer.html" class="slide-item">
+                        <img src="product_photo/内蔵型調光器.png" alt="内蔵型調光器">
                     </a>
-                    <a href="THERMALELECTRIC THERAPY.html" class="slide">
+                    <a href="THERMALELECTRIC THERAPY.html" class="slide-item">
                         <img src="product_photo/リブホット.jpg" alt="温熱/電位治療">
                     </a>
-                    <a href="product_interior_lighting.html" class="slide">
+                    <a href="product_interior_lighting.html" class="slide-item">
                         <img src="product_photo/照明器具.png" alt="インテリア照明">
                     </a>
                 </div>
                 <div class="slideshow-dots">
-                    <span class="dot active" data-index="0"></span>
-                    <span class="dot" data-index="1"></span>
-                    <span class="dot" data-index="2"></span>
-                    <span class="dot" data-index="3"></span>
-                    <span class="dot" data-index="4"></span>
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
                 </div>
                 <div class="story-text-overlay">
                     <h2 class="vertical-title">光を 整える</h2>
@@ -167,7 +168,7 @@
 
                 <a href="product_internal_dimmer.html">
                 <div class="product-card">
-                    <div class="img-box"><img src="product_photo/内臓型調光器.png" alt="BUILT-IN / OEM MODULES"></div>
+                    <div class="img-box"><img src="product_photo/内蔵型調光器.png" alt="BUILT-IN / OEM MODULES"></div>
                     <div class="card-info">
                         <h3>内蔵型調光器</h3>
                         <p>BUILT-IN / OEM MODULES</p>
@@ -197,6 +198,7 @@
                     </div>
                 </div>
                 </a>
+                
             </div>
 
             
@@ -420,35 +422,22 @@
     
 <script>
 (function() {
-    const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
-    let current = 0;
+    const slideItems = document.querySelectorAll('.slide-item');
 
-    dots.forEach(function(dot) {
+    dots.forEach(function(dot, index) {
         dot.onclick = function() {
-            const idx = parseInt(this.dataset.index);
-            if (idx === current) return;
 
-            const prevSlide = slides[current];
-            const nextSlide = slides[idx];
-
-            const prevVideo = prevSlide.querySelector('video');
-            if (prevVideo) {
-                prevVideo.pause();
-                prevVideo.currentTime = 0;
-            }
-
-            slides[current].classList.remove('active');
-            slides[idx].classList.add('active');
-
-            const nextVideo = nextSlide.querySelector('video');
-            if (nextVideo) {
-                nextVideo.play().catch(function() {});
-            }
-
-            dots[current].classList.remove('active');
-            dots[idx].classList.add('active');
-            current = idx;
+            slideItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+            dots.forEach(function(d) {
+                d.classList.remove('active');
+            });
+  
+            
+            slideItems[index].classList.add('active');
+            dot.classList.add('active');
         };
     });
 })();

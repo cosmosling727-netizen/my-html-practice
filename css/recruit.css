@@ -101,9 +101,9 @@
     font-size: 11px;
     letter-spacing: 0.4em;
     font-family: Arial, sans-serif;
-    color: var(--gold-light);
+    color: #E8D5A8;
     margin-bottom: 20px;
-    border-left: 2px solid var(--gold);
+    border-left: 2px solid #C8A96E;
     padding-left: 12px;
 }
 
@@ -187,9 +187,9 @@
     color: #222;
     letter-spacing: 0.15em;
     margin-bottom: 50px;
-    border-left: 3px solid var(--gold);
+    border-left: 3px solid #C8A96E;
     padding: 12px 0 12px 20px;
-    background-color: var(--gold-bg);
+    background-color: #F7F3EC;
 }
 
 .recruit-list{
@@ -294,7 +294,7 @@
     display: inline-block;
     font-size: 28px;
     font-weight: 200;
-    color: var(--gold);
+    color: #C8A96E;
     margin-bottom: 20px;
     font-family: Arial, sans-serif;
 }
@@ -330,7 +330,7 @@
 .recruit-contact-btn{
     display: inline-block;
     padding: 18px 50px;
-    background-color: var(--gold);
+    background-color: #C8A96E;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
@@ -339,7 +339,7 @@
 }
 
 .recruit-contact-btn:hover{
-    background-color: var(--gold-dark);
+    background-color: #B8944F;
 }
 
 @media screen and (max-width: 767px){

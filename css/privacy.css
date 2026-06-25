@@ -29,7 +29,7 @@
     display: block;
     width: 50px;
     height: 2px;
-    background: var(--gold);
+    background: #C8A96E;
     margin: 20px auto 0;
 }
 
@@ -56,4 +56,28 @@
     line-height: 1.8;
     margin-top: 40px;
     border: 1px solid #eee;
+}
+
+/* === レスポンシブ === */
+@media screen and (max-width: 767px) {
+    .privacy-page {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+
+    .content-container h1 {
+        font-size: 20px;
+    }
+
+    .content-container h2 {
+        font-size: 16px;
+    }
+
+    .content-container p {
+        font-size: 14px;
+    }
+
+    .content-container p:last-child {
+        padding: 20px;
+    }
 }

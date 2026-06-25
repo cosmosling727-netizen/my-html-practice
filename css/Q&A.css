@@ -64,9 +64,9 @@
     color: #222;
     letter-spacing: 0.15em;
     margin-bottom: 40px;
-    border-left: 3px solid var(--gold);
+    border-left: 3px solid #C8A96E;
     padding: 12px 0 12px 20px;
-    background-color: var(--gold-bg);
+    background-color: #F7F3EC;
 }
 
 .qa-list{
@@ -83,7 +83,7 @@
 .qa-q-marker{
     width: 40px;
     height: 40px;
-    background-color: var(--gold);
+    background-color: #C8A96E;
     color: #fff;
     font-size: 18px;
     font-weight: 700;
@@ -150,7 +150,7 @@
 #qa-toggle-btn{
     display: inline-block;
     padding: 16px 60px;
-    background-color: var(--gold);
+    background-color: #C8A96E;
     color: #fff;
     border: none;
     font-size: 13px;
@@ -161,7 +161,7 @@
 }
 
 #qa-toggle-btn:hover{
-    background-color: var(--gold-dark);
+    background-color: #B8944F;
 }
 
 .qa-contact-box{
@@ -182,7 +182,7 @@
 .qa-contact-btn{
     display: inline-block;
     padding: 18px 50px;
-    background-color: var(--gold);
+    background-color: #C8A96E;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
@@ -191,5 +191,46 @@
 }
 
 .qa-contact-btn:hover{
-    background-color: var(--gold-dark);
+    background-color: #B8944F;
+}
+
+/* === レスポンシブ === */
+@media screen and (max-width: 767px) {
+    .qa-main-section {
+        padding: 60px 5% 80px;
+    }
+
+    .qa-category-title {
+        font-size: 16px;
+    }
+
+    .qa-item {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .qa-q-marker {
+        margin-right: 0;
+    }
+
+    .qa-q-text {
+        font-size: 15px;
+    }
+
+    .qa-a-text {
+        font-size: 14px;
+    }
+
+    #qa-toggle-btn {
+        padding: 14px 40px;
+    }
+
+    .qa-contact-box {
+        padding: 40px 20px;
+    }
+
+    .qa-contact-btn {
+        padding: 16px 30px;
+        font-size: 13px;
+    }
 }

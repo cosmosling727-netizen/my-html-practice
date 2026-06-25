@@ -2,7 +2,7 @@
 
 .product-detail-main {
     padding-top: 150px;
-    background: linear-gradient(to right, #ddd 0%, #fff 40%);
+    background: linear-gradient(to right, #f0ebe3 0%, #fff 40%);
     padding-bottom: 50px;
 }
 
@@ -20,7 +20,7 @@
     font-size: 32px;
     font-weight: 500;
     line-height: 1.5;
-    border-left: 3px solid #333;
+    border-left: 3px solid #C8A96E;
     padding-left: 25px;
     margin-bottom: 40px;
     color: #222;
@@ -51,7 +51,7 @@
 
 .spec-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(200,169,110,0.15);
 }
 
 .spec-image {
@@ -61,15 +61,15 @@
     text-align: center;
     border-bottom: 1px solid #f0f0f0;
     display: flex;
-    align-items: center;/*居中三剑客，解决“位置”问题*/
+    align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
 .spec-image img {
     max-width: 100%;
-    max-height: 100%;/*你的身高最大不能超过盒的高度（即 100% 的盒高）。为了能钻进去，就会等比例缩小*/
-    width: auto;/*保持原来的长宽比例，不准变形。*/
+    max-height: 100%;
+    width: auto;
     height: auto;
 }
 
@@ -80,7 +80,7 @@
 .spec-info .label {
     display: inline-block;
     font-size: 11px;
-    background-color: #333;
+    background-color: #C8A96E;
     color: #fff;
     padding: 3px 12px;
     letter-spacing: 0.1em;
@@ -99,7 +99,7 @@
     color: #666;
     line-height: 1.6;
     margin-bottom: 30px;
-    min-height: 3.2em; /* 确保卡片描述高度对齐 */
+    min-height: 3.2em;
 }
 
 .spec-info dl {
@@ -108,7 +108,7 @@
 
 .spec-info dl div {
     border-bottom: 1px solid #eee; 
-    overflow: hidden;              /* 强制父元素包裹住浮动的子元素 dt */
+    overflow: hidden;
     padding: 0;
 }
 
@@ -150,10 +150,10 @@
 }
 
 .oem-cta {
-    background-color: #fafafa;
+    background-color: #F7F3EC;
     padding: 100px 8%;
     text-align: center;
-    border-top: 1px solid #eee;
+    border-top: 2px solid #C8A96E;
 }
 
 .cta-inner h3 {
@@ -166,7 +166,7 @@
 .btn-oem {
     display: inline-block;
     padding: 18px 50px;
-    background-color: #333;
+    background-color: #C8A96E;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
@@ -175,6 +175,55 @@
 }
 
 .btn-oem:hover{
-    background-color: #000;
+    background-color: #B8944F;
     padding-right: 60px;
+}
+
+/* === レスポンシブ === */
+@media screen and (max-width: 767px) {
+    .product-detail-main {
+        padding-top: 100px;
+    }
+
+    .product-intro .vertical-title {
+        font-size: 22px;
+    }
+
+    .intro-text p {
+        font-size: 14px;
+    }
+
+    .spec-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .spec-image {
+        height: 200px;
+    }
+
+    .spec-info {
+        padding: 20px;
+    }
+
+    .spec-info h3 {
+        font-size: 16px;
+    }
+
+    .spec-info dl dt,
+    .spec-info dl dd {
+        font-size: 13px;
+    }
+
+    .oem-cta {
+        padding: 60px 5%;
+    }
+
+    .cta-inner h3 {
+        font-size: 18px;
+    }
+
+    .btn-oem {
+        padding: 15px 35px;
+    }
 }

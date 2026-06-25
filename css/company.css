@@ -1,42 +1,21 @@
 @charset "utf-8";
 
 /* ==========================================
-   Company Page - Header Section
+   Company Page - Custom Header (Overrides)
    ========================================= */
 
+/* Company 页面的自定义背景色 */
 .page-header{
-    padding: 180px 8% 100px;
     background: linear-gradient(to right, #edf0f4 0%, #fff 40%);
-    text-align: center;
-    position: relative;
 }
 
-.header-container{
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
+/* Company 页面的自定义副标题 */
 .header-sub{
-    font-size: 13px;
-    color: #666;
-    letter-spacing: 0.6em;
-    margin-bottom: 25px;
     font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-.header-title {
-    font-size: 60px;        
-    font-weight: 300;   
-    color: #222;
-    letter-spacing: 0.2em;  
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
+/* Company 页面的自定义标题 */
 .header-jp {
-    font-size: 23px;
-    color: #666;    
-    letter-spacing: 0.3em;
     font-weight: 400;
 }
 
@@ -99,9 +78,9 @@
     font-size: 12px;
     letter-spacing: 0.4em;
     font-family: Arial, sans-serif;
-    color: var(--gold-light);
+    color: #E8D5A8;
     margin-bottom: 20px;
-    border-left: 2px solid var(--gold);
+    border-left: 2px solid #C8A96E;
     padding-left: 12px;
 }
 
@@ -173,9 +152,9 @@
     letter-spacing: 0.3em;
     margin-bottom: 50px;
     text-align: left;
-    border-left: 3px solid var(--gold);
+    border-left: 3px solid #C8A96E;
     padding: 15px 0 15px 15px;
-    background-color: var(--gold-bg);
+    background-color: #F7F3EC;
 }
 
 .profile-table dl {
@@ -272,7 +251,7 @@
     width: 150px;
     font-size: 14px;
     font-weight: 600;
-    color: var(--gold-dark);
+    color: #B8944F;
     font-family: Arial,sans-serif;
 }
 

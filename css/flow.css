@@ -1,41 +1,12 @@
 @charset "utf-8";
 
 /* ==========================================
-   FLOW (业务流程) 专用样式
+   FLOW (业务流程) - Custom Header (Overrides)
    ========================================= */
 
+/* Flow 页面的自定义背景色 */
 .page-header{
-    padding: 180px 8% 100px;
     background: linear-gradient(to right, #f0ebe3 0%, #fff 40%);
-    text-align: center;
-    position: relative;
-}
-
-.header-container{
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.header-sub{
-    font-size: 13px;
-    color: #666;
-    letter-spacing: 0.6em;
-    margin-bottom: 25px;
-}
-
-.header-title{
-    font-size: 60px;
-    font-weight: 300;
-    color: #222;
-    letter-spacing: 0.2em;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-.header-jp {
-    font-size: 23px;
-    color: #666;
-    letter-spacing: 0.3em;
 }
 
 .flow-main-section{
@@ -105,9 +76,9 @@
     font-size: 11px;
     letter-spacing: 0.4em;
     font-family: Arial, sans-serif;
-    color: var(--gold-light);
+    color: #E8D5A8;
     margin-bottom: 20px;
-    border-left: 2px solid var(--gold);
+    border-left: 2px solid #C8A96E;
     padding-left: 12px;
 }
 
@@ -169,9 +140,9 @@
 
 .flow-group-header {
     margin-bottom: 60px;
-    border-left: 3px solid var(--gold);
+    border-left: 3px solid #C8A96E;
     padding: 15px 0 15px 25px;
-    background-color: var(--gold-bg);
+    background-color: #F7F3EC;
 }
 
 .flow-group-header .en-title {
@@ -215,7 +186,7 @@
     font-family: Arial, sans-serif;
     font-size: 32px;
     font-weight: 200;
-    color: var(--gold);
+    color: #C8A96E;
     position: relative;
     display: inline-block;
 }
@@ -227,7 +198,7 @@
     bottom: -5px;
     height: 2px;
     width: 100%;
-    background: var(--gold);
+    background: #C8A96E;
 }
 
 .flow-content {
@@ -261,11 +232,11 @@
 .flow-item.sub-step .flow-num span {
     font-size: 18px;
     font-weight: 400;
-    color: var(--gold-dark);
+    color: #B8944F;
 }
 
 .flow-item.sub-step .flow-num span::after {
-    background: var(--gold-light);
+    background: #E8D5A8;
 }
 
 .flow-item.sub-step .flow-content h3 {
