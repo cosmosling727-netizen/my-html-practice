@@ -130,6 +130,122 @@
     opacity: 0.6;
 }
 
+/* === ONLINE STORE Banner（首屏楽天バナー） === */
+.online-store-banner {
+    background: linear-gradient(135deg, #f5f0e8 0%, #fff 60%);
+    padding: 50px 8%;
+    border-top: 1px solid #ede8df;
+    border-bottom: 1px solid #ede8df;
+    position: relative;
+    overflow: hidden;
+}
+
+.online-store-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #C8A96E, #E8D5A8, transparent);
+}
+
+.osb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.osb-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 32px 40px;
+    background: #fff;
+    border: 1px solid #e8e0d4;
+    border-left: 4px solid #C8A96E;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.osb-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(200, 169, 110, 0.18);
+    border-color: #C8A96E;
+    background: #fdfaf3;
+}
+
+.osb-text {
+    flex: 1;
+}
+
+.osb-en {
+    display: inline-block;
+    font-size: 11px;
+    color: #B8944F;
+    letter-spacing: 0.4em;
+    margin-bottom: 10px;
+}
+
+.osb-title {
+    font-size: 22px;
+    font-weight: 500;
+    color: #222;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.osb-sub {
+    font-size: 13px;
+    color: #777;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+}
+
+.osb-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.osb-logo img {
+    height: 44px;
+    width: auto;
+}
+
+.osb-btn {
+    display: inline-block;
+    font-size: 12px;
+    color: #B8944F;
+    letter-spacing: 0.2em;
+    border: 1px solid #C8A96E;
+    padding: 8px 18px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.osb-arrow {
+    display: inline-block;
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+}
+
+.osb-link:hover .osb-btn {
+    background: #C8A96E;
+    color: #fff;
+}
+
+.osb-link:hover .osb-arrow {
+    transform: translateX(4px);
+}
+
 /* === 强度板块 === */
 .strengths-section{
     padding: 120px 8%;
@@ -403,17 +519,17 @@
 
 .img-box {
     display: flex; 
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 4;
     background-color: #f9f9f9;
     margin-bottom: 25px;
     overflow:hidden;
 }
 
 .img-box img { 
-    width: 80%; 
-    height: 80%;
+    width: 100%; 
+    height: 100%;
     margin: auto;
-    object-fit: cover; 
+    object-fit: contain; 
     transition: transform 0.5s ease;
 }
 
@@ -698,25 +814,26 @@ input:focus, textarea:focus {
 
 .qa-guide-btn {
     display: inline-block;
-    margin-top: 30px;
-    padding: 12px 32px;
-    font-size: 13px;
+    margin-top: 35px;
+    padding: 15px 35px;
+    font-size: 14px;
     letter-spacing: 0.15em;
-    color: #555;
+    color: #fff;
     text-decoration: none;
-    border: 1px solid #ddd;
-    border-radius: 30px;
+    background-color: #333;
+    border: 2px solid #333;
+    border-radius: 4px;
     transition: all 0.3s ease;
 }
 
 .qa-guide-btn:hover {
-    color: #000;
-    border-color: #333;
+    background-color: #000;
+    border-color: #000;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-/* === 在线店铺 === */
+/* === 在线店铺（フッター上の大型バナー） === */
 .online-store-section{
     padding: 100px 8%;
     background: linear-gradient(135deg, #F7F3EC 0%, #fff 40%);
@@ -915,6 +1032,7 @@ input:focus, textarea:focus {
 /* === 手机响应式 (767px以下) === */
 @media screen and (max-width: 767px) {
 
+    /* --- ブランドストーリー --- */
     .brand-story {
         margin-top: 75px;
     }
@@ -953,7 +1071,7 @@ input:focus, textarea:focus {
         writing-mode: horizontal-tb;
         border-left: none;
         border-bottom: 1px solid #eee;
-        padding: 20px 8% 10px;
+        padding: 20px 8% 25px;
         text-align: center;
         color: #333;
         transform: none;
@@ -961,20 +1079,200 @@ input:focus, textarea:focus {
 
     .story-text-overlay .vertical-title {
         color: #333;
-        font-size: 2rem;
+        font-size: 1.8rem;
         letter-spacing: 0.3em;
         margin-left: 0;
-        text-indent: 1.3em;
+        text-indent: 0.3em;
     }
 
     .story-text-overlay .vertical-description {
         color: #666;
         font-size: 0.9rem;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.1em;
     }
 
+    /* --- 共通タイトル --- */
+    .section-main-title {
+        font-size: 1.6rem;
+        margin-bottom: 35px;
+        letter-spacing: 0.15em;
+    }
+
+    /* --- ONLINE STORE Banner --- */
+    .online-store-banner {
+        padding: 30px 5%;
+    }
+
+    .osb-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px 22px;
+    }
+
+    .osb-title {
+        font-size: 18px;
+    }
+
+    .osb-sub {
+        font-size: 12px;
+    }
+
+    .osb-logo {
+        flex-direction: row;
+        align-self: stretch;
+        justify-content: space-between;
+    }
+
+    .osb-logo img {
+        height: 36px;
+    }
+
+    .osb-br-sp {
+        display: none;
+    }
+
+    /* --- 強み --- */
+    .strengths-section {
+        padding: 60px 5%;
+    }
+
+    .strengths-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .strength-item {
+        padding: 25px 20px;
+    }
+
+    /* --- 導入事例 --- */
     .philosophy-section {
-        padding: 80px 8%;
+        padding: 60px 5%;
+    }
+
+    .cases-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .case-card {
+        padding: 25px 20px;
+    }
+
+    .case-number {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    /* --- 取引先 --- */
+    .partners-section {
+        padding: 60px 5%;
+    }
+
+    .partners-grid {
+        gap: 12px 15px;
+    }
+
+    .logo-item {
+        width: calc(50% - 8px);
+        font-size: 12px;
+        padding: 4px 0 4px 10px;
+    }
+
+    /* --- 製品グリッド --- */
+    .products-section {
+        padding: 60px 5%;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card-info h3 {
+        font-size: 14px;
+    }
+
+    /* --- トピック --- */
+    .topic_section {
+        padding: 60px 5%;
+    }
+
+    .topic_list a {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 5px;
+        gap: 8px;
+    }
+
+    .topic_list .date {
+        width: auto;
+        margin-right: 0;
+        font-size: 12px;
+    }
+
+    .topic_list .category {
+        width: auto;
+        margin-right: 0;
+        min-width: 80px;
+    }
+
+    .topic_list .title {
+        width: 100%;
+        white-space: normal;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    /* --- アクセス --- */
+    .access_section {
+        padding: 60px 5%;
+    }
+
+    .access_container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .access_info {
+        height: auto;
+        padding-bottom: 15px;
+    }
+
+    .access_map {
+        height: 220px;
+    }
+
+    /* --- お問い合わせ --- */
+    .contact_section {
+        padding: 60px 5%;
+    }
+
+    .contact_container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* --- オンライン店舗（フッター上） --- */
+    .online-store-section {
+        padding: 60px 5%;
+    }
+
+    .store-intro {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .store-buttons-wrap a {
+        width: 100%;
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .btn-text {
+        font-size: 13px;
     }
 
 }

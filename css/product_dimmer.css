@@ -1,0 +1,610 @@
+@charset "utf-8";
+
+/* ============================================================
+   DIMMER SERIES — 統一スタイルシート
+   使用ページ:
+     product_wall_dimmer.html   (サブカテゴリ選択ページ)
+     product_wall_dimmer_gyaku.html  (逆位相 製品詳細)
+     product_wall_dimmer_sei.html    (正位相 製品詳細)
+     product_wall_dimmer_pwm.html    (PWM    製品詳細)
+   ============================================================ */
+
+
+/* ─── 共通コンテナ ─────────────────────────────────────────── */
+.dimmer-main {
+    padding-top: 100px;
+    background: linear-gradient(to right, #f0ebe3 0%, #fff 40%);
+    padding-bottom: 0;
+}
+
+.dimmer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 8%;
+}
+
+
+/* ─── ページヘッダー（カテゴリ・詳細共通） ──────────────────── */
+.dimmer-page-header {
+    padding: 130px 8% 80px;
+    background: linear-gradient(135deg, #f5f0e8 0%, #fff 60%);
+    position: relative;
+    overflow: hidden;
+}
+
+.dimmer-page-header::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #C8A96E, #E8D5A8, transparent);
+}
+
+.dimmer-page-header::after {
+    content: attr(data-en);
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    font-size: 100px;
+    font-weight: 700;
+    color: rgba(200,169,110,0.07);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.dimmer-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dimmer-header-sub {
+    font-size: 11px;
+    color: #B8944F;
+    letter-spacing: 0.5em;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dimmer-header-sub::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: #C8A96E;
+}
+
+.dimmer-header-title {
+    font-size: 48px;
+    font-weight: 200;
+    color: #222;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.dimmer-header-desc {
+    font-size: 15px;
+    color: #666;
+    line-height: 2;
+    max-width: 600px;
+}
+
+
+/* ─── パンくず ─────────────────────────────────────────────── */
+.dimmer-breadcrumb {
+    padding: 12px 8%;
+    font-size: 13px;
+    color: #777;
+    letter-spacing: 0.15em;
+    background: #f9f7f4;
+    border-bottom: 1px solid #ede8df;
+}
+
+.dimmer-breadcrumb a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.dimmer-breadcrumb a:hover {
+    color: #B8944F;
+    text-decoration: underline;
+}
+
+.dimmer-breadcrumb span {
+    margin: 0 8px;
+    color: #bbb;
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   A. サブカテゴリ選択ページ（product_wall_dimmer.html）
+   ════════════════════════════════════════════════════════════ */
+
+.subcat-intro-section {
+    padding: 80px 8% 60px;
+    text-align: center;
+}
+
+.subcat-intro-section .section-label {
+    font-size: 11px;
+    color: #B8944F;
+    letter-spacing: 0.5em;
+    margin-bottom: 25px;
+}
+
+.subcat-intro-section .section-main-title {
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 0.25em;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.subcat-intro-section .subcat-lead {
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ─── サブカテゴリ カードグリッド ─────────────────────────── */
+.subcat-section {
+    padding: 60px 8% 120px;
+}
+
+.subcat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* カード1枚のみの場合（内蔵型など） */
+.subcat-grid--single {
+    grid-template-columns: minmax(280px, 400px);
+    justify-content: center;
+}
+
+.subcat-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.subcat-card {
+    border: 1px solid #e8e0d4;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    background: #fff;
+}
+
+.subcat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(200,169,110,0.18);
+    border-color: #C8A96E;
+}
+
+/* カラーバー（上部のアクセントライン） */
+.subcat-card-bar {
+    height: 4px;
+}
+
+.subcat-card-bar.gyaku  { background: linear-gradient(to right, #4a6fa5, #6a8fc5); }
+.subcat-card-bar.sei    { background: linear-gradient(to right, #C8A96E, #E8D5A8); }
+.subcat-card-bar.pwm    { background: linear-gradient(to right, #5a9e6f, #8dcc9f); }
+
+/* 画像エリア */
+.subcat-card-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: #f9f7f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid #f0ebe3;
+}
+
+.subcat-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.subcat-card:hover .subcat-card-img img {
+    transform: scale(1.08);
+}
+
+/* テキストエリア */
+.subcat-card-body {
+    padding: 30px 28px 32px;
+}
+
+.subcat-card-en {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: #B8944F;
+    margin-bottom: 10px;
+}
+
+.subcat-card-title {
+    font-size: 22px;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 12px;
+    letter-spacing: 0.08em;
+}
+
+.subcat-card-desc {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
+
+.subcat-card-count {
+    font-size: 11px;
+    color: #aaa;
+    letter-spacing: 0.2em;
+    border-top: 1px solid #f0ebe3;
+    padding-top: 16px;
+}
+
+.subcat-card-count span {
+    color: #C8A96E;
+    font-weight: 600;
+}
+
+.subcat-viewmore {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #777;
+    transition: all 0.3s;
+}
+
+.subcat-viewmore::after {
+    content: "→";
+    transition: transform 0.3s;
+}
+
+.subcat-card:hover .subcat-viewmore {
+    color: #333;
+}
+
+.subcat-card:hover .subcat-viewmore::after {
+    transform: translateX(4px);
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   B. 製品詳細ページ（gyaku / sei / pwm 共通）
+   ════════════════════════════════════════════════════════════ */
+
+.detail-main {
+    padding-top: 0;
+    background: #fff;
+}
+
+/* ─── 製品説明セクション ──────────────────────────────────── */
+.detail-intro-section {
+    padding: 80px 8% 60px;
+    background: linear-gradient(to right, #f5f0e8 0%, #fff 50%);
+    border-bottom: 1px solid #ede8df;
+}
+
+.detail-intro-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.detail-intro-text h2 {
+    font-size: 28px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 0.15em;
+    border-left: 3px solid #C8A96E;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.detail-intro-text p {
+    font-size: 15px;
+    color: #555;
+    line-height: 2.2;
+    margin-bottom: 18px;
+}
+
+.detail-intro-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f7f4;
+    border: 1px solid #ede8df;
+    border-radius: 4px;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.detail-intro-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ─── 特徴バッジ ──────────────────────────────────────────── */
+.detail-feature-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.feature-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    padding: 6px 16px;
+    border: 1px solid #C8A96E;
+    color: #B8944F;
+    border-radius: 2px;
+}
+
+/* ─── 製品一覧セクション ──────────────────────────────────── */
+.detail-products-section {
+    padding: 80px 8% 100px;
+}
+
+.detail-section-header {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.detail-section-header .label-en {
+    font-size: 11px;
+    color: #B8944F;
+    letter-spacing: 0.5em;
+    margin-bottom: 20px;
+}
+
+.detail-section-header h2 {
+    font-size: 1.8rem;
+    font-weight: 200;
+    letter-spacing: 0.25em;
+    color: #222;
+}
+
+/* ─── 製品カードグリッド ──────────────────────────────────── */
+.detail-product-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 40px;
+}
+
+.detail-product-card {
+    border: 1px solid #f0ebe3;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    background: #fff;
+}
+
+.detail-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(200,169,110,0.15);
+}
+
+/* 製品カード画像 */
+.detail-card-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: #f9f7f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #f0ebe3;
+    overflow: hidden;
+}
+
+.detail-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.detail-product-card:hover .detail-card-img img {
+    transform: scale(1.05);
+}
+
+/* 製品カード情報エリア */
+.detail-card-body {
+    padding: 32px 30px 36px;
+}
+
+.detail-card-label {
+    display: inline-block;
+    font-size: 10px;
+    background: #C8A96E;
+    color: #fff;
+    padding: 4px 14px;
+    letter-spacing: 0.15em;
+    margin-bottom: 18px;
+}
+
+.detail-card-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+}
+
+.detail-card-code {
+    font-size: 12px;
+    color: #aaa;
+    letter-spacing: 0.2em;
+    margin-bottom: 18px;
+    font-family: "Courier New", monospace;
+}
+
+.detail-card-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 28px;
+    min-height: 4em;
+}
+
+/* スペックテーブル */
+.detail-card-spec {
+    border-top: 1px solid #eee;
+}
+
+.detail-card-spec .spec-row {
+    display: flex;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.detail-card-spec .spec-key {
+    width: 130px;
+    flex-shrink: 0;
+    padding: 12px 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: #444;
+}
+
+.detail-card-spec .spec-val {
+    padding: 12px 0;
+    font-size: 13px;
+    color: #666;
+    flex: 1;
+}
+
+/* 注釈 */
+.detail-note {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 20px 25px;
+    background: #fdf9f3;
+    border-left: 3px solid #C8A96E;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.9;
+}
+
+.detail-note p + p {
+    margin-top: 6px;
+}
+
+
+/* ─── OEM CTAセクション ───────────────────────────────────── */
+.oem-cta {
+    background: #f9f7f4;
+    border-top: 1px solid #ede8df;
+    padding: 0;
+}
+
+.cta-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.cta-inner h3 {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: #333;
+    margin-bottom: 28px;
+}
+
+.btn-oem {
+    display: inline-block;
+    padding: 14px 40px;
+    border: 1px solid #C8A96E;
+    color: #B8944F;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    transition: all 0.3s;
+}
+
+.btn-oem:hover {
+    background: #C8A96E;
+    color: #fff;
+}
+
+
+/* ─── レスポンシブ ────────────────────────────────────────── */
+@media screen and (max-width: 960px) {
+    .subcat-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .detail-intro-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .detail-product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dimmer-header-title {
+        font-size: 36px;
+    }
+
+    .dimmer-page-header::after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .subcat-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .dimmer-header-title {
+        font-size: 28px;
+    }
+
+    .detail-product-grid {
+        gap: 28px;
+    }
+
+    .subcat-section {
+        padding: 40px 5% 80px;
+    }
+
+    .detail-products-section {
+        padding: 50px 5% 70px;
+    }
+}

@@ -265,28 +265,75 @@ small{
 }
 
 /* === 返回顶部按钮 === */
-.back-to-top{
+.back-to-top {
     position: fixed;
     right: 40px;
     bottom: 40px;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     text-decoration: none;
-    background-color: #333;
-    color: #fff;
+    background-color: #fff;
+    color: #C8A96E;
+    border: 1.5px solid #C8A96E;
     border-radius: 50%;
-    font-size: 25px;
+    font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 999;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 16px rgba(200,169,110,0.18);
+    letter-spacing: 0;
 }
 
-.back-to-top:hover{
-    background-color: #000;
+.back-to-top:hover {
+    background-color: #C8A96E;
+    color: #fff;
+    border-color: #C8A96E;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(200,169,110,0.35);
+}
+
+/* ─── 画像ホバー切り替え（01 → 02） ─────────────────────────── */
+.detail-card-img,
+.detail-intro-img,
+.subcat-card-img,
+.img-box {
+    position: relative;
+}
+
+.img-default {
+    transition: opacity 0.4s ease;
+}
+
+.img-hover-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.detail-card-img:hover .img-default,
+.detail-intro-img:hover .img-default,
+.subcat-card-img:hover .img-default,
+.img-box:hover .img-default,
+.slide-item:hover .img-default {
+    opacity: 0;
+}
+
+.detail-card-img:hover .img-hover-img,
+.detail-intro-img:hover .img-hover-img,
+.subcat-card-img:hover .img-hover-img,
+.img-box:hover .img-hover-img,
+.slide-item:hover .img-hover-img {
     opacity: 1;
-    transform: translateY(-5px);
 }
 
 /* === 手机响应式 (767px以下) === */
