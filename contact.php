@@ -26,27 +26,45 @@ $site_name   = 'TOYOSTAR';              // サイト名
 
 // ============== 1. データを受け取る ==============
 // $_POST は form method="post" で送信されたデータが入る
+$company = isset($_POST['company']) ? $_POST['company'] : '';   // 貴社名（任意）
 $name    = isset($_POST['name'])    ? $_POST['name']    : '';
 $email   = isset($_POST['email'])   ? $_POST['email']   : '';
+$tel     = isset($_POST['tel'])     ? $_POST['tel']     : '';   // 電話番号（任意）
+$fax     = isset($_POST['fax'])     ? $_POST['fax']     : '';   // FAX（任意）
 $message = isset($_POST['message']) ? $_POST['message'] : '';
-$website = isset($_POST['website']) ? $_POST['website'] : ''; // ハニーポット
+$website = isset($_POST['website']) ? $_POST['website'] : '';   // ハニーポット
+
+// メール内で空欄を見やすくするため、未入力は「（未入力）」に置換
+$company_disp = $company !== '' ? $company : '（未入力）';
+$tel_disp     = $tel     !== '' ? $tel     : '（未入力）';
+$fax_disp     = $fax     !== '' ? $fax     : '（未入力）';
 
 // ============== 2. バリデーション（入力チェック）==============
 $errors = [];
 
-// お名前チェック
+// ご担当者名チェック（必須）
 if ($name === '' || mb_strlen($name) > 100) {
-    $errors[] = 'お名前が未入力、または長すぎます。';
+    $errors[] = 'ご担当者様が未入力、または長すぎます。';
 }
 
-// メールアドレスチェック
+// メールアドレスチェック（必須）
 if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = 'メールアドレスの形式が正しくありません。';
 }
 
-// お問い合わせ内容チェック
+// お問い合わせ内容チェック（必須）
 if ($message === '' || mb_strlen($message) > 5000) {
     $errors[] = 'お問い合わせ内容が未入力、または長すぎます。';
+}
+
+// 電話番号チェック（任意・入力時のみ形式確認）
+if ($tel !== '' && !preg_match('/^[0-9\-\+\s\(\)]+$/', $tel)) {
+    $errors[] = '電話番号の形式が正しくありません。';
+}
+
+// FAX番号チェック（任意・入力時のみ形式確認）
+if ($fax !== '' && !preg_match('/^[0-9\-\+\s\(\)]+$/', $fax)) {
+    $errors[] = 'FAX番号の形式が正しくありません。';
 }
 
 // ハニーポットチェック（ここに値が入っていればBotと判断）
@@ -76,11 +94,20 @@ $customer_body = <<<EOT
 担当者より改めてご連絡いたしますので、今しばらくお待ちください。
 
 ────────────────────────────
-■ お名前
+■ 貴社名
+{$company_disp}
+
+■ ご担当者様
 {$name}
 
 ■ メールアドレス
 {$email}
+
+■ 電話番号
+{$tel_disp}
+
+■ ＦＡＸ番号
+{$fax_disp}
 
 ■ お問い合わせ内容
 {$message}
@@ -98,11 +125,20 @@ EOT;
 $admin_body = <<<EOT
 ウェブサイトからお問い合わせがありました。
 
-■ お名前
+■ 貴社名
+{$company_disp}
+
+■ ご担当者様
 {$name}
 
 ■ メールアドレス
 {$email}
+
+■ 電話番号
+{$tel_disp}
+
+■ ＦＡＸ番号
+{$fax_disp}
 
 ■ お問い合わせ内容
 {$message}

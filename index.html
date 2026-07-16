@@ -24,10 +24,23 @@
                     <li><a href="product_interior_lighting.html">インテリア照明</a></li>
                 </ul>
             </li>
-            <li><a href="flow.html">FLOW</a></li>
+            <li class="dropdown">
+                <a href="oem.html">OEM</a>
+                <ul class="dropdown-menu">
+                    <li><a href="oem_dimmer.html">調光器OEM</a></li>
+                    <li><a href="oem_lighting.html">照明器具OEM</a></li>
+                </ul>
+            </li>
             <li><a href="topic.html">TOPIC</a></li>
             <li><a href="company.html">COMPANY</a></li>
             <li><a href="recruit.html">RECRUIT</a></li>
+            <li class="dropdown">
+                <a href="Q&A.html">Q&amp;A</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Q&A.html#dimmer">調光器Q&amp;A</a></li>
+                    <li><a href="Q&A.html#lighting">照明器具Q&amp;A</a></li>
+                </ul>
+            </li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
@@ -339,6 +352,7 @@
 
         <section id="contact" class="contact_section">
             <div class="contact_container">
+
                 <div class="contact_lead">
                     <div class="section-label">CONTACT</div>
                     <h2 class="section-main-title">お問い合わせ</h2>
@@ -346,33 +360,84 @@
                        お気軽にお問い合わせください。
                     </p>
                     <p class="contact_text2">内容を確認次第、担当者より改めてご連絡いたします。</p>
-                    <a href="Q&A.html" class="qa-guide-btn">よくある質問を見る →</a>
                 </div>
 
-                <form class="contact_form" action="contact.php" method="post">
-                    <div class="form_group">
-                        <label>お名前<span>NAME</span></label>
-                        <input type="text" name="name" placeholder="例：山田　太郎" required>
-                    </div>
-                    <div class="form_group">
-                        <label>メールアドレス<span>EMAIL</span></label>
-                        <input type="email" name="email" placeholder="example@toyostar.co.jp" required>
-                    </div>
-                    <div class="form_group">
-                        <label>お問い合わせ内容<span>MESSAGE</span></label>
-                        <textarea name="message" placeholder="ご質問、ご要望などをご記入ください" rows="5" required></textarea>
+                <div class="contact_form-wrap">
+
+                    <div class="contact_phone-box">
+                        <div class="phone-box-left">
+                            <p class="phone-box-label">↓お電話でのお問い合わせはこちら</p>
+                            <p class="phone-box-num">048-770-3531</p>
+                            <p class="phone-box-time">受付時間　平日 9:00-17:00</p>
+                        </div>
+                        <div class="phone-box-right">
+                            <p>製品名・購入先等を伝えて頂くことで、よりスムーズに担当者へお繋ぎできます。</p>
+                            <p>担当者不在の場合には回答に時間を頂戴する場合がございます。<br>
+                            弊社休業日は電話が繋がりません。下記お問い合わせフォームをご利用下さい。<br>
+                            担当者より折り返し連絡を致します。</p>
+                        </div>
                     </div>
 
-                    <!-- ハニーポット（スパム対策。人間は触らない隠しフィールド） -->
-                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                    <p class="contact-note">お客様からの個人情報、お寄せいただいた相談内容は<a href="privacy.html">厳重に取り扱い</a>ます。</p>
 
-                    <p style="font-size: 11px; color: #999; margin-bottom: 15px; text-align: center;">
-                        ご入力いただいた情報は、当社の
-                        <a href="privacy.html" style="color: #666;">
-                        プライバシーポリシー</a>に従って管理されます。
-                    </p>
-                    <button type="submit" class="submit_btn">上記の内容で送信する SEND</button>
-                </form>
+                    <p class="contact-note">電話・ＦＡＸにて回答をさせて頂く場合もございます。<br>
+                    土曜・日曜・祝日・年末年始／夏季休業期間は翌営業日以降の対応となります。予めご了承ください。</p>
+
+                    <p class="contact-note contact-note--strong">簡易型調光器を注文の場合はお問い合わせ内容の欄に<strong>品名・数量・送り先・希望納期</strong>の明記をお願いします。</p>
+
+                    <form class="contact_form" action="contact.php" method="post">
+
+                        <div class="form_row">
+                            <div class="form_group">
+                                <label>貴社名<span>COMPANY</span></label>
+                                <input type="text" name="company" placeholder="サンプル株式会社">
+                            </div>
+                            <div class="form_group">
+                                <label>ご担当者様<span>NAME</span><i class="required">必須</i></label>
+                                <input type="text" name="name" placeholder="山田　太郎" required>
+                            </div>
+                        </div>
+
+                        <div class="form_row">
+                            <div class="form_group">
+                                <label>メールアドレス<span>EMAIL</span><i class="required">必須</i></label>
+                                <input type="email" name="email" placeholder="info@sample.jp" required>
+                            </div>
+                            <div class="form_group">
+                                <label>電話番号<span>TEL</span></label>
+                                <input type="tel" name="tel" placeholder="000-0000-0000">
+                            </div>
+                        </div>
+
+                        <div class="form_group">
+                            <label>ＦＡＸ番号<span>FAX</span></label>
+                            <input type="tel" name="fax" placeholder="000-0000-0000">
+                        </div>
+
+                        <div class="form_group">
+                            <label>お問い合わせ内容<span>MESSAGE</span><i class="required">必須</i></label>
+                            <textarea name="message" placeholder="ご質問、ご要望などをご記入ください" rows="6" required></textarea>
+                        </div>
+
+                        <!-- ハニーポット（スパム対策。人間は触らない隠しフィールド） -->
+                        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+                        <p class="contact-policy">
+                            ご入力いただいた情報は、当社の
+                            <a href="privacy.html">プライバシーポリシー</a>に従って管理されます。
+                        </p>
+
+                        <button type="submit" class="submit_btn">上記の内容で送信する SEND</button>
+
+                    <div class="contact-qa-link">
+                        <a href="Q&A.html" class="qa-guide-btn">
+                            <span class="qa-guide-icon">?</span>
+                            <span class="qa-guide-text">よくあるご質問を見る <span class="qa-guide-arrow">→</span></span>
+                        </a>
+                    </div>
+                    </form>
+
+                </div>
             </div>
         </section>
 
@@ -409,7 +474,7 @@
                          <li><a href="Q&A.html">よくある質問</a></li>
                          <li><a href="#contact">お問い合わせ</a></li>
                          <li><a href="privacy.html">プライバシーポリシー</a></li>
-                         <li><a href="flow.html">OEMの流れ</a></li>
+                         <li><a href="oem.html">OEMの流れ</a></li>
                      </ul>
                  </div>
                  <div class="footer-group">
@@ -469,3 +534,6 @@
 
 </body>
 </html>
+
+
+
