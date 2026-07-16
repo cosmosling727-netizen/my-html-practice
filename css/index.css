@@ -735,13 +735,14 @@
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items:flex-start;
-    gap: 80px;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .contact_lead{
-    flex:1;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 .contact_title{
@@ -762,25 +763,136 @@
     line-height: 2;
 }
 
+.contact_form-wrap{
+    width: 100%;
+}
+
+/* === 電話案内ボックス === */
+.contact_phone-box {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 40px;
+    background: #fff;
+    border: 1px solid #ede8df;
+    border-top: 3px solid #C8A96E;
+    border-radius: 4px;
+    padding: 30px 36px;
+    margin-bottom: 35px;
+}
+
+.phone-box-left {
+    border-right: 1px solid #ede8df;
+    padding-right: 30px;
+}
+
+.phone-box-label {
+    font-size: 12px;
+    color: #555;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.phone-box-num {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #B8944F;
+    margin-bottom: 8px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.phone-box-num a {
+    color: #B8944F;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.phone-box-num a:hover {
+    color: #8d6e35;
+}
+
+.phone-box-time {
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 0.1em;
+}
+
+.phone-box-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.9;
+}
+
+.phone-box-right p + p {
+    margin-top: 8px;
+}
+
+/* === 注意事項テキスト === */
+.contact-note {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.contact-note a {
+    color: #B8944F;
+    text-decoration: underline;
+}
+
+.contact-note--strong {
+    color: #333;
+    font-weight: 500;
+}
+
+.contact-note--strong strong {
+    color: #B8944F;
+    font-weight: 700;
+}
+
+/* === フォーム === */
 .contact_form{
-    flex:1.5;
+    width: 100%;
+}
+
+.form_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
 }
 
 .form_group{
-    margin-bottom: 30px;
+    margin-bottom: 22px;
 }
 
 .form_group label{
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 13px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    color: #333;
 }
 
 .form_group label span{
     font-size: 10px;
     color: #777;
-    margin-left: 10px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+}
+
+.form_group label .required {
+    display: inline-block;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    color: #fff;
+    background: #b85450;
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-left: auto;
+    letter-spacing: 0.1em;
 }
 
 input,textarea{
@@ -791,21 +903,53 @@ input,textarea{
     font-family: inherit;
     outline: none;
     transition: border-color 0.3s ease;
+    background: #fff;
 }
 
 input:focus, textarea:focus {
-    border-color: #333;
+    border-color: #C8A96E;
+    box-shadow: 0 0 0 2px rgba(200, 169, 110, 0.15);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.contact-policy {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.8;
+    text-align: center;
+    margin: 20px 0 18px;
+}
+
+.contact-policy a {
+    color: #666;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.contact-policy a:hover {
+    color: #B8944F;
+}
+
+.contact-qa-link {
+    text-align: center;
+    margin-top: 25px;
 }
 
 .submit_btn{
     width: 100%;
-    padding: 20px;
+    padding: 18px;
     background-color: #C8A96E;
     color: #fff;
     border: none;
     letter-spacing: 0.2em;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 14px;
+    font-family: inherit;
 }
 
 .submit_btn:hover{
@@ -813,24 +957,58 @@ input:focus, textarea:focus {
 }
 
 .qa-guide-btn {
-    display: inline-block;
-    margin-top: 35px;
-    padding: 15px 35px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 25px;
+    padding: 14px 32px 14px 16px;
     font-size: 14px;
     letter-spacing: 0.15em;
     color: #fff;
     text-decoration: none;
-    background-color: #333;
-    border: 2px solid #333;
+    background: linear-gradient(135deg, #C8A96E 0%, #B8944F 100%);
+    border: none;
     border-radius: 4px;
     transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(200, 169, 110, 0.35);
+}
+
+.qa-guide-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    color: #B8944F;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    flex-shrink: 0;
+}
+
+.qa-guide-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.qa-guide-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 16px;
 }
 
 .qa-guide-btn:hover {
-    background-color: #000;
-    border-color: #000;
+    background: linear-gradient(135deg, #B8944F 0%, #A6843E 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 28px rgba(200, 169, 110, 0.5);
+}
+
+.qa-guide-btn:hover .qa-guide-arrow {
+    transform: translateX(4px);
 }
 
 /* === 在线店铺（フッター上の大型バナー） === */
@@ -1251,8 +1429,34 @@ input:focus, textarea:focus {
     }
 
     .contact_container {
-        flex-direction: column;
-        gap: 40px;
+        gap: 30px;
+    }
+
+    .contact_phone-box {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 22px 20px;
+    }
+
+    .phone-box-left {
+        border-right: none;
+        border-bottom: 1px solid #ede8df;
+        padding-right: 0;
+        padding-bottom: 18px;
+        text-align: center;
+    }
+
+    .phone-box-num {
+        font-size: 26px;
+    }
+
+    .form_row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form_group {
+        margin-bottom: 18px;
     }
 
     /* --- オンライン店舗（フッター上） --- */

@@ -117,6 +117,9 @@ body {
     color: #777;
 }
 
+/* === 顶部导航 Q&A 入口（继承 .menu a 样式） === */
+/* 样式完全继承 .menu a，这里无需重复定义 */
+
 /* === 页面头部（Page Header） === */
 .page-header{
     padding: 180px 8% 100px;
@@ -366,4 +369,137 @@ small{
         height: auto;
     }
 
+}
+
+
+/* === 商品ページ：Q&A + お問い合わせ誘導バナー === */
+.product-qa-cta {
+    background: linear-gradient(135deg, #f5f0e8 0%, #fff 60%);
+    padding: 60px 8%;
+    border-top: 1px solid #ede8df;
+    border-bottom: 1px solid #ede8df;
+}
+
+.pqc-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.pqc-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 32px;
+    background: #fff;
+    border: 1px solid #e8e0d4;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.pqc-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(200, 169, 110, 0.18);
+    border-color: #C8A96E;
+}
+
+.pqc-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #C8A96E;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+}
+
+.pqc-card--contact .pqc-icon {
+    background: #333;
+    font-size: 20px;
+}
+
+.pqc-text {
+    flex: 1;
+}
+
+.pqc-en {
+    display: block;
+    font-size: 10px;
+    color: #B8944F;
+    letter-spacing: 0.4em;
+    margin-bottom: 6px;
+}
+
+.pqc-card--contact .pqc-en {
+    color: #777;
+}
+
+.pqc-title {
+    font-size: 17px;
+    font-weight: 500;
+    color: #222;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.pqc-sub {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.6;
+}
+
+.pqc-arrow {
+    flex-shrink: 0;
+    font-size: 22px;
+    color: #C8A96E;
+    transition: transform 0.3s ease;
+}
+
+.pqc-card--contact .pqc-arrow {
+    color: #333;
+}
+
+.pqc-card:hover .pqc-arrow {
+    transform: translateX(6px);
+}
+
+@media screen and (max-width: 767px) {
+    .product-qa-cta {
+        padding: 40px 5%;
+    }
+
+    .pqc-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .pqc-card {
+        padding: 20px 22px;
+        gap: 16px;
+    }
+
+    .pqc-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    .pqc-title {
+        font-size: 15px;
+    }
+
+    .pqc-sub {
+        font-size: 11px;
+    }
 }

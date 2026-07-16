@@ -1,0 +1,457 @@
+﻿@charset "utf-8";
+
+/* ==========================================
+   OEM (OEM 繧ｵ繝ｼ繝薙せ) - Custom Header (Overrides)
+   ========================================= */
+
+/* OEM 繝壹・繧ｸ縺ｮ繧ｫ繧ｹ繧ｿ繝閭梧勹濶ｲ */
+.page-header{
+    background: linear-gradient(to right, #f0ebe3 0%, #fff 40%);
+}
+
+.oem-main-section{
+    padding: 100px 8% 150px;
+    background-color: #fff;
+}
+
+.company-container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.oem-hero {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #4a4a4a;
+}
+
+.oem-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.oem-hero-bg img {
+    width: auto;
+    height: 100%;
+    max-width: 55%;
+    object-fit: contain;
+    object-position: left center;
+    display: block;
+}
+
+.oem-hero-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 35%, #4a4a4a 55%);
+    pointer-events: none;
+}
+
+.oem-hero-text {
+    position: relative;
+    z-index: 1;
+    width: 42%;
+    padding: 40px 5%;
+    margin-right: 6%;
+    color: #fff;
+}
+
+.oem-hero-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    font-family: Arial, sans-serif;
+    color: #E8D5A8;
+    margin-bottom: 20px;
+    border-left: 2px solid #C8A96E;
+    padding-left: 12px;
+}
+
+.oem-hero-title {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    line-height: 1.7;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.oem-hero-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 2;
+    letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 767px) {
+    .oem-hero {
+        min-height: auto;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #fff;
+    }
+    .oem-hero-bg {
+        position: relative;
+        height: 280px;
+        background-color: #4a4a4a;
+    }
+    .oem-hero-bg::after {
+        display: none;
+    }
+    .oem-hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        max-width: 100%;
+    }
+    .oem-hero-text {
+        width: 100%;
+        padding: 35px 8%;
+        margin-right: 0;
+        color: #333;
+    }
+    .oem-hero-title {
+        font-size: 20px;
+        color: #222;
+    }
+    .oem-hero-desc {
+        color: #666;
+    }
+}
+
+.oem-group {
+    margin-bottom: 120px;
+}
+
+.oem-group-header {
+    margin-bottom: 60px;
+    border-left: 3px solid #C8A96E;
+    padding: 15px 0 15px 25px;
+    background-color: #F7F3EC;
+}
+
+.oem-group-header .en-title {
+    font-size: 14px;
+    color: #777;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+}
+
+.oem-group-header .jp-title {
+    font-size: 26px;
+    color: #222;
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+}
+
+.oem-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.oem-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.oem-item:hover{
+    background-color: #fcfcfc;
+    padding-left: 20px;
+}
+
+.oem-num {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.oem-num span {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 200;
+    color: #C8A96E;
+    position: relative;
+    display: inline-block;
+}
+
+.oem-num span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 100%;
+    background: #C8A96E;
+}
+
+.oem-content {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.oem-content h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.oem-content p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* 繧ｵ繝悶せ繝・ャ繝暦ｼ・2-01 縺ｪ縺ｩ縺ｮ邏ｰ縺九＞鬆・岼・・*/
+.oem-item.sub-step {
+    margin-left: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+.oem-item.sub-step .oem-num {
+    width: 120px;
+}
+
+.oem-item.sub-step .oem-num span {
+    font-size: 18px;
+    font-weight: 400;
+    color: #B8944F;
+}
+
+.oem-item.sub-step .oem-num span::after {
+    background: #E8D5A8;
+}
+
+.oem-item.sub-step .oem-content h3 {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+
+/* === OEM 蜈･蜿｣・壹き繝・ざ繝ｪ繧ｫ繝ｼ繝・=== */
+.oem-intro {
+    text-align: center;
+    padding: 80px 0 60px;
+}
+
+.oem-intro .section-label {
+    font-size: 11px;
+    color: #B8944F;
+    letter-spacing: 0.5em;
+    margin-bottom: 25px;
+}
+
+.oem-intro .section-main-title {
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 0.25em;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.oem-lead {
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.oem-category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 80px;
+}
+
+.oem-category-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border: 1px solid #e8e0d4;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.oem-category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(200,169,110,0.18);
+    border-color: #C8A96E;
+}
+
+.oem-category-bar {
+    height: 4px;
+}
+
+.oem-category-bar--dimmer {
+    background: linear-gradient(to right, #C8A96E, #E8D5A8);
+}
+
+.oem-category-bar--lighting {
+    background: linear-gradient(to right, #5a9e6f, #8dcc9f);
+}
+
+.oem-category-img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background: #f9f7f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid #f0ebe3;
+}
+
+.oem-category-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.oem-category-card:hover .oem-category-img img {
+    transform: scale(1.05);
+}
+
+.oem-category-body {
+    padding: 30px 28px 32px;
+}
+
+.oem-category-en {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: #B8944F;
+    margin-bottom: 10px;
+}
+
+.oem-category-title {
+    font-size: 22px;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 12px;
+    letter-spacing: 0.08em;
+}
+
+.oem-category-desc {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.oem-category-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #777;
+    transition: all 0.3s;
+    padding-top: 16px;
+    border-top: 1px solid #f0ebe3;
+}
+
+.oem-category-link::after {
+    content: "→";
+    transition: transform 0.3s;
+}
+
+.oem-category-card:hover .oem-category-link {
+    color: #333;
+}
+
+.oem-category-card:hover .oem-category-link::after {
+    transform: translateX(4px);
+}
+
+/* === OEM 隧ｳ邏ｰ繝壹・繧ｸ縺ｮ CTA === */
+.oem-cta {
+    background: #f9f7f4;
+    border-top: 1px solid #ede8df;
+    border-bottom: 1px solid #ede8df;
+    margin: 80px 0 0;
+}
+
+.oem-cta-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 8%;
+    text-align: center;
+}
+
+.oem-cta-inner h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.oem-cta-inner p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.oem-cta .btn-oem {
+    display: inline-block;
+    padding: 14px 40px;
+    border: 1px solid #C8A96E;
+    color: #B8944F;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    transition: all 0.3s;
+    background: transparent;
+}
+
+.oem-cta .btn-oem:hover {
+    background: #C8A96E;
+    color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+    .oem-category-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .oem-intro {
+        padding: 50px 0 30px;
+    }
+
+    .oem-intro .section-main-title {
+        font-size: 1.6rem;
+    }
+
+    .oem-cta-inner {
+        padding: 40px 5%;
+    }
+
+    .oem-cta-inner h3 {
+        font-size: 15px;
+    }
+}
+

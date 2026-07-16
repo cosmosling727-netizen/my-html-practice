@@ -147,7 +147,8 @@
     margin-bottom: 80px;
 }
 
-#qa-toggle-btn{
+#qa-toggle-btn,
+#qa-toggle-btn-lighting{
     display: inline-block;
     padding: 16px 60px;
     background-color: #C8A96E;
@@ -160,7 +161,8 @@
     font-family: inherit;
 }
 
-#qa-toggle-btn:hover{
+#qa-toggle-btn:hover,
+#qa-toggle-btn-lighting:hover{
     background-color: #B8944F;
 }
 
@@ -194,6 +196,82 @@
     background-color: #B8944F;
 }
 
+
+/* === Tab ナビゲーション（調光器Q&A / 照明器具Q&A） === */
+.qa-tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 60px;
+    border-bottom: 2px solid #ede8df;
+}
+
+.qa-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 48px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #888;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.qa-tab:hover {
+    color: #B8944F;
+}
+
+.qa-tab--active {
+    color: #B8944F;
+    border-bottom-color: #C8A96E;
+    font-weight: 600;
+}
+
+/* === Q&A セクションヘッダー === */
+.qa-category-section {
+    margin-bottom: 100px;
+}
+
+.qa-category-section:last-of-type {
+    margin-bottom: 60px;
+}
+
+.qa-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 0 35px;
+    border-top: 1px solid #ede8df;
+    border-bottom: 1px solid #ede8df;
+}
+
+.qa-section-header .qa-section-en {
+    font-size: 11px;
+    color: #B8944F;
+    letter-spacing: 0.5em;
+    margin-bottom: 15px;
+}
+
+.qa-section-header .qa-section-title {
+    font-size: 28px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+}
+
+.qa-section-header .qa-section-desc {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+
 /* === レスポンシブ === */
 @media screen and (max-width: 767px) {
     .qa-main-section {
@@ -221,7 +299,8 @@
         font-size: 14px;
     }
 
-    #qa-toggle-btn {
+    #qa-toggle-btn,
+    #qa-toggle-btn-lighting {
         padding: 14px 40px;
     }
 
@@ -232,5 +311,30 @@
     .qa-contact-btn {
         padding: 16px 30px;
         font-size: 13px;
+    }
+
+    .qa-tab-nav {
+        gap: 0;
+        margin-bottom: 40px;
+    }
+
+    .qa-tab {
+        flex: 1;
+        padding: 14px 12px;
+        font-size: 13px;
+        letter-spacing: 0.1em;
+    }
+
+    .qa-section-header {
+        padding: 30px 0 25px;
+        margin-bottom: 40px;
+    }
+
+    .qa-section-header .qa-section-title {
+        font-size: 22px;
+    }
+
+    .qa-category-section {
+        margin-bottom: 60px;
     }
 }
