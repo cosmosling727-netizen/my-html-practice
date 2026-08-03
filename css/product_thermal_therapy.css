@@ -149,6 +149,47 @@
     margin-bottom: 0;
 }
 
+.section-title {
+    font-size: 26px;
+    font-weight: 500;
+    color: #222;
+    letter-spacing: 0.15em;
+    border-left: 3px solid #C8A96E;
+    padding-left: 20px;
+    margin: 60px 0 40px;
+}
+
+.section-title:first-of-type {
+    margin-top: 0;
+}
+
+.subcat-card-bar.heating {
+    background-color: #D9534F;
+}
+
+.subcat-card-bar.controller {
+    background-color: #5B8DB8;
+}
+
+.subcat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1200px;
+}
+
+.subcat-card-img {
+    aspect-ratio: 4 / 3;
+}
+
+.subcat-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.subcat-card-desc {
+    line-height: 2;
+}
+
 .oem-cta {
     background-color: #F7F3EC;
     padding: 100px 8%;

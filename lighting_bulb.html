@@ -3,13 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PRODUCTS | TOYOSTAR</title>
+    <title>電球 | TOYOSTAR</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/product_dimmer.css">
+    <style>
+        .lp-section { padding: 80px 8% 120px; }
+        .lp-header { text-align: center; margin-bottom: 60px; }
+        .lp-grid {
+            display: grid;
+            grid-template-columns: minmax(280px, 400px);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .lp-card {
+            display: block;
+            background: #fff;
+            border: 1px solid #e8e0d4;
+            border-top: 3px solid #C8A96E;
+            border-radius: 4px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.35s ease;
+        }
+        .lp-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(200,169,110,0.18);
+        }
+        .lp-card-img {
+            aspect-ratio: 3 / 4;
+            background: #f9f7f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .lp-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .lp-card-body {
+            padding: 28px 24px;
+            text-align: center;
+        }
+        .lp-card-name {
+            font-size: 20px;
+            font-weight: 500;
+            color: #222;
+            margin-bottom: 12px;
+            letter-spacing: 0.08em;
+        }
+        .lp-card-arrow {
+            font-size: 11px;
+            color: #B8944F;
+            letter-spacing: 0.2em;
+        }
+        .list-empty {
+            text-align: center;
+            padding: 80px 20px;
+            color: #777;
+            font-size: 14px;
+        }
+        @media (max-width: 767px) {
+            .lp-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
 </head>
 <body>
-
     <nav class="nav-container">
         <div><a href="index.html"><img src="product_photo/outline会社バッジ.png" alt="TOYOSTAR Logo"></a></div>
         
@@ -53,85 +116,36 @@
             <span class="nav-rakuten-text">楽天ショップ<br>T-STYLE</span>
         </a>
     </nav>
-
-    <header class="page-header">
-        <div class="header-container">
-            <p class="header-sub">PRODUCTS</p>
-            <h1 class="header-title">製品情報</h1>
-            <p class="header-jp">取り扱い製品</p>
+    <div class="lighting-page-header" data-en="LIGHTING">
+        <div class="lighting-header-inner">
+            <p class="lighting-header-sub">PRODUCTS / INTERIOR LIGHTING / BULB</p>
+            <h1 class="lighting-header-title">電球</h1>
         </div>
-    </header>
-
-    <p class="breadcrumb"><a href="index.html">HOME</a> › PRODUCTS</p>
-
-    <main>
-    <section class="product-intro-section">
-        <div class="company-container">
-            <div class="section-label">OUR PRODUCTS</div>
-            <h2 class="section-main-title">取り扱い製品一覧</h2>
-            <p class="product-description">
-                トヨスターは半世紀にわたる調光技術と照明デザインの専門知識を活かし、<br>
-                お客様の多様なニーズにお応えする製品を幅広く提供しています。<br>
-                各製品の詳細は、以下のカードからご覧いただけます。
-            </p>
+    </div>
+    <p class="lighting-breadcrumb">
+        <a href="index.html">HOME</a><span>›</span>
+        <a href="product.html">PRODUCTS</a><span>›</span>
+        <a href="product_interior_lighting.html">インテリア照明</a><span>›</span>
+        電球
+    </p>
+    <section class="lp-section">
+        <div class="lp-header">
+            <p class="section-label">PRODUCTS</p>
+            <h2 class="section-main-title">電球 ラインアップ</h2>
+        </div>
+        <div class="lp-grid">
+            <p class="list-empty">只今、準備中です。</p>
         </div>
     </section>
-
-    <section class="products-section">
-        <div class="product-grid">
-            <a href="product_wall_dimmer.html">
-                <div class="product-card">
-                    <div class="img-box"><img src="product_photo/逆位相3A_正移相3A01.jpg" alt="WALL MOUNTED DIMMERS" class="img-default"><img src="product_photo/逆位相3A_正移相3A02.jpg" alt="WALL MOUNTED DIMMERS" class="img-hover-img"></div>
-                    <div class="card-info">
-                        <h3>壁型調光器</h3>
-                        <p>WALL MOUNTED DIMMERS</p>
-                        <span class="product-viewmore">VIEW MORE</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="product_internal_dimmer.html">
-                <div class="product-card">
-                    <div class="img-box"><img src="product_photo/逆内蔵2線式01.jpg" alt="BUILT-IN / OEM MODULES" class="img-default">
-                        <img src="product_photo/逆内蔵2線式02.jpg" alt="BUILT-IN / OEM MODULES" class="img-hover-img"></div>
-                        <div class="card-info">
-                        <h3>内蔵型調光器</h3>
-                        <p>BUILT-IN / OEM MODULES</p>
-                        <span class="product-viewmore">VIEW MORE</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="product_thermal_therapy.html">
-                <div class="product-card">
-                    <div class="img-box"><img src="product_photo/リブホット.jpg" alt="THERAPY"></div>
-                    <div class="card-info">
-                        <h3>温熱器具</h3>
-                        <p>THERMAL / ELECTRIC THERAPY</p>
-                        <span class="product-viewmore">VIEW MORE</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="product_interior_lighting.html">
-                <div class="product-card">
-                    <div class="img-box">
-                            <img src="product_photo/Capiz/Capiz 4-spot/orange2.JPG" alt="INTERIOR LIGHTING" class="img-default">
-                            <img src="product_photo/Chandelier pendant/whole.JPG" alt="INTERIOR LIGHTING" class="img-hover-img">
-                        </div>
-                    <div class="card-info">
-                        <h3>インテリア照明</h3>
-                        <p>INTERIOR LIGHTING</p>
-                        <span class="product-viewmore">VIEW MORE</span>
-                    </div>
-                </div>
-            </a>
+    <section class="oem-cta">
+        <div class="cta-inner">
+            <h3>オリジナル製品の設計・製造も承っております</h3>
+            <a href="oem_lighting.html" class="btn-oem">OEMの流れを見る →</a>
         </div>
     </section>
-    </main>
     <section class="product-qa-cta">
         <div class="pqc-container">
-            <a href="Q&amp;A.html" class="pqc-card pqc-card--qa">
+            <a href="Q&A.html" class="pqc-card pqc-card--qa">
                 <div class="pqc-icon">?</div>
                 <div class="pqc-text">
                     <span class="pqc-en">Q&amp;A</span>
@@ -151,8 +165,6 @@
             </a>
         </div>
     </section>
-
-
     <footer>
         <div class="footer-inner">
             <div class="footer-links">
@@ -162,7 +174,7 @@
                         <li><a href="product_wall_dimmer.html">壁型調光器</a></li>
                         <li><a href="product_internal_dimmer.html">内蔵型調光器</a></li>
                         <li><a href="product_thermal_therapy.html">温熱器具</a></li>
-                        <li><a href="product_interior_lighting.html">インテリア照明</a></li>
+<li><a href="product_interior_lighting.html">インテリア照明</a></li>
                                         <li class="dropdown-rakuten">
                         <a href="http://www.rakuten.co.jp/toyostar" target="_blank" rel="noopener">
                           <img src="product_photo/楽天アイコン.png" alt="" class="dropdown-icon">
@@ -171,24 +183,24 @@
                     </ul>
                 </div>
                 <div class="footer-group">
-                     <h4>SUPPORT</h4>
-                      <ul>
-                          <li><a href="Q&A.html">よくある質問</a></li>
-                          <li><a href="index.html#contact">お問い合わせ</a></li>
-                           <li><a href="privacy.html">プライバシーポリシー</a></li>
-                           <li><a href="oem.html">OEMの流れ</a></li>
-                     </ul>
-                 </div>
-                 <div class="footer-group">
-                     <h4>CASES</h4>
-                     <ul>
-                         <li><a href="case_study_001.html">ホテル客室 調光システム</a></li>
-                         <li><a href="case_study_002.html">商業施設 照明リニューアル</a></li>
-                         <li><a href="case_study_003.html">照明メーカー OEM調光器</a></li>
-                     </ul>
-                 </div>
-                  <div class="footer-group">
-                     <h4>COMPANY</h4>
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="Q&A.html">よくある質問</a></li>
+                        <li><a href="index.html#contact">お問い合わせ</a></li>
+                        <li><a href="privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="oem_lighting.html">OEMの流れ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-group">
+                    <h4>CASES</h4>
+                    <ul>
+                        <li><a href="case_study_001.html">ホテル客室 調光システム</a></li>
+                        <li><a href="case_study_002.html">商業施設 照明リニューアル</a></li>
+                        <li><a href="case_study_003.html">照明メーカー OEM調光器</a></li>
+                    </ul>
+                </div>
+                <div class="footer-group">
+                    <h4>COMPANY</h4>
                     <ul>
                         <li><a href="company.html">会社概要</a></li>
                         <li><a href="recruit.html">採用情報</a></li>
@@ -196,34 +208,22 @@
                     </ul>
                 </div>
             </div>
-             <div class="footer-info">
+            <div class="footer-info">
                 <p class="footer-logo">TOYOSTAR</p>
                 <address>
-                   トヨスター株式会社 | TOYOSTAR CO., LTD.<br>
-                   〒362-0001埼玉県上尾市大字上尾264-1<br>
-                   TEL:048-770-3531<br>
-                   FAX:048-770-2631<br>
-                   受付時間: 9:00～17:00（土・日・祝を除く）
+                    トヨスター株式会社 | TOYOSTAR CO., LTD.<br>
+                    〒362-0001埼玉県上尾市大字上尾264-1<br>
+                    TEL:048-770-3531<br>
+                    FAX:048-770-2631<br>
+                    受付時間: 9:00～17:00（土・日・祝を除く）
                 </address>
                 <small>&copy; 2026 TOYOSTAR CO., LTD.</small>
             </div>
         </div>
     </footer>
     <a href="#" class="back-to-top">↑</a>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -268,6 +268,15 @@
     background-color: #fff;
 }
 
+.partners-block{
+    background: #fff;
+    border: 1px solid #ede8df;
+    border-top: 3px solid #C8A96E;
+    border-radius: 4px;
+    padding: 50px 60px;
+    margin-bottom: 60px;
+}
+
 .partners-list, .banks-list{
     list-style: none;
     margin: 0;
@@ -276,23 +285,33 @@
 
 .partners-list li, .banks-list li{
     font-size: 14px;
-    color: #666;
-    padding: 12px 0;
-    border-bottom: 1px dashed #eee;
+    color: #555;
+    padding: 14px 4px;
+    border-bottom: 1px solid #f0ebe3;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+}
+
+.partners-list li:hover {
+    color: #B8944F;
 }
 
 .partners-list{
     column-count: 3;
-    column-gap: 60px;
-    column-rule: 1px dashed #eee;
-} 
+    column-gap: 50px;
+}
 
 .partners-list li {
-    break-inside: avoid;     /* リスト項目が列の途中で切れないようにする */
+    break-inside: avoid;
 }
 
 .banks-block{
-    margin-top: 120px;
+    background: #fff;
+    border: 1px solid #ede8df;
+    border-top: 3px solid #C8A96E;
+    border-radius: 4px;
+    padding: 50px 60px;
 }
 
 .banks-list{
@@ -319,5 +338,10 @@
     }
     .partners-list {
         column-count: 1;
+    }
+
+    .partners-block,
+    .banks-block {
+        padding: 30px 22px;
     }
 }

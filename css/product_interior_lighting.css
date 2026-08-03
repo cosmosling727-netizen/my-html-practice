@@ -1,262 +1,427 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
-.product-detail-main {
-    padding-top: 150px;
-    background: linear-gradient(to right, #f0ebe3 0%, #fff 40%);
-    padding-bottom: 50px;
+/* ============================================================
+   INTERIOR LIGHTING — 統一スタイルシート
+   照明器具専用スタイル（product_dimmer.css と構造は統一、命名は照明用に分離）
+   使用ページ:
+     product_interior_lighting.html    (サブカテゴリ選択ページ)
+   ============================================================ */
+
+
+/* ============================================================
+   1. ページヘッダー（カテゴリ・詳細共通）
+   HTML: <div class="lighting-page-header">
+   ============================================================ */
+
+.lighting-page-header {
+    padding: 130px 8% 80px;
+    background: linear-gradient(135deg, #f5f0e8 0%, #fff 60%);
+    position: relative;
+    overflow: hidden;
 }
 
-.company-container {
+.lighting-page-header::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #C8A96E, #E8D5A8, transparent);
+}
+
+.lighting-page-header::after {
+    content: attr(data-en);
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    font-size: 100px;
+    font-weight: 700;
+    color: rgba(200,169,110,0.07);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.lighting-header-inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 8%;
 }
 
-.product-intro {
-    margin-bottom: 100px;
+.lighting-header-sub {
+    font-size: 11px;
+    color: #B8944F;
+    letter-spacing: 0.5em;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.product-intro .vertical-title {
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 1.5;
-    border-left: 3px solid #C8A96E;
-    padding-left: 25px;
-    margin-bottom: 40px;
+.lighting-header-sub::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: #C8A96E;
+}
+
+.lighting-header-title {
+    font-size: 48px;
+    font-weight: 200;
     color: #222;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
-.intro-text p {
-    font-size: 16px;
-    line-height: 2.2; 
-    color: #555;
+.lighting-header-desc {
+    font-size: 15px;
+    color: #666;
+    line-height: 2;
+    max-width: 600px;
+}
+
+
+/* ============================================================
+   2. パンくず
+   HTML: <p class="lighting-breadcrumb">
+   ============================================================ */
+
+.lighting-breadcrumb {
+    padding: 12px 8%;
+    font-size: 13px;
+    color: #777;
+    letter-spacing: 0.15em;
+    background: #f9f7f4;
+    border-bottom: 1px solid #ede8df;
+}
+
+.lighting-breadcrumb a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.lighting-breadcrumb a:hover {
+    color: #B8944F;
+    text-decoration: underline;
+}
+
+.lighting-breadcrumb span {
+    margin: 0 8px;
+    color: #bbb;
+}
+
+
+/* ============================================================
+   3. サブカテゴリ選択ページ
+   HTML: product_interior_lighting.html
+   ============================================================ */
+
+.subcat-intro-section {
+    padding: 80px 8% 60px;
+    text-align: center;
+}
+
+.subcat-intro-section .section-label {
+    font-size: 11px;
+    color: #B8944F;
+    letter-spacing: 0.5em;
     margin-bottom: 25px;
-    max-width: 850px;
 }
 
-.intro-text .catalog-note {
+.subcat-intro-section .section-main-title {
+    font-size: 2rem;
+    font-weight: 200;
+    letter-spacing: 0.25em;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.subcat-intro-section .subcat-lead {
     font-size: 14px;
     color: #666;
-    margin-top: 10px;
+    line-height: 2;
+    max-width: 680px;
+    margin: 0 auto;
 }
 
-.intro-text .catalog-note a {
-    color: #C8A96E;
-    text-decoration: underline;
-    transition: color 0.3s ease;
+
+/* --- カードグリッド --- */
+
+.subcat-section {
+    padding: 60px 8% 120px;
 }
 
-.intro-text .catalog-note a:hover {
-    color: #B8944F;
-}
-
-.spec-grid {
+.subcat-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 80px 50px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
 }
 
-.spec-card {
+.subcat-grid--lighting {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Capiz（5个卡）PC 端 3 列布局（5个 = 3+2 自然换行） */
+.subcat-grid--capiz {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.subcat-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+}
+
+.subcat-card {
+    border: 1px solid #e8e0d4;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    background: #fff;
     display: flex;
     flex-direction: column;
-    border: 1px solid #f0f0f0;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-}
-
-.spec-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(200,169,110,0.15);
-}
-
-.spec-image {
     width: 100%;
-    height: 250px;
-    background-color: #fcfcfc;
-    text-align: center;
-    border-bottom: 1px solid #f0f0f0;
+}
+
+.subcat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(200,169,110,0.18);
+    border-color: #C8A96E;
+}
+
+/* カラーバー（上部のアクセントライン） */
+.subcat-card-bar {
+    height: 4px;
+}
+
+/* 照明器具専用カラー（4タイプ） */
+.subcat-card-bar.table-light   { background: linear-gradient(to right, #D4A574, #E8C8A0); }
+.subcat-card-bar.ceiling-light { background: linear-gradient(to right, #7FB3D5, #A8D5E8); }
+.subcat-card-bar.pendant-light { background: linear-gradient(to right, #C8A96E, #E8D5A8); }
+.subcat-card-bar.bulb          { background: linear-gradient(to right, #F5D547, #FFEB99); }
+
+/* Capiz 専用カラー（5タイプ） */
+.subcat-card-bar.capiz-4-spot          { background: linear-gradient(to right, #a8845e, #d8b48a); }
+.subcat-card-bar.capiz-cross           { background: linear-gradient(to right, #b89a6e, #d4be96); }
+.subcat-card-bar.capiz-duct-rail-socket { background: linear-gradient(to right, #c5a374, #ddc19a); }
+.subcat-card-bar.capiz-pendant         { background: linear-gradient(to right, #d4a574, #e8c8a0); }
+.subcat-card-bar.capiz-table-light     { background: linear-gradient(to right, #8b6f47, #b08f6a); }
+
+/* 画像エリア */
+.subcat-card-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #f9f7f4;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    border-bottom: 1px solid #f0ebe3;
 }
 
-.spec-image img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+.subcat-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
 }
 
-.spec-info{
-    padding: 35px;
+.subcat-card:hover .subcat-card-img img {
+    transform: scale(1.08);
 }
 
-.spec-info .label {
-    display: inline-block;
-    font-size: 11px;
-    background-color: #C8A96E;
-    color: #fff;
-    padding: 3px 12px;
-    letter-spacing: 0.1em;
-    margin-bottom: 20px;
+/* テキストエリア */
+.subcat-card-body {
+    padding: 30px 28px 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.spec-info h3 {
-    font-size: 19px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #222;
-}
-
-.spec-info .desc {
-    font-size: 15px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    min-height: 3.2em;
-}
-
-.spec-info .pdf-link {
-    display: inline-block;
-    font-size: 12px;
-    color: #C8A96E;
-    margin-bottom: 20px;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.spec-info .pdf-link:hover {
+.subcat-card-en {
+    font-size: 10px;
+    letter-spacing: 0.4em;
     color: #B8944F;
+    margin-bottom: 10px;
+    min-height: 14px;
 }
 
-.spec-info dl {
-    border-top: 1px solid #eee;
+.subcat-card-title {
+    font-size: 22px;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 12px;
+    letter-spacing: 0.08em;
+    min-height: 66px;
+    display: flex;
+    align-items: center;
 }
 
-.spec-info dl div {
-    border-bottom: 1px solid #eee; 
-    overflow: hidden;
+.subcat-card-desc {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.9;
+    margin-bottom: 22px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.subcat-viewmore {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: #777;
+    transition: all 0.3s;
+}
+
+.subcat-viewmore::after {
+    content: "→";
+    transition: transform 0.3s;
+}
+
+.subcat-card:hover .subcat-viewmore {
+    color: #333;
+}
+
+.subcat-card:hover .subcat-viewmore::after {
+    transform: translateX(4px);
+}
+
+
+/* ============================================================
+   4. OEM CTAセクション（共通）
+   HTML: <section class="oem-cta">
+   ※ 別ファイル product_dimmer.css / oem.css でも同名クラス定義あり
+   ============================================================ */
+
+.oem-cta {
+    background: linear-gradient(135deg, #f5f0e8 0%, #fff 60%);
+    border-top: 1px solid #ede8df;
+    border-bottom: 1px solid #ede8df;
     padding: 0;
 }
 
-.spec-info dl dt {
-    width: 100px;
-    padding: 15px 0;
-    font-size: 13px;
-    font-weight: 700;
-    color: #444;
-    float: left;
-    clear: left;
-}
-
-.spec-info dl dd {
-    margin-left: 100px;
-    padding: 15px 0;
-    font-size: 15px;
-    color: #666;
-}
-
-.spec-info .brand-partner-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;   
-    gap: 11px;             
-    margin-top: 25px;       
-    padding-top: 10px;
-}
-
-.spec-info .brand-partner-wrap img {
-    height: 25px;  
-    width: auto;
-}
-
-.brand-partner {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 0;
-}
-
-.oem-cta {
-    background-color: #F7F3EC;
-    padding: 100px 8%;
+.cta-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 8%;
     text-align: center;
-    border-top: 2px solid #C8A96E;
 }
 
 .cta-inner h3 {
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 40px;
-    letter-spacing: 0.05em;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: #333;
+    margin-bottom: 28px;
 }
 
 .btn-oem {
     display: inline-block;
-    padding: 18px 50px;
-    background-color: #C8A96E;
-    color: #fff;
+    padding: 14px 40px;
+    border: 1px solid #C8A96E;
+    color: #B8944F;
     text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    letter-spacing: 0.1em;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    transition: all 0.3s;
+    background: transparent;
 }
 
-.btn-oem:hover{
-    background-color: #B8944F;
-    padding-right: 60px;
+.btn-oem:hover {
+    background: #C8A96E;
+    color: #fff;
 }
 
-/* === レスポンシブ === */
-@media screen and (max-width: 767px) {
-    .product-detail-main {
-        padding-top: 100px;
-    }
 
-    .product-intro .vertical-title {
-        font-size: 22px;
-    }
+/* ============================================================
+   モバイル対応
+   ============================================================ */
 
-    .intro-text p {
-        font-size: 14px;
-    }
-
-    .intro-text .catalog-note {
-        font-size: 13px;
-    }
-
-    .spec-grid {
+@media screen and (max-width: 960px) {
+    .subcat-grid,
+    .subcat-grid--lighting {
         grid-template-columns: 1fr;
-        gap: 40px;
     }
 
-    .spec-image {
-        height: 200px;
+    .lighting-page-header::after {
+        display: none;
     }
 
-    .spec-info {
-        padding: 20px;
+    .lighting-header-title {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .subcat-grid,
+    .subcat-grid--lighting,
+    .subcat-grid--capiz {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 
-    .spec-info h3 {
-        font-size: 16px;
+    .lighting-header-title {
+        font-size: 28px;
     }
 
-    .spec-info dl dt,
-    .spec-info dl dd {
-        font-size: 13px;
+    .subcat-section {
+        padding: 40px 5% 80px;
     }
 
-    .oem-cta {
-        padding: 60px 5%;
+    .subcat-intro-section {
+        padding: 50px 5% 30px;
+    }
+
+    .subcat-intro-section .section-main-title {
+        font-size: 1.4rem;
+    }
+
+    .subcat-card-body {
+        padding: 22px 18px 24px;
+    }
+
+    .subcat-card-en {
+        font-size: 9px;
+    }
+
+    .subcat-card-title {
+        font-size: 18px;
+        min-height: 54px;
+    }
+
+    .subcat-card-desc {
+        font-size: 12px;
+    }
+
+    .lighting-breadcrumb {
+        padding: 10px 5%;
+        font-size: 12px;
+    }
+
+    .cta-inner {
+        padding: 40px 5%;
     }
 
     .cta-inner h3 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .btn-oem {
-        padding: 15px 35px;
+        padding: 12px 28px;
+        font-size: 12px;
     }
 }

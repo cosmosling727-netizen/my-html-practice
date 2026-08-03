@@ -10,21 +10,11 @@
    ============================================================ */
 
 
-/* ─── 共通コンテナ ─────────────────────────────────────────── */
-.dimmer-main {
-    padding-top: 100px;
-    background: linear-gradient(to right, #f0ebe3 0%, #fff 40%);
-    padding-bottom: 0;
-}
+/* ============================================================
+   1. ページヘッダー（dimmer- シリーズ）
+   HTML: <div class="dimmer-page-header">
+   ============================================================ */
 
-.dimmer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 8%;
-}
-
-
-/* ─── ページヘッダー（カテゴリ・詳細共通） ──────────────────── */
 .dimmer-page-header {
     padding: 130px 8% 80px;
     background: linear-gradient(135deg, #f5f0e8 0%, #fff 60%);
@@ -97,7 +87,11 @@
 }
 
 
-/* ─── パンくず ─────────────────────────────────────────────── */
+/* ============================================================
+   3. パンくず
+   HTML: <p class="dimmer-breadcrumb">
+   ============================================================ */
+
 .dimmer-breadcrumb {
     padding: 12px 8%;
     font-size: 13px;
@@ -124,9 +118,10 @@
 }
 
 
-/* ════════════════════════════════════════════════════════════
-   A. サブカテゴリ選択ページ（product_wall_dimmer.html）
-   ════════════════════════════════════════════════════════════ */
+/* ============================================================
+   4. A. サブカテゴリ選択ページ
+   HTML: product_wall_dimmer.html（また内蔵型など 1 枚のページもある）
+   ============================================================ */
 
 .subcat-intro-section {
     padding: 80px 8% 60px;
@@ -156,7 +151,9 @@
     margin: 0 auto;
 }
 
-/* ─── サブカテゴリ カードグリッド ─────────────────────────── */
+
+/* --- カードグリッド --- */
+
 .subcat-section {
     padding: 60px 8% 120px;
 }
@@ -169,19 +166,20 @@
     margin: 0 auto;
 }
 
-/* カード1枚のみの場合（内蔵型など） */
-.subcat-grid--single {
-    grid-template-columns: minmax(280px, 400px);
-    justify-content: center;
-}
+
+
 
 .subcat-link {
-    display: block;
+    display: flex;
     text-decoration: none;
     color: inherit;
+    height: 100%;
 }
 
 .subcat-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     border: 1px solid #e8e0d4;
     border-radius: 4px;
     overflow: hidden;
@@ -200,9 +198,9 @@
     height: 4px;
 }
 
-.subcat-card-bar.gyaku  { background: linear-gradient(to right, #4a6fa5, #6a8fc5); }
-.subcat-card-bar.sei    { background: linear-gradient(to right, #C8A96E, #E8D5A8); }
-.subcat-card-bar.pwm    { background: linear-gradient(to right, #5a9e6f, #8dcc9f); }
+.subcat-card-bar.gyaku { background: linear-gradient(to right, #4a6fa5, #6a8fc5); }
+.subcat-card-bar.sei   { background: linear-gradient(to right, #C8A96E, #E8D5A8); }
+.subcat-card-bar.pwm   { background: linear-gradient(to right, #5a9e6f, #8dcc9f); }
 
 /* 画像エリア */
 .subcat-card-img {
@@ -230,6 +228,9 @@
 /* テキストエリア */
 .subcat-card-body {
     padding: 30px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .subcat-card-en {
@@ -252,19 +253,7 @@
     color: #777;
     line-height: 1.9;
     margin-bottom: 22px;
-}
-
-.subcat-card-count {
-    font-size: 11px;
-    color: #aaa;
-    letter-spacing: 0.2em;
-    border-top: 1px solid #f0ebe3;
-    padding-top: 16px;
-}
-
-.subcat-card-count span {
-    color: #C8A96E;
-    font-weight: 600;
+    flex: 1;
 }
 
 .subcat-viewmore {
@@ -292,16 +281,19 @@
 }
 
 
-/* ════════════════════════════════════════════════════════════
-   B. 製品詳細ページ（gyaku / sei / pwm 共通）
-   ════════════════════════════════════════════════════════════ */
+/* ============================================================
+   5. B. 製品詳細ページ（gyaku / sei / pwm 共通）
+   HTML: product_wall_dimmer_*.html（逆位相・正位相・PWM）
+   ============================================================ */
 
 .detail-main {
     padding-top: 0;
     background: #fff;
 }
 
-/* ─── 製品説明セクション ──────────────────────────────────── */
+
+/* --- 製品説明セクション --- */
+
 .detail-intro-section {
     padding: 80px 8% 60px;
     background: linear-gradient(to right, #f5f0e8 0%, #fff 50%);
@@ -352,7 +344,9 @@
     object-fit: contain;
 }
 
-/* ─── 特徴バッジ ──────────────────────────────────────────── */
+
+/* --- 特徴バッジ --- */
+
 .detail-feature-tags {
     display: flex;
     flex-wrap: wrap;
@@ -370,7 +364,9 @@
     border-radius: 2px;
 }
 
-/* ─── 製品一覧セクション ──────────────────────────────────── */
+
+/* --- 製品一覧セクション --- */
+
 .detail-products-section {
     padding: 80px 8% 100px;
 }
@@ -395,7 +391,9 @@
     color: #222;
 }
 
-/* ─── 製品カードグリッド ──────────────────────────────────── */
+
+/* --- 製品カードグリッド --- */
+
 .detail-product-grid {
     max-width: 1200px;
     margin: 0 auto;
@@ -490,7 +488,29 @@
     border-bottom: 1px solid #f5f5f5;
 }
 
-.detail-card-spec .spec-key {
+/* 推奨商品などの追加情報用：複数行・リンク含む */
+.detail-card-spec .spec-row {
+    align-items: flex-start;
+}
+
+.spec-val {
+    line-height: 1.9;
+}
+
+.spec-val a {
+    color: #B8944F;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: all 0.2s;
+}
+
+.spec-val a:hover {
+    color: #C8A96E;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.spec-key {
     width: 130px;
     flex-shrink: 0;
     padding: 12px 0;
@@ -523,7 +543,12 @@
 }
 
 
-/* ─── OEM CTAセクション ───────────────────────────────────── */
+/* ============================================================
+   6. OEM CTAセクション（共通）
+   HTML: <section class="oem-cta">
+   ※ 別ファイル oem.css でも同名クラス定義あり
+   ============================================================ */
+
 .oem-cta {
     background: #f9f7f4;
     border-top: 1px solid #ede8df;
@@ -562,7 +587,10 @@
 }
 
 
-/* ─── レスポンシブ ────────────────────────────────────────── */
+/* ============================================================
+   モバイル対応
+   ============================================================ */
+
 @media screen and (max-width: 960px) {
     .subcat-grid {
         grid-template-columns: 1fr 1fr;

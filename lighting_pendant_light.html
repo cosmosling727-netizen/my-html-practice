@@ -3,13 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>送信完了 | TOYOSTAR</title>
+    <title>ペンダントライト | TOYOSTAR</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/contact_result.css">
+    <link rel="stylesheet" href="css/product_dimmer.css">
+    <style>
+        .lp-section { padding: 80px 8% 120px; }
+        .lp-header { text-align: center; margin-bottom: 60px; }
+        .lp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .lp-card {
+            display: block;
+            background: #fff;
+            border: 1px solid #e8e0d4;
+            border-top: 3px solid #C8A96E;
+            border-radius: 4px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.35s ease;
+        }
+        .lp-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(200,169,110,0.18);
+        }
+        .lp-card-img {
+            aspect-ratio: 3 / 4;
+            background: #f9f7f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .lp-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .lp-card-body {
+            padding: 28px 24px;
+            text-align: center;
+        }
+        .lp-card-name {
+            font-size: 20px;
+            font-weight: 500;
+            color: #222;
+            margin-bottom: 12px;
+            letter-spacing: 0.08em;
+        }
+        .lp-card-arrow {
+            font-size: 11px;
+            color: #B8944F;
+            letter-spacing: 0.2em;
+        }
+        .list-empty {
+            text-align: center;
+            padding: 80px 20px;
+            color: #777;
+            font-size: 14px;
+        }
+        @media (max-width: 767px) {
+            .lp-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
 </head>
 <body>
-
     <nav class="nav-container">
         <div><a href="index.html"><img src="product_photo/outline会社バッジ.png" alt="TOYOSTAR Logo"></a></div>
         
@@ -53,36 +116,57 @@
             <span class="nav-rakuten-text">楽天ショップ<br>T-STYLE</span>
         </a>
     </nav>
-
-    <main class="result-main">
-        <div class="result-container">
-            <div class="result-icon">
-                <svg viewBox="0 0 80 80" width="80" height="80" aria-hidden="true">
-                    <circle cx="40" cy="40" r="36" fill="none" stroke="#C8A96E" stroke-width="2"/>
-                    <path d="M24 41 L36 53 L58 29" fill="none" stroke="#C8A96E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-
-            <p class="result-en">THANK YOU</p>
-            <h1 class="result-title">お問い合わせありがとうございます</h1>
-
-            <p class="result-desc">
-                お問い合わせ内容を送信いたしました。<br>
-                内容を確認次第、担当者より改めてご連絡いたします。<br>
-                今しばらくお待ちください。
-            </p>
-
-            <p class="result-note">
-                ※ 自動返信メールを <strong>ご入力いただいたメールアドレス</strong> 宛にお送りしています。<br>
-                メールが届かない場合は、迷惑メールフォルダをご確認のうえ、<a href="index.html#contact">再度お問い合わせください</a>。
-            </p>
-
-            <div class="result-buttons">
-                <a href="index.html" class="btn-back-home">ホームに戻る</a>
-                <a href="product.html" class="btn-back-products">製品一覧を見る</a>
-            </div>
+    <div class="lighting-page-header" data-en="LIGHTING">
+        <div class="lighting-header-inner">
+            <p class="lighting-header-sub">PRODUCTS / INTERIOR LIGHTING / PENDANT LIGHT</p>
+            <h1 class="lighting-header-title">ペンダントライト</h1>
         </div>
-    </main>
+    </div>
+    <p class="lighting-breadcrumb">
+        <a href="index.html">HOME</a><span>›</span>
+        <a href="product.html">PRODUCTS</a><span>›</span>
+        <a href="product_interior_lighting.html">インテリア照明</a><span>›</span>
+        ペンダントライト
+    </p>
+    <section class="lp-section">
+        <div class="lp-header">
+            <p class="section-label">PRODUCTS</p>
+            <h2 class="section-main-title">ペンダントライト ラインアップ</h2>
+        </div>
+        <div class="lp-grid">
+                            <a href="lighting_rerto_modern_pendant.html" class="lp-card">
+                    <div class="lp-card-img">
+                        <img src="product_photo/Rerto modern pendant/whole.jpg" alt="Rerto Modern Pendant">
+                    </div>
+                    <div class="lp-card-body">
+                        <h3 class="lp-card-name">Rerto Modern Pendant</h3>
+                        <span class="lp-card-arrow">VIEW DETAILS →</span>
+                    </div>
+                </a>                <a href="lighting_wooden_pendant.html" class="lp-card">
+                    <div class="lp-card-img">
+                        <img src="product_photo/wooden pendant/whole.JPG" alt="Wooden Pendant">
+                    </div>
+                    <div class="lp-card-body">
+                        <h3 class="lp-card-name">Wooden Pendant</h3>
+                        <span class="lp-card-arrow">VIEW DETAILS →</span>
+                    </div>
+                </a>                <a href="lighting_chandelier_pendant.html" class="lp-card">
+                    <div class="lp-card-img">
+                        <img src="product_photo/Chandelier pendant/whole.JPG" alt="Chandelier Pendant">
+                    </div>
+                    <div class="lp-card-body">
+                        <h3 class="lp-card-name">Chandelier Pendant</h3>
+                        <span class="lp-card-arrow">VIEW DETAILS →</span>
+                    </div>
+                </a>
+        </div>
+    </section>
+    <section class="oem-cta">
+        <div class="cta-inner">
+            <h3>オリジナル製品の設計・製造も承っております</h3>
+            <a href="oem_lighting.html" class="btn-oem">OEMの流れを見る →</a>
+        </div>
+    </section>
     <section class="product-qa-cta">
         <div class="pqc-container">
             <a href="Q&A.html" class="pqc-card pqc-card--qa">
@@ -105,7 +189,6 @@
             </a>
         </div>
     </section>
-
     <footer>
         <div class="footer-inner">
             <div class="footer-links">
@@ -115,7 +198,7 @@
                         <li><a href="product_wall_dimmer.html">壁型調光器</a></li>
                         <li><a href="product_internal_dimmer.html">内蔵型調光器</a></li>
                         <li><a href="product_thermal_therapy.html">温熱器具</a></li>
-                        <li><a href="product_interior_lighting.html">インテリア照明</a></li>
+<li><a href="product_interior_lighting.html">インテリア照明</a></li>
                                         <li class="dropdown-rakuten">
                         <a href="http://www.rakuten.co.jp/toyostar" target="_blank" rel="noopener">
                           <img src="product_photo/楽天アイコン.png" alt="" class="dropdown-icon">
@@ -154,7 +237,8 @@
                 <address>
                     トヨスター株式会社 | TOYOSTAR CO., LTD.<br>
                     〒362-0001埼玉県上尾市大字上尾264-1<br>
-                    TEL:048-770-3531 / FAX:048-770-2631<br>
+                    TEL:048-770-3531<br>
+                    FAX:048-770-2631<br>
                     受付時間: 9:00～17:00（土・日・祝を除く）
                 </address>
                 <small>&copy; 2026 TOYOSTAR CO., LTD.</small>
@@ -164,17 +248,6 @@
     <a href="#" class="back-to-top">↑</a>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
