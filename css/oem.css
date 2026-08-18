@@ -281,9 +281,9 @@
 
 .oem-category-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto 80px;
 }
 
@@ -314,6 +314,10 @@
 
 .oem-category-bar--lighting {
     background: linear-gradient(to right, #5a9e6f, #8dcc9f);
+}
+
+.oem-category-bar--thermal {
+    background: linear-gradient(to right, #D9534F, #E8A19C);
 }
 
 .oem-category-img {

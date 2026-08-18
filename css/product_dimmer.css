@@ -438,6 +438,35 @@
     transform: scale(1.05);
 }
 
+/* サムネイルギャラリー */
+.detail-card-thumbs {
+    display: flex;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #fff;
+    border-bottom: 1px solid #f0ebe3;
+}
+
+.detail-card-thumbs .thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f9f7f4;
+}
+
+.detail-card-thumbs .thumb:hover {
+    border-color: #C8A96E;
+    opacity: 0.8;
+}
+
+.detail-card-thumbs .thumb.active {
+    border-color: #C8A96E;
+    opacity: 1;
+}
+
 /* 製品カード情報エリア */
 .detail-card-body {
     padding: 32px 30px 36px;
