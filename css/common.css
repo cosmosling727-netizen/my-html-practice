@@ -572,6 +572,11 @@ small {
 
 @media screen and (max-width: 767px) {
 
+    /* --- 1. body 全体下移（防止固定 nav 遮挡内容） --- */
+    body {
+        padding-top: 220px;
+    }
+
     /* --- 2. ナビゲーション --- */
     .nav-container {
         flex-direction: column;

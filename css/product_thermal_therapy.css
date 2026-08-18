@@ -223,7 +223,7 @@
 /* === レスポンシブ === */
 @media screen and (max-width: 767px) {
     .product-detail-main {
-        padding-top: 100px;
+        padding-top: 0;
     }
 
     .product-intro .vertical-title {

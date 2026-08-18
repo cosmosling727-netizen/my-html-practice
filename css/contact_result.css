@@ -170,7 +170,7 @@
 
 @media screen and (max-width: 767px) {
     .result-main {
-        padding-top: 100px;
+        padding-top: 0;
         padding-bottom: 60px;
     }
 

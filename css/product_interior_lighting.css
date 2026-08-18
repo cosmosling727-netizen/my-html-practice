@@ -374,6 +374,10 @@
         gap: 24px;
     }
 
+    .lighting-page-header {
+        padding-top: 0;
+    }
+
     .lighting-header-title {
         font-size: 28px;
     }

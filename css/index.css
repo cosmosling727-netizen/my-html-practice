@@ -1268,7 +1268,7 @@ textarea {
 
     /* --- 1. ブランドストーリー --- */
     .brand-story {
-        margin-top: 75px;
+        margin-top: 0;
     }
 
     .story-image-section {
