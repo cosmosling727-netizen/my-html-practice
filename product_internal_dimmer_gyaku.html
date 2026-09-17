@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,38 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/product_dimmer.css">
+    <style>
+        /* product_internal_dimmer_gyaku.html のみ：製品サブセクション見出し */
+        .detail-subsection {
+            max-width: 1200px;
+            margin: 60px auto 30px;
+            padding: 0 8%;
+            text-align: center;
+        }
+        .detail-subsection:first-of-type {
+            margin-top: 0;
+        }
+        .detail-subsection-title {
+            font-size: 22px;
+            font-weight: 400;
+            color: #222;
+            letter-spacing: 0.15em;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #C8A96E;
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+        .detail-subsection-lead {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.8;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <nav class="nav-container">
-        <div><a href="index.html"><img src="product_photo/outline会社バッジ.png" alt="TOYOSTAR Logo"></a></div>
+        <div><a href="index.html"><img src="product_photo/outline_company.png" alt="TOYOSTAR Logo"></a></div>
         
         <ul class="menu">
             <li class="dropdown">
@@ -22,7 +50,7 @@
                     <li><a href="product_interior_lighting.html">インテリア照明</a></li>
                     <li class="dropdown-rakuten">
                         <a href="http://www.rakuten.co.jp/toyostar" target="_blank" rel="noopener">
-                          <img src="product_photo/楽天アイコン.png" alt="" class="dropdown-icon">
+                          <img src="product_photo/rakutenlogo_big.png" alt="" class="dropdown-icon">
                           T-STYLE（楽天ショップ）
                         </a></li>
                 </ul>
@@ -43,13 +71,14 @@
                 <ul class="dropdown-menu">
                     <li><a href="Q&A.html#dimmer">調光器Q&amp;A</a></li>
                     <li><a href="Q&A.html#lighting">照明器具Q&amp;A</a></li>
+                    <li><a href="Q&A.html#other">その他</a></li>
                 </ul>
             </li>
             <li><a href="index.html#contact">CONTACT</a></li>
         </ul>
 
         <a href="http://www.rakuten.co.jp/toyostar" class="nav-rakuten" target="_blank" rel="noopener">
-            <img src="product_photo/楽天アイコン.png" alt="楽天市場" class="nav-rakuten-icon">
+            <img src="product_photo/rakutenlogo_big.png" alt="楽天市場" class="nav-rakuten-icon">
             <span class="nav-rakuten-text">楽天ショップ<br>T-STYLE</span>
         </a>
     </nav>
@@ -93,8 +122,8 @@
                     </div>
                 </div>
                 <div class="detail-intro-img">
-                    <img src="product_photo/逆内蔵2線式01.jpg" alt="逆位相内蔵型調光器" class="img-default">
-                    <img src="product_photo/逆内蔵2線式02.jpg" alt="逆位相内蔵型調光器" class="img-hover-img">
+                    <img src="product_photo/built_in_2wire_01.jpg" alt="逆位相内蔵型調光器" class="img-default">
+                    <img src="product_photo/built_in_2wire_02.jpg" alt="逆位相内蔵型調光器" class="img-hover-img">
                 </div>
             </div>
         </section>
@@ -105,13 +134,17 @@
                 <h2>製品ラインアップ</h2>
             </div>
 
+            <!-- ============== 内蔵型一体型位相 ============== -->
+            <div class="detail-subsection">
+                <h3 class="detail-subsection-title">内蔵型一体型位相</h3>
+                <p class="detail-subsection-lead">調光部と電源部を一体化したコンパクト設計。様々なパネル構成に対応します。</p>
+            </div>
             <div class="detail-product-grid dimmer-container">
-
                 <!-- 逆内蔵型（2線式） -->
                 <div class="detail-product-card">
                     <div class="detail-card-img">
-                        <img src="product_photo/逆内蔵2線式01.jpg" alt="逆内蔵型（2線式）" class="img-default">
-                        <img src="product_photo/逆内蔵2線式02.jpg" alt="逆内蔵型（2線式）" class="img-hover-img">
+                        <img src="product_photo/built_in_2wire_01.jpg" alt="逆内蔵型（2線式）" class="img-default">
+                        <img src="product_photo/built_in_2wire_02.jpg" alt="逆内蔵型（2線式）" class="img-hover-img">
                     </div>
                     <div class="detail-card-body">
                         <span class="detail-card-label">逆位相制御</span>
@@ -133,9 +166,18 @@
                                 <span class="spec-key">推奨商品</span>
                                 <span class="spec-val">
                                     ① 電源：品名・会社名・容量<br>
-                                    ② LED電球：当社セット販売のLED電球をご使用ください<a href="#">適合品一覧はこちら。</a>
+                                    ② LED電球：当社セット販売のLED電球をご使用ください<a href="led_bulbs.html" class="qa-inline-link">適合品一覧はこちら。</a>
                                 </span>
                             </div>
+                        </div>
+                        <div class="pdf-download">
+                            <a href="manual/取説_TRT-060ULHE_20260512.pdf" target="_blank" class="btn-pdf-download">
+                                <svg class="pdf-icon" viewBox="0 0 24 24" width="16" height="16">
+                                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                  <polyline points="14 2 14 8 20 8"/>
+                                </svg>
+                                PDFダウンロード_取扱説明書
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -165,9 +207,101 @@
                                 <span class="spec-key">推奨商品</span>
                                 <span class="spec-val">
                                     ① 電源：品名・会社名・容量<br>
-                                    ② LED電球：当社セット販売のLED電球をご使用ください<a href="#">適合品一覧はこちら。</a>
+                                    ② LED電球：当社セット販売のLED電球をご使用ください<a href="led_bulbs.html" class="qa-inline-link">適合品一覧はこちら。</a>
                                 </span>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ============== 内蔵型分離型位相 ============== -->
+            <div class="detail-subsection">
+                <h3 class="detail-subsection-title">内蔵型分離型位相</h3>
+                <p class="detail-subsection-lead">調光部と電源部を分離した設計。放熱性を高め、大容量負荷にも安定対応します。</p>
+            </div>
+            <div class="detail-product-grid dimmer-container">
+                <!-- 逆位相分離型  -->
+                <div class="detail-product-card">
+                    <div class="detail-card-img">
+                        <img src="product_photo/separate_built_in.jpg" alt="逆位相制御 分離型内蔵型調光器" class="img-default">
+                        <img src="product_photo/built_in_2wire_02.jpg" alt="逆位相制御 分離型内蔵型調光器" class="img-hover-img">
+                    </div>
+                    <div class="detail-card-body">
+                        <span class="detail-card-label">逆位相制御 分離型内蔵型調光器</span>
+                        <h3 class="detail-card-name">逆位相分離型</h3>
+                        <div class="detail-card-spec">
+                            <div class="spec-row">
+                                <span class="spec-key">定格電圧</span>
+                                <span class="spec-val">100V</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">品名</span>
+                                <span class="spec-val">TRT-060ULHE-B</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">スイッチボックス</span>
+                                <span class="spec-val">パネル用</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">推奨商品</span>
+                                <span class="spec-val">
+                                    ① 電源：品名・会社名・容量<br>
+                                    ② LED電球：当社セット販売のLED電球をご使用ください<a href="led_bulbs.html" class="qa-inline-link">適合品一覧はこちら。</a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="pdf-download">
+                            <a href="manual/取説_TRT-060ULHE-B_20260512.pdf" target="_blank" class="btn-pdf-download">
+                                <svg class="pdf-icon" viewBox="0 0 24 24" width="16" height="16">
+                                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                  <polyline points="14 2 14 8 20 8"/>
+                                </svg>
+                                PDFダウンロード_取扱説明書
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 正位相分離型  -->
+                <div class="detail-product-card">
+                    <div class="detail-card-img">
+                        <img src="product_photo/separate_built_in.jpg" alt="正位相制御 分離型内蔵型調光器" class="img-default">
+                        <img src="product_photo/built_in_2wire_02.jpg" alt="正位相制御 分離型内蔵型調光器" class="img-hover-img">
+                    </div>
+                    <div class="detail-card-body">
+                        <span class="detail-card-label">正位相制御 分離型内蔵型調光器</span>
+                        <h3 class="detail-card-name">正位相分離型</h3>
+                        <div class="detail-card-spec">
+                            <div class="spec-row">
+                                <span class="spec-key">定格電圧</span>
+                                <span class="spec-val">100V</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">品名</span>
+                                <span class="spec-val">TRD-100ULHE-B / TRD-100ULHJ-B</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">スイッチボックス</span>
+                                <span class="spec-val">パネル用</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-key">推奨商品</span>
+                                <span class="spec-val">
+                                    ① 電源：品名・会社名・容量<br>
+                                    ② LED電球：当社セット販売のLED電球をご使用ください<a href="led_bulbs.html" class="qa-inline-link">適合品一覧はこちら。</a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="pdf-download">
+                            <a href="manual/取説_TRD-100ULHE-B.J-B_20260512.pdf" target="_blank" class="btn-pdf-download">
+                                <svg class="pdf-icon" viewBox="0 0 24 24" width="16" height="16">
+                                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                  <polyline points="14 2 14 8 20 8"/>
+                                </svg>
+                                PDFダウンロード_取扱説明書
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -223,7 +357,7 @@
                         <li><a href="product_interior_lighting.html">インテリア照明</a></li>
                                         <li class="dropdown-rakuten">
                         <a href="http://www.rakuten.co.jp/toyostar" target="_blank" rel="noopener">
-                          <img src="product_photo/楽天アイコン.png" alt="" class="dropdown-icon">
+                          <img src="product_photo/rakutenlogo_big.png" alt="" class="dropdown-icon">
                           T-STYLE（楽天ショップ）
                         </a></li>
                     </ul>
@@ -259,7 +393,7 @@
                 <address>
                     トヨスター株式会社 | TOYOSTAR CO., LTD.<br>
                     〒362-0001埼玉県上尾市大字上尾264-1<br>
-                    TEL:048-770-3531 / FAX:048-770-2631<br>
+                    TEL:048-775-6831 / FAX:048-774-8247<br>
                     受付時間: 9:00～17:00（土・日・祝を除く）
                 </address>
                 <small>&copy; 2026 TOYOSTAR CO., LTD.</small>

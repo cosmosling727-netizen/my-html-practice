@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
-    
+
 </head>
 <body>
 
     <nav class="nav-container">
-        <div><a href="index.html"><img src="product_photo/outline会社バッジ.png" alt="TOYOSTAR Logo"></a></div>
-        
+        <div><a href="index.html"><img src="product_photo/outline_company.png" alt="TOYOSTAR Logo"></a></div>
+
         <ul class="menu">
             <li class="dropdown">
                 <a href="product.html">PRODUCTS</a>
@@ -24,7 +24,7 @@
                     <li><a href="product_interior_lighting.html">インテリア照明</a></li>
                     <li class="dropdown-rakuten">
                         <a href="http://www.rakuten.co.jp/toyostar" target="_blank" rel="noopener">
-                          <img src="product_photo/楽天アイコン.png" alt="" class="dropdown-icon">
+                          <img src="product_photo/rakutenlogo_big.png" alt="" class="dropdown-icon">
                           T-STYLE（楽天ショップ）
                         </a></li>
                 </ul>
@@ -45,13 +45,14 @@
                 <ul class="dropdown-menu">
                     <li><a href="Q&A.html#dimmer">調光器Q&amp;A</a></li>
                     <li><a href="Q&A.html#lighting">照明器具Q&amp;A</a></li>
+                    <li><a href="Q&A.html#other">その他</a></li>
                 </ul>
             </li>
             <li><a href="index.html#contact">CONTACT</a></li>
         </ul>
 
         <a href="http://www.rakuten.co.jp/toyostar" class="nav-rakuten" target="_blank" rel="noopener">
-            <img src="product_photo/楽天アイコン.png" alt="楽天市場" class="nav-rakuten-icon">
+            <img src="product_photo/rakutenlogo_big.png" alt="楽天市場" class="nav-rakuten-icon">
             <span class="nav-rakuten-text">楽天ショップ<br>T-STYLE</span>
         </a>
     </nav>
@@ -61,23 +62,29 @@
         <section class="brand-story">
             <div class="story-image-section">
                 <div class="story-image-box" id="slideshow-area">
-                    <a href="product_wall_dimmer.html" class="slide-item active">
-                        <video src="product_photo/壁型調光器.mp4" autoplay muted loop playsinline></video>
-                    </a>
+                    <div class="slide-item active">
+                        <video class="slide-bg" src="video/video.mp4" autoplay muted loop playsinline></video>
+                        <video class="slide-main" src="video/video.mp4"  autoplay muted loop playsinline></video>
+                    </div>
                     <a href="product_wall_dimmer.html" class="slide-item">
-                        <img src="product_photo/square_逆位相3A_正移相3A01.jpg" alt="壁型調光器" class="img-default">
-                        <img src="product_photo/square_逆位相3A_正移相3A02.jpg" alt="壁型調光器" class="img-hover-img">
+                        <img class="slide-bg" src="product_photo/square_phase3a_01.jpg" alt="壁型調光器">
+                        <img class="slide-main img-default" src="product_photo/square_phase3a_01.jpg" alt="壁型調光器">
+                        <img class="slide-main img-hover-img" src="product_photo/square_phase3a_02.jpg" alt="壁型調光器">
                     </a>
                     <a href="product_internal_dimmer.html" class="slide-item">
-                        <img src="product_photo/逆内蔵2線式01.jpg" alt="内蔵型調光器" class="img-default">
-                        <img src="product_photo/逆内蔵2線式02.jpg" alt="内蔵型調光器" class="img-hover-img">
+                        <img class="slide-bg" src="product_photo/built_in_2wire_01.jpg" alt="内蔵型調光器">
+                        <img class="slide-main img-default" src="product_photo/built_in_2wire_01.jpg" alt="内蔵型調光器">
+                        <img class="slide-main img-hover-img" src="product_photo/built_in_2wire_02.jpg" alt="内蔵型調光器">
                     </a>
                     <a href="product_thermal_therapy.html" class="slide-item">
-                        <img src="product_photo/リブホット.jpg" alt="温熱器具">
+                        <img class="slide-bg" src="product_photo/rib_mat.jpg" alt="温熱器具">
+                        <img class="slide-main" src="product_photo/rib_hot.jpg" alt="温熱器具">
+                        <img class="slide-main img-hover-img" src="product_photo/rib_mat.jpg" alt="温熱器具">
                     </a>
                     <a href="product_interior_lighting.html" class="slide-item">
-                        <img src="product_photo/Capiz/Capiz 4-spot/orange2.png" alt="INTERIOR LIGHTING" class="img-default">
-                        <img src="product_photo/wooden pendant/whole.png" alt="INTERIOR LIGHTING" class="img-hover-img">
+                        <img class="slide-bg" src="photo_capiz/capiz_4spot/capiz_4spot_orange_02.png" alt="INTERIOR LIGHTING">
+                        <img class="slide-main img-default" src="photo_capiz/capiz_4spot/capiz_4spot_orange_02.png" alt="INTERIOR LIGHTING">
+                        <img class="slide-main img-hover-img" src="photo_capiz/capiz_4spot/capiz_4spot_whole_01.png" alt="INTERIOR LIGHTING">
                     </a>
                 </div>
                 <div class="slideshow-dots">
@@ -106,7 +113,7 @@
                         <p class="osb-sub">トヨスターのオリジナル照明をオンラインでご購入いただけます。</p>
                     </div>
                     <div class="osb-logo">
-                        <img src="product_photo/rakuten logo.png" alt="Rakuten Official Store">
+                        <img src="product_photo/rakuten_logo.png" alt="Rakuten Official Store">
                         <span class="osb-btn">ショップを見る <span class="osb-arrow">→</span></span>
                     </div>
                 </a>
@@ -129,20 +136,74 @@
                     <div class="strength-item">
                        <span class="number">02</span>
                        <h3>品質管理</h3>
-                       <p class="en-sub">MADE IN JAPAN QUALITY</p>
-                       <p class="desc">埼玉県上尾市の自社工場にて、開発から製造
-                        まで一貫体制。厳しい検査基準をクリアした製品をお届けします。</p>
+                       <p class="en-sub">JAPAN QUALITY</p>
+                       <p class="desc">開発から製造
+                        まで厳しい検査基準をクリアした製品をお届けします。<br>
+                        細部までこだわり、高品質な素材と優れたデザインを両立させています。</p>
                    </div>
 
                    <div class="strength-item">
                       <span class="number">03</span>
                       <h3>柔軟な対応</h3>
                       <p class="en-sub">FLEXIBLE SOLUTIONS</p>
-                      <p class="desc">特注仕様やOEM開発など、お客様のニーズに
-                        合わせた柔軟なカスタマイズが可能です。</p>
+                      <p class="desc">OEM開発など、お客様のニーズに
+                        合わせた柔軟なカスタマイズが可能です。<br>
+                        専用フォームよりお問い合わせください。担当者が迅速に対応いたします。</p>
                    </div>
 
                 </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             ご挨拶（占位版）
+             后续需要替换：
+             1) product_photo/president_placeholder.jpg  →  真实社長照片
+             2) 核心 message 文字（縦書き見出し）
+             3) 正文文案
+             4) 役職 / 氏名 / 印章文字列
+             ============================================================ -->
+        <section class="president-message">
+            <div class="section-label pm-label-en">MESSAGE</div>
+            <h2 class="section-main-title">ご挨拶</h2>
+
+            <div class="pm-container">
+
+                <div class="pm-left">
+                    <div class="pm-photo-frame">
+                        <!-- TODO: 替换为真实社長照片，建议 600x720 以上 -->
+                        <img src="product_photo/president_placeholder.jpg" alt="代表取締役社長 写真">
+                        <span class="pm-photo-caption">PHOTO BY TOYOSTAR</span>
+                    </div>
+                </div>
+
+                <div class="pm-right">
+                    <p class="pm-body">
+                        私たちの会社を訪ねてくださったみなさま、ありがとうございます。<br>
+                        トヨスターは、調光器を原点に、照明器具、そして温熱器具へと、<br>
+                        少しずつものづくりを広げてきました。<br>
+                        派手なお話は得意ではないのですが、<br>
+                        「光の調整がきいたね」「あたたかいね」と<br>
+                        お客様の声をいただける時が、何よりもの喜びです。<br>
+                        半世紀の中で、技術も、ものづくりも、ずいぶん変わりました。<br>
+                        それでも変わらないのは、「 lighting the future...」――<br>
+                        光と、あたたかさの両方を、もっと人の近くへ届けたい、という想いです。<br>
+                        まだまだ至らない点もあるかと思いますが、<br>
+                        これからもどうぞよろしくお願いいたします。
+                    </p>
+
+                    <div class="pm-signature">
+                        <span class="pm-position">
+                            <!-- TODO: 替换为真实役職 -->
+                            代表取締役社長
+                        </span>
+                        <span class="pm-name">
+                            <!-- TODO: 替换为真实氏名 -->
+                            浜田　忠博
+                        </span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -150,23 +211,23 @@
             <div class="philosophy-container">
                 <div class="section-label">CASE STUDIES</div>
                 <h2 class="section-main-title">導入事例</h2>
-                <div class="cases-grid">
+                <div class="cases-grid cases-grid--3col">
                     <a href="case_study_001.html" class="case-card">
-                        <span class="case-number">01</span>
+                        <span class="case-number"><span class="case-num">01</span><span class="case-cat">内蔵型調光器</span></span>
                         <h3 class="case-title">ホテル客室　調光システム導入</h3>
-                        <p class="case-desc">全客室の照明を一括制御。ゲストの満足度向上と運用コスト削減を両立。</p>
+                        <p class="case-desc">全客室の照明を一括制御。ゲストの満足度向上と運用コスト削減を両立した調光システム導入事例。</p>
                         <span class="case-link">詳しく見る →</span>
                     </a>
                     <a href="case_study_002.html" class="case-card">
-                        <span class="case-number">02</span>
+                        <span class="case-number"><span class="case-num">02</span><span class="case-cat">壁型調光器</span></span>
                         <h3 class="case-title">商業施設　照明リニューアル</h3>
-                        <p class="case-desc">LED対応調光器への切り替えで、施設全体の消費電力を約30%削減。</p>
+                        <p class="case-desc">LED対応調光器への切り替えで、施設全体の消費電力を約30%削減したリニューアル事例。</p>
                         <span class="case-link">詳しく見る →</span>
                     </a>
                     <a href="case_study_003.html" class="case-card">
-                        <span class="case-number">03</span>
-                        <h3 class="case-title">照明メーカー向け　OEM調光器</h3>
-                        <p class="case-desc">独自仕様の内蔵型調光器を共同開発。製品ラインアップの拡充に貢献。</p>
+                        <span class="case-number"><span class="case-num">03</span><span class="case-cat">インテリア照明</span></span>
+                        <h3 class="case-title">照明メーカー向け　OEM器具開発</h3>
+                        <p class="case-desc">独自仕様のインテリア照明を共同開発。製品ラインアップの拡充に貢献したOEM事例。</p>
                         <span class="case-link">詳しく見る →</span>
                     </a>
                 </div>
@@ -179,29 +240,40 @@
                 <div class="section-label">MAIN PARTNERS</div>
                 <h2 class="section-main-title">主要取引先</h2>
                 <div class="partners-grid">
-                    <div class="logo-item">DAIKO <span>(大光電機)</span></div>
-                    <div class="logo-item">KOIZUMI <span>(コイズミ照明)</span></div>
-                    <div class="logo-item">ENDO <span>(遠藤照明)</span></div>
-                    <div class="logo-item">MITSUBISHI <span>(三菱電機照明)</span></div>
-                    <div class="logo-item">DNL<span>(DNライティング)</span></div>
-                    <div class="logo-item">DALTON <span>(ダルトン)</span></div>
+                    <div class="logo-item"><span>大光電機株式会社</span></div>
+                    <div class="logo-item"><span>株式会社遠藤照明</span></div>
+                    <div class="logo-item"><span>コイズミ照明株式会社</span></div>
+                    <div class="logo-item"><span>三菱電機照明株式会社</span></div>
+                    <div class="logo-item"><span>DNライティング株式会社</span></div>
+                    <div class="logo-item"><span>株式会社テス・ライティング</span></div>
+                    <div class="logo-item"><span>株式会社ココロカ</span></div>
+                    <div class="logo-item"><span>山田照明株式会社</span></div>
+                    <div class="logo-item"><span>ジェイベック株式会社</span></div>
+                    <div class="logo-item"><span>オリンピア照明株式会社</span></div>
+                    <div class="logo-item"><span>株式会社ユニティ</span></div>
+                    <div class="logo-item"><span>ライティング創株式会社</span></div>
+                    <div class="logo-item"><span>株式会社ホタルクス</span></div>
+                    <div class="logo-item"><span>アイリスオーヤマ株式会社</span></div>
+                    <div class="logo-item"><span>株式会社エイテックス</span></div>
+                    <div class="logo-item"><span>トキ・コーポレーション株式会社</span></div>
+                    <div class="logo-item"><span>プリンス電機株式会社</span></div>
+                    <div class="logo-item"><span>株式会社Francfranc</span></div>
+                    <div class="logo-item"><span>ベイクルーズ株式会社</span></div>
+                    <div class="logo-item"><span>ダルトン株式会社</span></div>
                 </div>
-                <div class="partners-footer">
-                    <a href="company.html#partners" class="view-all-link">VIEW ALL PARTNERS<span class="arrow">→</span>
-                    </a>
-                </div>
+                <p class="partners-note">※ 順不同</p>
             </div>
         </section>
 
         <section class="products-section">
             <div class="section-label">SELECTED SOLUTIONS</div>
             <h2 class="section-main-title">厳選ソリューション</h2>
-            
+
             <div class="product-grid">
                 <a href="product_wall_dimmer.html">
                 <div class="product-card">
-                    <div class="img-box"><img src="product_photo/square_逆位相3A_正移相3A01.jpg" alt="WALL MOUNTED DIMMERS" class="img-default">
-                        <img src="product_photo/square_逆位相3A_正移相3A02.jpg" alt="WALL MOUNTED DIMMERS" class="img-hover-img"></div>
+                    <div class="img-box"><img src="product_photo/square_phase3a_01.jpg" alt="WALL MOUNTED DIMMERS" class="img-default">
+                        <img src="product_photo/square_phase3a_02.jpg" alt="WALL MOUNTED DIMMERS" class="img-hover-img"></div>
                     <div class="card-info">
                         <h3>壁型調光器</h3>
                         <p>WALL MOUNTED DIMMERS</p>
@@ -212,8 +284,8 @@
 
                 <a href="product_internal_dimmer.html">
                 <div class="product-card">
-                    <div class="img-box"><img src="product_photo/逆内蔵2線式01.jpg" alt="BUILT-IN / OEM MODULES" class="img-default">
-                        <img src="product_photo/逆内蔵2線式02.jpg" alt="BUILT-IN / OEM MODULES" class="img-hover-img"></div>
+                    <div class="img-box"><img src="product_photo/built_in_2wire_01.jpg" alt="BUILT-IN / OEM MODULES" class="img-default">
+                        <img src="product_photo/built_in_2wire_02.jpg" alt="BUILT-IN / OEM MODULES" class="img-hover-img"></div>
                     <div class="card-info">
                         <h3>内蔵型調光器</h3>
                         <p>BUILT-IN / OEM MODULES</p>
@@ -224,7 +296,8 @@
 
                 <a href="product_thermal_therapy.html">
                 <div class="product-card">
-                    <div class="img-box"><img src="product_photo/リブホット.jpg" alt="Therapy"></div>
+                    <div class="img-box"><img src="product_photo/rib_hot.jpg" alt="Therapy">
+                    <img src="product_photo/rib_mat.jpg" alt="Therapy" class="img-hover-img"></div>
                     <div class="card-info">
                         <h3>温熱器具</h3>
                         <p>HEATING EQUIPMENT</p>
@@ -235,8 +308,8 @@
 
                 <a href="product_interior_lighting.html">
                 <div class="product-card">
-                    <div class="img-box"><img src="product_photo/Capiz/Capiz 4-spot/orange2.png" alt="INTERIOR LIGHTING" class="img-default">
-                        <img src="product_photo/wooden pendant/whole.png" alt="INTERIOR LIGHTING" class="img-hover-img"></div>
+                    <div class="img-box"><img src="photo_capiz/capiz_4spot/capiz_4spot_orange_02.png" alt="INTERIOR LIGHTING" class="img-default">
+                        <img src="photo_capiz/capiz_4spot/capiz_4spot_whole_02.png" alt="INTERIOR LIGHTING" class="img-hover-img"></div>
                     <div class="card-info">
                         <h3>インテリア照明</h3>
                         <p>INTERIOR LIGHTING</p>
@@ -244,10 +317,10 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
 
-            
+
 
         </section>
 
@@ -301,12 +374,12 @@
                     <h3>本社</h3>
                     <p class="zip">〒362-0001</p>
                     <p class="address">埼玉県上尾市大字上尾264-1</p>
-                    <p class="tel">TEL: 048-770-3531<br>FAX: 048-770-2631</p>
+                    <p class="tel">TEL: 048-775-6831<br>FAX: 048-774-8247</p>
                   </div>
                   <div class="access_map">
                       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6456.229067229069!2d139.576742!3d35.993068!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018cf84fe9cebab%3A0x6b7976b30bd5e76b!2z44CSMzYyLTAwMDEg5Z-8546J55yM5LiK5bC-5biC5LiK77yS77yW77yU4oiS77yR!5e0!3m2!1sja!2sjp!4v1773795155599!5m2!1sja!2sjp"
                        width="600" height="450" style="border:0;"
-                        allowfullscreen="" loading="lazy" 
+                        allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                       </iframe>
                   </div>
@@ -317,12 +390,12 @@
                     <h3>R&Dセンター</h3>
                     <p class="zip">〒362-0013</p>
                     <p class="address">埼玉県上尾市大字上尾村592-4</p>
-                    <p class="tel">TEL: 048-770-3531<br>FAX: 048-770-2631</p>
+                    <p class="tel">TEL: 048-775-6831<br>FAX: 048-774-8247</p>
                   </div>
                   <div class="access_map">
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6456.612256921409!2d139.597107!3d35.988386!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018cf0b99aa96e9%3A0x89cae45d711542da!2z5qCq5byP5Lya56S-5ZKM57SX!5e0!3m2!1sja!2sjp!4v1773797822909!5m2!1sja!2sjp" 
-                      width="600" height="450" style="border:0;" 
-                      allowfullscreen="" loading="lazy" 
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6456.612256921409!2d139.597107!3d35.988386!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018cf0b99aa96e9%3A0x89cae45d711542da!2z5qCq5byP5Lya56S-5ZKM57SX!5e0!3m2!1sja!2sjp!4v1773797822909!5m2!1sja!2sjp"
+                      width="600" height="450" style="border:0;"
+                      allowfullscreen="" loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade">
                       </iframe>
                   </div>
@@ -336,9 +409,9 @@
                     <p class="tel">TEL: 072-993-3111<br>FAX: 072-993-5875</p>
                   </div>
                   <div class="access_map">
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6565.896581306437!2d135.587596!3d34.630747!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000df43f4821881%3A0xc930f9d7a09f11e1!2z44CSNTgxLTAwNzEg5aSn6Ziq5bqc5YWr5bC-5biC5YyX5LmF5a6d5a-677yR5LiB55uu77yU4oiS77yS77yQ!5e0!3m2!1sja!2sjp!4v1773797973437!5m2!1sja!2sjp" 
-                      width="600" height="450" style="border:0;" 
-                      allowfullscreen="" loading="lazy" 
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6565.896581306437!2d135.587596!3d34.630747!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000df43f4821881%3A0xc930f9d7a09f11e1!2z44CSNTgxLTAwNzEg5aSn6Ziq5bqc5YWr5bC-5biC5YyX5LmF5a6d5a-677yR5LiB55uu77yU4oiS77yS77yQ!5e0!3m2!1sja!2sjp!4v1773797973437!5m2!1sja!2sjp"
+                      width="600" height="450" style="border:0;"
+                      allowfullscreen="" loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade">
                       </iframe>
                   </div>
@@ -352,9 +425,9 @@
                     <p class="tel">TEL: 048-541-2231<br>FAX: 048-542-7656</p>
                   </div>
                   <div class="access_map">
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6451.099249329392!2d139.525677!3d36.055696!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d27780d07841%3A0x66be5523636c69f1!2z44CSMzY0LTAwMDEg5Z-8546J55yM5YyX5pys5biC5rex5LqV77yX5LiB55uu77yS77yW!5e0!3m2!1sja!2sjp!4v1773798008124!5m2!1sja!2sjp" 
-                      width="600" height="450" style="border:0;" 
-                      allowfullscreen="" loading="lazy" 
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6451.099249329392!2d139.525677!3d36.055696!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018d27780d07841%3A0x66be5523636c69f1!2z44CSMzY0LTAwMDEg5Z-8546J55yM5YyX5pys5biC5rex5LqV77yX5LiB55uu77yS77yW!5e0!3m2!1sja!2sjp!4v1773798008124!5m2!1sja!2sjp"
+                      width="600" height="450" style="border:0;"
+                      allowfullscreen="" loading="lazy"
                       referrerpolicy="no-referrer-when-downgrade">
                       </iframe>
                   </div>
@@ -380,7 +453,7 @@
                     <div class="contact_phone-box">
                         <div class="phone-box-left">
                             <p class="phone-box-label">↓お電話でのお問い合わせはこちら</p>
-                            <p class="phone-box-num">048-770-3531</p>
+                            <p class="phone-box-num">048-775-6831</p>
                             <p class="phone-box-time">受付時間　平日 9:00-17:00</p>
                         </div>
                         <div class="phone-box-right">
@@ -398,8 +471,8 @@
 
                     <p class="contact-note contact-note--strong">簡易型調光器を注文の場合はお問い合わせ内容の欄に<strong>品名・数量・送り先・希望納期</strong>の明記をお願いします。</p>
 
-                    <form class="contact_form" action="contact.php" method="post">
 
+                    <form class="contact_form" action="contact.php" method="post">
                         <div class="form_row">
                             <div class="form_group">
                                 <label>貴社名<span>COMPANY</span></label>
@@ -428,9 +501,21 @@
                         </div>
 
                         <div class="form_group">
+                            <label>お問い合わせ項目<span>CATEGORY</span><i class="required">必須</i></label>
+                            <select name="inquiry_type" required>
+                              <option value="" disabled selected>選択してください</option>
+                              <option value="調光器について">調光器について</option>
+                              <option value="照明器具について">照明器具について</option>
+                              <option value="温熱器具について">温熱器具について</option>
+                              <option value="その他">その他</option>
+                            </select>
+                        </div>
+
+                        <div class="form_group">
                             <label>お問い合わせ内容<span>MESSAGE</span><i class="required">必須</i></label>
                             <textarea name="message" placeholder="ご質問、ご要望などをご記入ください" rows="6" required></textarea>
                         </div>
+
 
                         <!-- ハニーポット（スパム対策。人間は触らない隠しフィールド） -->
                         <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
@@ -450,19 +535,20 @@
                     </div>
                     </form>
 
+
                 </div>
             </div>
         </section>
 
     </main>
-    
+
     <section class="online-store-section">
         <div class="store-container">
             <h3 class="store-title">ONLINE STORE</h3>
             <p class="store-intro">トヨスターのインテリア照明は、こちらの楽天公式ショップからご購入いただけます。</p>
             <div class="store-buttons-wrap">
                 <a href="http://www.rakuten.co.jp/toyostar">
-                    <img src="product_photo/rakuten logo.png" alt="Rakuten Official Store">
+                    <img src="product_photo/rakuten_logo.png" alt="Rakuten Official Store">
                     <span class="btn-text">照明・インテリア雑貨のT-STYLE</span>
                 </a>
                 </div>
@@ -479,9 +565,9 @@
                         <li><a href="product_internal_dimmer.html">内蔵型調光器</a></li>
                         <li><a href="product_thermal_therapy.html">温熱器具</a></li>
                         <li><a href="product_interior_lighting.html">インテリア照明</a></li>
-                                        <li class="dropdown-rakuten">
+                        <li class="dropdown-rakuten">
                         <a href="http://www.rakuten.co.jp/toyostar" target="_blank" rel="noopener">
-                          <img src="product_photo/楽天アイコン.png" alt="" class="dropdown-icon">
+                          <img src="product_photo/rakutenlogo_big.png" alt="" class="dropdown-icon">
                           T-STYLE（楽天ショップ）
                         </a></li>
                     </ul>
@@ -500,7 +586,8 @@
                      <ul>
                          <li><a href="case_study_001.html">ホテル客室 調光システム</a></li>
                          <li><a href="case_study_002.html">商業施設 照明リニューアル</a></li>
-                         <li><a href="case_study_003.html">照明メーカー OEM調光器</a></li>
+                         <li><a href="case_study_003.html">照明メーカー OEM器具開発</a></li>
+                         <li><a href="case_study_004.html">医療福祉施設 OEM温熱マット</a></li>
                      </ul>
                  </div>
                   <div class="footer-group">
@@ -517,8 +604,8 @@
                 <address>
                   トヨスター株式会社 | TOYOSTAR CO., LTD.<br>
                   〒362-0001埼玉県上尾市大字上尾264-1<br>
-                  TEL:048-770-3531<br>
-                  FAX:048-770-2631<br>
+                  TEL:048-775-6831<br>
+                  FAX:048-774-8247<br>
                   受付時間: 9:00～17:00（土・日・祝を除く）
                 </address>
                 <small>&copy; 2026 TOYOSTAR CO., LTD.</small>
@@ -526,7 +613,7 @@
         </div>
     </footer>
     <a href="#" class="back-to-top">↑</a>
-    
+
 <script>
 (function() {
     const dots = document.querySelectorAll('.dot');
@@ -541,8 +628,8 @@
             dots.forEach(function(d) {
                 d.classList.remove('active');
             });
-  
-            
+
+
             slideItems[index].classList.add('active');
             dot.classList.add('active');
         };
@@ -552,11 +639,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-

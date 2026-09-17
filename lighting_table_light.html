@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -7,74 +7,11 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/product_dimmer.css">
-    <style>
-        .lp-section { padding: 80px 8% 120px; }
-        .lp-header { text-align: center; margin-bottom: 60px; }
-        .lp-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .lp-card {
-            display: block;
-            background: #fff;
-            border: 1px solid #e8e0d4;
-            border-top: 3px solid #C8A96E;
-            border-radius: 4px;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.35s ease;
-        }
-        .lp-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 48px rgba(200,169,110,0.18);
-        }
-        .lp-card-img {
-            aspect-ratio: 3 / 4;
-            background: #f9f7f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .lp-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        .lp-card-body {
-            padding: 28px 24px;
-            text-align: center;
-        }
-        .lp-card-name {
-            font-size: 20px;
-            font-weight: 500;
-            color: #222;
-            margin-bottom: 12px;
-            letter-spacing: 0.08em;
-        }
-        .lp-card-arrow {
-            font-size: 11px;
-            color: #B8944F;
-            letter-spacing: 0.2em;
-        }
-        .list-empty {
-            text-align: center;
-            padding: 80px 20px;
-            color: #777;
-            font-size: 14px;
-        }
-        @media (max-width: 767px) {
-            .lp-grid { grid-template-columns: 1fr !important; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/product_interior_lighting.css">
 </head>
 <body>
     <nav class="nav-container">
-        <div><a href="index.html"><img src="product_photo/outline会社バッジ.png" alt="TOYOSTAR Logo"></a></div>
+        <div><a href="index.html"><img src="product_photo/outline_company.png" alt="TOYOSTAR Logo"></a></div>
         
         <ul class="menu">
             <li class="dropdown">
@@ -86,7 +23,7 @@
                     <li><a href="product_interior_lighting.html">インテリア照明</a></li>
                     <li class="dropdown-rakuten">
                         <a href="http://www.rakuten.co.jp/toyostar" target="_blank" rel="noopener">
-                          <img src="product_photo/楽天アイコン.png" alt="" class="dropdown-icon">
+                          <img src="product_photo/rakutenlogo_big.png" alt="" class="dropdown-icon">
                           T-STYLE（楽天ショップ）
                         </a></li>
                 </ul>
@@ -107,13 +44,14 @@
                 <ul class="dropdown-menu">
                     <li><a href="Q&A.html#dimmer">調光器Q&amp;A</a></li>
                     <li><a href="Q&A.html#lighting">照明器具Q&amp;A</a></li>
+                    <li><a href="Q&A.html#other">その他</a></li>
                 </ul>
             </li>
             <li><a href="index.html#contact">CONTACT</a></li>
         </ul>
 
         <a href="http://www.rakuten.co.jp/toyostar" class="nav-rakuten" target="_blank" rel="noopener">
-            <img src="product_photo/楽天アイコン.png" alt="楽天市場" class="nav-rakuten-icon">
+            <img src="product_photo/rakutenlogo_big.png" alt="楽天市場" class="nav-rakuten-icon">
             <span class="nav-rakuten-text">楽天ショップ<br>T-STYLE</span>
         </a>
     </nav>
@@ -129,29 +67,54 @@
         <a href="product_interior_lighting.html">インテリア照明</a><span>›</span>
         テーブルライト
     </p>
-    <section class="lp-section">
-        <div class="lp-header">
-            <p class="section-label">PRODUCTS</p>
-            <h2 class="section-main-title">テーブルライト ラインアップ</h2>
-        </div>
-        <div class="lp-grid">
-                            <a href="lighting_classic_desk_lamp.html" class="lp-card">
-                    <div class="lp-card-img">
-                        <img src="product_photo/Classic desk lamp/whole.png" alt="Classic Desk Lamp">
+    <section class="subcat-intro-section">
+        <div class="section-label">PRODUCT TYPE</div>
+        <h2 class="section-main-title">シリーズを選択してください</h2>
+        <p class="subcat-lead">
+            クラシカルなデザインを中心とした2シリーズを取り揃えております。<br>
+            ご希望のシリーズの詳細は、以下のカードよりご確認ください。
+        </p>
+    </section>
+    <section class="subcat-section">
+        <div class="subcat-grid subcat-grid--lighting">
+            <a href="lighting_classic_desk_lamp.html" class="subcat-link">
+                <div class="subcat-card">
+                    <div class="subcat-card-bar table-light"></div>
+                    <div class="subcat-card-img">
+                        <img src="photo_classic_desk_lamp/１.png" alt="Classic Desk Lamp" class="img-default">
+                        <!-- TODO: 第二張画像（hover 切替用） src を差し替えてください -->
+                        <img src="photo_classic_desk_lamp/desk_lamp_whole.png" alt="Classic Desk Lamp 詳細" class="img-hover-img">
                     </div>
-                    <div class="lp-card-body">
-                        <h3 class="lp-card-name">Classic Desk Lamp</h3>
-                        <span class="lp-card-arrow">VIEW DETAILS →</span>
+                    <div class="subcat-card-body">
+                        <p class="subcat-card-en">CLASSIC DESK LAMP</p>
+                        <h3 class="subcat-card-title">Classic Desk Lamp</h3>
+                        <p class="subcat-card-desc">
+                            クラシカルなデスクランプ。<br>
+                            読書や作業にぴったり。調光で目に優しいあかりに。
+                        </p>
+                        <span class="subcat-viewmore">VIEW PRODUCTS</span>
                     </div>
-                </a>                <a href="lighting_classic_ball_lamp.html" class="lp-card">
-                    <div class="lp-card-img">
-                        <img src="product_photo/Classic ball lamp/whole.png" alt="Classic Ball Lamp">
+                </div>
+            </a>
+            <a href="lighting_classic_ball_lamp.html" class="subcat-link">
+                <div class="subcat-card">
+                    <div class="subcat-card-bar table-light"></div>
+                    <div class="subcat-card-img">
+                        <img src="photo_classic_ball_lamp/ball_lamp_01.png" alt="Classic Ball Lamp" class="img-default">
+                        <!-- TODO: 第二張画像（hover 切替用） src を差し替えてください -->
+                        <img src="photo_classic_ball_lamp/ball_lamp_whole.png" alt="Classic Ball Lamp 詳細" class="img-hover-img">
                     </div>
-                    <div class="lp-card-body">
-                        <h3 class="lp-card-name">Classic Ball Lamp</h3>
-                        <span class="lp-card-arrow">VIEW DETAILS →</span>
+                    <div class="subcat-card-body">
+                        <p class="subcat-card-en">CLASSIC BALL LAMP</p>
+                        <h3 class="subcat-card-title">Classic Ball Lamp</h3>
+                        <p class="subcat-card-desc">
+                            球体のあかりが美しいテーブルランプ。<br>
+                            ベッドサイドやリビングのアクセントに。
+                        </p>
+                        <span class="subcat-viewmore">VIEW PRODUCTS</span>
                     </div>
-                </a>
+                </div>
+            </a>
         </div>
     </section>
     <section class="oem-cta">
@@ -194,7 +157,7 @@
 <li><a href="product_interior_lighting.html">インテリア照明</a></li>
                                         <li class="dropdown-rakuten">
                         <a href="http://www.rakuten.co.jp/toyostar" target="_blank" rel="noopener">
-                          <img src="product_photo/楽天アイコン.png" alt="" class="dropdown-icon">
+                          <img src="product_photo/rakutenlogo_big.png" alt="" class="dropdown-icon">
                           T-STYLE（楽天ショップ）
                         </a></li>
                     </ul>
@@ -230,8 +193,8 @@
                 <address>
                     トヨスター株式会社 | TOYOSTAR CO., LTD.<br>
                     〒362-0001埼玉県上尾市大字上尾264-1<br>
-                    TEL:048-770-3531<br>
-                    FAX:048-770-2631<br>
+                    TEL:048-775-6831<br>
+                    FAX:048-774-8247<br>
                     受付時間: 9:00～17:00（土・日・祝を除く）
                 </address>
                 <small>&copy; 2026 TOYOSTAR CO., LTD.</small>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -7,74 +7,70 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/product_dimmer.css">
+    <link rel="stylesheet" href="css/product_interior_lighting.css">
     <style>
-        .lp-section { padding: 80px 8% 120px; }
-        .lp-header { text-align: center; margin-bottom: 60px; }
-        .lp-grid {
-            display: grid;
-            grid-template-columns: minmax(280px, 400px);
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .lp-card {
-            display: block;
-            background: #fff;
-            border: 1px solid #e8e0d4;
-            border-top: 3px solid #C8A96E;
-            border-radius: 4px;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.35s ease;
-        }
-        .lp-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 48px rgba(200,169,110,0.18);
-        }
-        .lp-card-img {
+        /* ============================================================
+           電球カード専用スタイル（lighting_bulb.html のみ）
+           縦長画像（包装写真等）も完全に表示するため、
+           画像領域を 3:4 の縦長にし object-fit: contain で包含表示。
+           ============================================================ */
+        .subcat-grid--capiz .subcat-card-img {
             aspect-ratio: 3 / 4;
-            background: #f9f7f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
         }
-        .lp-card-img img {
-            width: 100%;
-            height: 100%;
+        .subcat-grid--capiz .subcat-card-img img {
             object-fit: contain;
+            padding: 8px;
         }
-        .lp-card-body {
-            padding: 28px 24px;
-            text-align: center;
+
+        /* EDISON LED BULB タイトル：英語と日本語を縦に 2 行で独立表示 */
+        .bulb-title-twoline {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            line-height: 1.35;
         }
-        .lp-card-name {
-            font-size: 20px;
-            font-weight: 500;
-            color: #222;
-            margin-bottom: 12px;
-            letter-spacing: 0.08em;
+        .bulb-title-twoline .bulb-title-jp {
+            display: block;
+            font-size: 13px;
+            color: #888;
+            letter-spacing: 0.1em;
+            font-weight: 400;
         }
-        .lp-card-arrow {
-            font-size: 11px;
+
+        /* 電球カード内 コンパクト仕様テーブル（lighting_bulb.html のみ） */
+        .bulb-card-spec {
+            margin: 0 0 16px;
+            padding: 14px 0 4px;
+            border-top: 1px solid #f0ebe3;
+        }
+        .bulb-card-spec > div {
+            display: flex;
+            padding: 5px 0;
+            border-bottom: 1px dotted #e8e0d4;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        .bulb-card-spec > div:last-child {
+            border-bottom: none;
+        }
+        .bulb-card-spec dt {
+            width: 90px;
+            flex-shrink: 0;
             color: #B8944F;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.08em;
+            font-weight: 500;
         }
-        .list-empty {
-            text-align: center;
-            padding: 80px 20px;
-            color: #777;
-            font-size: 14px;
-        }
-        @media (max-width: 767px) {
-            .lp-grid { grid-template-columns: 1fr !important; }
+        .bulb-card-spec dd {
+            margin: 0;
+            color: #444;
+            flex: 1;
         }
     </style>
 </head>
 <body>
     <nav class="nav-container">
-        <div><a href="index.html"><img src="product_photo/outline会社バッジ.png" alt="TOYOSTAR Logo"></a></div>
+        <div><a href="index.html"><img src="product_photo/outline_company.png" alt="TOYOSTAR Logo"></a></div>
         
         <ul class="menu">
             <li class="dropdown">
@@ -86,7 +82,7 @@
                     <li><a href="product_interior_lighting.html">インテリア照明</a></li>
                     <li class="dropdown-rakuten">
                         <a href="http://www.rakuten.co.jp/toyostar" target="_blank" rel="noopener">
-                          <img src="product_photo/楽天アイコン.png" alt="" class="dropdown-icon">
+                          <img src="product_photo/rakutenlogo_big.png" alt="" class="dropdown-icon">
                           T-STYLE（楽天ショップ）
                         </a></li>
                 </ul>
@@ -107,13 +103,14 @@
                 <ul class="dropdown-menu">
                     <li><a href="Q&A.html#dimmer">調光器Q&amp;A</a></li>
                     <li><a href="Q&A.html#lighting">照明器具Q&amp;A</a></li>
+                    <li><a href="Q&A.html#other">その他</a></li>
                 </ul>
             </li>
             <li><a href="index.html#contact">CONTACT</a></li>
         </ul>
 
         <a href="http://www.rakuten.co.jp/toyostar" class="nav-rakuten" target="_blank" rel="noopener">
-            <img src="product_photo/楽天アイコン.png" alt="楽天市場" class="nav-rakuten-icon">
+            <img src="product_photo/rakutenlogo_big.png" alt="楽天市場" class="nav-rakuten-icon">
             <span class="nav-rakuten-text">楽天ショップ<br>T-STYLE</span>
         </a>
     </nav>
@@ -121,6 +118,10 @@
         <div class="lighting-header-inner">
             <p class="lighting-header-sub">PRODUCTS / INTERIOR LIGHTING / BULB</p>
             <h1 class="lighting-header-title">電球</h1>
+            <p class="lighting-header-desc">
+                トヨスター調光器に対応するLED電球シリーズ。<br>
+                口金・形状・光色の異なる5タイプをラインアップしております。
+            </p>
         </div>
     </div>
     <p class="lighting-breadcrumb">
@@ -129,13 +130,119 @@
         <a href="product_interior_lighting.html">インテリア照明</a><span>›</span>
         電球
     </p>
-    <section class="lp-section">
-        <div class="lp-header">
-            <p class="section-label">PRODUCTS</p>
-            <h2 class="section-main-title">電球 ラインアップ</h2>
-        </div>
-        <div class="lp-grid">
-            <p class="list-empty">只今、準備中です。</p>
+    <section class="subcat-intro-section">
+        <div class="section-label">PRODUCT LINEUP</div>
+        <h2 class="section-main-title">製品を選択してください</h2>
+        <p class="subcat-lead">
+            調光器対応のLED電球を5種類取り揃えております。<br>
+            ご希望の製品の詳細は、以下のカードよりご確認ください。
+        </p>
+    </section>
+    <section class="subcat-section">
+        <div class="subcat-grid subcat-grid--capiz">
+
+            <div class="subcat-link">
+                <div class="subcat-card">
+                    <div class="subcat-card-bar bulb"></div>
+                    <div class="subcat-card-img">
+                        <img src="product_photo/EDISON LED BULB01.jpg" alt="EDISON LED BULB" class="img-default">
+                        <img src="product_photo/EDISON LED BULB02.jpg" alt="EDISON LED BULB 詳細" class="img-hover-img">
+                    </div>
+                    <div class="subcat-card-body">
+                        <p class="subcat-card-en">EDISON LED BULB</p>
+                        <h3 class="subcat-card-title bulb-title-twoline">EDISON LED BULB<span class="bulb-title-jp">（エジソン LED バルブ）</span></h3>
+                        <p class="subcat-card-desc">
+                            クリアガラスでフィラメントの温かい光を演出する、エジソン球スタイルのLED電球。<br>
+                            コンパクトなE26口金で、レトロな雰囲気を簡単につくれます。
+                        </p>
+                        <dl class="bulb-card-spec">
+                            <div><dt>サイズ</dt><dd>D58 × H130 mm</dd></div>
+                            <div><dt>消費電力</dt><dd>3.7W</dd></div>
+                            <div><dt>定格電流</dt><dd>68 mA</dd></div>
+                            <div><dt>全光束</dt><dd>360 lm（40形相当）</dd></div>
+                            <div><dt>色温度</dt><dd>電球色 2700K</dd></div>
+                            <div><dt>配光角度</dt><dd>全方向（約300°）</dd></div>
+                            <div><dt>口金</dt><dd>E26 タイプ</dd></div>
+                            <div><dt>カラー</dt><dd>クリアガラス</dd></div>
+                            <div><dt>定格寿命</dt><dd>20,000 h</dd></div>
+                            <div><dt>電源</dt><dd>AC100V 50/60Hz</dd></div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subcat-link">
+                <div class="subcat-card">
+                    <div class="subcat-card-bar bulb"></div>
+                    <div class="subcat-card-img">
+                        <img src="product_photo/LDA7L-G-E26D-02 shiro_big.png" alt="一般球型 LED電球" class="img-default">
+                        <img src="product_photo/LDA7L-G-E26D-02 shiro_big.png" alt="一般球型 LED電球 詳細" class="img-hover-img">
+                    </div>
+                    <div class="subcat-card-body">
+                        <p class="subcat-card-en">STANDARD BULB</p>
+                        <h3 class="subcat-card-title">一般球型 LED電球</h3>
+                        <p class="subcat-card-desc">
+                            最も一般的なE26口金のスタンダードタイプ。<br>
+                            2700K・810lmで、リビング・ダイニングの主照明に最適です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subcat-link">
+                <div class="subcat-card">
+                    <div class="subcat-card-bar bulb"></div>
+                    <div class="subcat-card-img">
+                        <img src="product_photo/transparent_gray.png" alt="フィラメント型ガングレー球" class="img-default">
+                        <img src="product_photo/transparent_gray.png" alt="フィラメント型ガングレー球 詳細" class="img-hover-img">
+                    </div>
+                    <div class="subcat-card-body">
+                        <p class="subcat-card-en">FILAMENT GUN GRAY</p>
+                        <h3 class="subcat-card-title">フィラメント型ガングレー球</h3>
+                        <p class="subcat-card-desc">
+                            スモークガラスで落ち着いた光に仕上げる、E26口金のLED電球。<br>
+                            2100Kの温かみのある電球色で、上質な空間をつくります。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subcat-link">
+                <div class="subcat-card">
+                    <div class="subcat-card-bar bulb"></div>
+                    <div class="subcat-card-img">
+                        <img src="product_photo/LDA7L-G-E26D-02 shiro_small.png" alt="ミニクリプトン球型 LED電球" class="img-default">
+                        <img src="product_photo/LDA7L-G-E26D-02 shiro_small.png" alt="ミニクリプトン球型 LED電球 詳細" class="img-hover-img">
+                    </div>
+                    <div class="subcat-card-body">
+                        <p class="subcat-card-en">MINI KRYPTON</p>
+                        <h3 class="subcat-card-title">ミニクリプトン球型 LED電球</h3>
+                        <p class="subcat-card-desc">
+                            コンパクトなE17口金の小型LED電球。<br>
+                            ダウンライト・スポットライト・ペンダントなど、多用途に対応します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subcat-link">
+                <div class="subcat-card">
+                    <div class="subcat-card-bar bulb"></div>
+                    <div class="subcat-card-img">
+                        <img src="product_photo/dimming_led_bulb.jpg" alt="シャンデリア用 小型LED電球" class="img-default">
+                        <img src="product_photo/dimming_led_bulb.jpg" alt="シャンデリア用 小型LED電球 詳細" class="img-hover-img">
+                    </div>
+                    <div class="subcat-card-body">
+                        <p class="subcat-card-en">CHANDELIER BULB</p>
+                        <h3 class="subcat-card-title">シャンデリア用 小型LED電球</h3>
+                        <p class="subcat-card-desc">
+                            シャンデリア・ブラケット向けのE12口金タイプ。<br>
+                            コンパクトなボディで装飾照明にも美しく調和します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     <section class="oem-cta">
@@ -178,7 +285,7 @@
 <li><a href="product_interior_lighting.html">インテリア照明</a></li>
                                         <li class="dropdown-rakuten">
                         <a href="http://www.rakuten.co.jp/toyostar" target="_blank" rel="noopener">
-                          <img src="product_photo/楽天アイコン.png" alt="" class="dropdown-icon">
+                          <img src="product_photo/rakutenlogo_big.png" alt="" class="dropdown-icon">
                           T-STYLE（楽天ショップ）
                         </a></li>
                     </ul>
@@ -214,8 +321,8 @@
                 <address>
                     トヨスター株式会社 | TOYOSTAR CO., LTD.<br>
                     〒362-0001埼玉県上尾市大字上尾264-1<br>
-                    TEL:048-770-3531<br>
-                    FAX:048-770-2631<br>
+                    TEL:048-775-6831<br>
+                    FAX:048-774-8247<br>
                     受付時間: 9:00～17:00（土・日・祝を除く）
                 </address>
                 <small>&copy; 2026 TOYOSTAR CO., LTD.</small>
