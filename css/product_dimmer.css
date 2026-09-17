@@ -1,12 +1,30 @@
 @charset "utf-8";
 
 /* ============================================================
-   DIMMER SERIES — 統一スタイルシート
+   PRODUCT COMMON — 全产品页共通スタイルシート
+   ============================================================
+   ⚠️ このファイル名は "dimmer" ですが、実際には全产品ページで
+   共有される「共通スタイルシート」です。命名は历史的な経緯で
+   残しています。
+
    使用ページ:
-     product_wall_dimmer.html   (サブカテゴリ選択ページ)
-     product_wall_dimmer_gyaku.html  (逆位相 製品詳細)
-     product_wall_dimmer_sei.html    (正位相 製品詳細)
-     product_wall_dimmer_pwm.html    (PWM    製品詳細)
+     ◆ 调光器 (dimmer):
+       product_wall_dimmer.html, product_wall_dimmer_gyaku.html,
+       product_wall_dimmer_sei.html,  product_wall_dimmer_pwm.html,
+       product_internal_dimmer.html,  product_internal_dimmer_bunki.html,
+       product_internal_dimmer_gyaku.html, product_internal_dimmer_pwm.html
+     ◆ 照明器具 (lighting):
+       lighting_bulb.html, lighting_ceiling_light.html, lighting_pendant_light.html,
+       lighting_table_light.html, lighting_ceiling_six_lights.html,
+       lighting_chandelier_pendant.html, lighting_classic_ball_lamp.html,
+       lighting_classic_desk_lamp.html, lighting_rerto_modern_pendant.html,
+       lighting_wooden_pendant.html
+     ◆ 温热 (thermal):
+       product_thermal_therapy.html
+
+   ◆ 専用追加スタイル（このファイルと併用）:
+     product_interior_lighting.css   — 室内照明専用（capiz 等）
+     product_thermal_therapy.css     — 温热専用
    ============================================================ */
 
 
@@ -166,8 +184,19 @@
     margin: 0 auto;
 }
 
+/* カード数が 1〜2 枚のときは 1〜2 列に自動調整し、中央寄せにする。
+   カード数が 3 枚以上の場合はデフォルトの 3 列を維持。 */
+.subcat-grid:has(> .subcat-link:only-child),
+.subcat-grid:has(> .subcat-card:only-child) {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+}
 
-
+.subcat-grid:has(> .subcat-link:nth-child(2):last-child),
+.subcat-grid:has(> .subcat-card:nth-child(2):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+}
 
 .subcat-link {
     display: flex;
@@ -335,14 +364,14 @@
     background: #f9f7f4;
     border: 1px solid #ede8df;
     border-radius: 4px;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
 }
 
 .detail-intro-img img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 
@@ -369,7 +398,7 @@
 /* --- 製品一覧セクション --- */
 
 .detail-products-section {
-    padding: 80px 8% 100px;
+    padding: 80px 8% 30px;
 }
 
 .detail-section-header {
@@ -419,7 +448,7 @@
 /* 製品カード画像 */
 .detail-card-img {
     width: 100%;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 3;
     background: #f9f7f4;
     display: flex;
     align-items: center;
@@ -431,7 +460,8 @@
 .detail-card-img img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
     transition: transform 0.5s ease;
 }
 
@@ -540,6 +570,20 @@
     font-weight: 600;
 }
 
+/* qa-inline-link在spec-val内时保持正确的样式 */
+.spec-val .qa-inline-link {
+    color: #fff;
+    text-decoration: none;
+    text-underline-offset: unset;
+}
+
+.spec-val .qa-inline-link:hover {
+    color: #fff;
+    background-color: #B8944F;
+    text-decoration: none;
+    font-weight: normal;
+}
+
 .spec-key {
     width: 130px;
     flex-shrink: 0;
@@ -554,6 +598,42 @@
     font-size: 13px;
     color: #666;
     flex: 1;
+}
+
+/* PDF ダウンロードボタン */
+.pdf-download {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.btn-pdf-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background-color: #D32F2F;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-weight: 500;
+}
+
+.btn-pdf-download:hover {
+    background-color: #B71C1C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+}
+
+.pdf-icon {
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
 }
 
 /* 注釈 */
@@ -574,9 +654,12 @@
 
 
 /* ============================================================
-   6. OEM CTAセクション（共通）
+   6. OEM CTAセクション（調光器/照明共通ベース）
    HTML: <section class="oem-cta">
-   ※ 別ファイル oem.css でも同名クラス定義あり
+   - product_dimmer.css: 基本スタイル（純色）
+   - product_interior_lighting.css: 背景をグラデーションに上書き
+   - oem.css: margin-top を上書き（OEM ページ用）
+   - product_thermal_therapy.css: 実心ボタンスタイルで完全上書き
    ============================================================ */
 
 .oem-cta {
@@ -618,6 +701,23 @@
 
 
 /* ============================================================
+   4.6 Wall Dimmer 専用：縦長写真（3:4）を全て表示
+   HTML: product_wall_dimmer_gyaku.html, _sei.html, _pwm.html
+   <main class="detail-main wall-dimmer">
+   ============================================================ */
+
+.wall-dimmer .detail-intro-img,
+.wall-dimmer .detail-card-img {
+    aspect-ratio: 3 / 4;
+}
+
+.wall-dimmer .detail-intro-img img,
+.wall-dimmer .detail-card-img img {
+    object-fit: contain;
+}
+
+
+/* ============================================================
    モバイル対応
    ============================================================ */
 
@@ -650,6 +750,11 @@
         gap: 24px;
     }
 
+    .btn-pdf-download {
+        width: 100%;
+        justify-content: center;
+    }
+
     .dimmer-page-header {
         padding-top: 0;
     }
@@ -670,3 +775,4 @@
         padding: 50px 5% 70px;
     }
 }
+

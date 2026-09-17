@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 
 /* ============================================================
@@ -92,8 +92,74 @@
     object-fit: contain;
 }
 
-.slide-item video {
+/* --- 动态高斯模糊背景层（视频模糊铺满） --- */
+.slide-item .slide-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    filter: blur(10px) brightness(0.9);
+    transform: scale(1.15);
+    z-index: 0;
+}
+
+/* --- YouTube iframe 共通（背景＋前景共用样式） --- */
+.slide-item .slide-bg.slide-video,
+.slide-item .slide-main.slide-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- 背景用 iframe：铺满 + 模糊 + 缩放 --- */
+.slide-item .slide-bg.slide-video {
+    filter: blur(10px) brightness(0.9);
+    transform: scale(1.15);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* --- 前景用 iframe：保持比例居中 --- */
+.slide-item .slide-main.slide-video {
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- 前景视频（保持原比例） --- */
+.slide-item .slide-main {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- 前景图片（絶对定位で重ねられる） --- */
+.slide-item .slide-main.img-default,
+.slide-item .slide-main.img-hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slide-item .slide-main.img-default {
+    opacity: 1;
+}
+
+.slide-item .slide-main.img-hover-img {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.slide-item:hover .slide-main.img-default {
+    opacity: 0;
+}
+
+.slide-item:hover .slide-main.img-hover-img {
+    opacity: 1;
 }
 
 .slide-item.active {
@@ -106,7 +172,7 @@
 
 .slideshow-dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 25;
@@ -115,11 +181,11 @@
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background: #000;
-    opacity: 0.25;
+    background: #C8A96E;
+    opacity: 0.4;
     cursor: pointer;
     transition: opacity 0.3s ease, background 0.3s ease;
 }
@@ -131,11 +197,11 @@
 
 .dot.active {
     opacity: 1;
-    background: #888;
+    background: #B8944F;
 }
 
 .dot:hover {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 
@@ -266,8 +332,9 @@
    ============================================================ */
 
 .strengths-section {
-    padding: 120px 8%;
+    padding: 90px 8%;
     background-color: #F7F3EC;
+    border-bottom: 1px solid rgba(200, 169, 110, 0.25);
 }
 
 .strengths-container {
@@ -326,14 +393,129 @@
 }
 
 
+
+
 /* ============================================================
-   4. 導入事例（案例研究）
+   4. ご挨拶
+   HTML: <section class="president-message">
+   タイトルは全局の .section-label / .section-main-title を使用
+   ============================================================ */
+
+.president-message {
+    padding: 90px 8%;
+    background-color: #FBF8F2;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(200, 169, 110, 0.25);
+}
+
+/* --- 双语小标（现在只用英文，保留 class 占位以备后用） --- */
+.pm-label-en {
+    margin-bottom: 12px;
+}
+
+.pm-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.3fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* --- 左侧：照片 --- */
+
+.pm-photo-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: linear-gradient(135deg, #efe7d8 0%, #d9cdb4 100%);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e8e0d4;
+}
+
+.pm-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.pm-photo-frame:hover img {
+    transform: scale(1.04);
+}
+
+/* --- 照片下方的水印说明 --- */
+.pm-photo-caption {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.3em;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* --- 装饰：照片右下角的金色小方块 --- */
+.pm-photo-frame::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #C8A96E;
+    background: #F7F3EC;
+    z-index: -1;
+}
+
+/* --- 右侧：文字内容 --- */
+
+/* --- 正文 --- */
+.pm-body {
+    font-size: 14px;
+    line-height: 2.4;
+    color: #555;
+    margin-bottom: 45px;
+    letter-spacing: 0.05em;
+}
+
+/* --- 落款区 --- */
+.pm-signature {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 20px;
+    border-top: 1px solid #d8cdb4;
+}
+
+.pm-position {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 0.3em;
+}
+
+.pm-name {
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+    letter-spacing: 0.15em;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+
+/* ============================================================
+   5. 導入事例（案例研究）
    HTML: <section class="philosophy-section" id="cases">
    ============================================================ */
 
 .philosophy-section {
     padding: 120px 8%;
-    border-top: 1px solid #eee;
+    background-color: #FFFFFF;
+    border-top: 1px solid rgba(200, 169, 110, 0.25);
+    border-bottom: 1px solid #eee;
 }
 
 .philosophy-container {
@@ -347,6 +529,41 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+}
+
+/* 3個カード用：3枚で全幅を均等に使うための変種。
+   親 philosophy-container(max-width:1000px)の中でセンター寄せ。 */
+.cases-grid--3col {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin: 0 auto;
+}
+
+.cases-grid--4col {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cases-grid--4col .case-card {
+    padding: 35px 28px;
+}
+
+.cases-grid--4col .case-title {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.cases-grid--4col .case-desc {
+    font-size: 12.5px;
+    line-height: 1.85;
+    margin-bottom: 22px;
+}
+
+.cases-grid--4col .case-number {
+    font-size: 28px;
+    margin-bottom: 16px;
 }
 
 .case-card {
@@ -370,13 +587,33 @@
 }
 
 .case-number {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 22px;
+    line-height: 1;
+}
+
+.case-num {
     font-size: 32px;
     font-weight: 700;
     color: #C8A96E;
     font-family: Arial, sans-serif;
     letter-spacing: 0.05em;
-    margin-bottom: 20px;
     line-height: 1;
+}
+
+.case-cat {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.15em;
+    padding: 4px 10px;
+    background: linear-gradient(135deg, #f5f0e8 0%, #fff 100%);
+    border-left: 3px solid #C8A96E;
+    line-height: 1.4;
 }
 
 .case-title {
@@ -422,7 +659,7 @@
 
 
 /* ============================================================
-   5. 取引先（合作伙伴）
+   6. 取引先（合作伙伴）
    HTML: <section class="partners-section">
    ============================================================ */
 
@@ -430,31 +667,32 @@
     padding: 100px 8%;
     background-color: #F7F3EC;
     border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(200, 169, 110, 0.25);
 }
 
 .partners-container {
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center;   /* 见出し「主要取引先」を中央揃え */
+}
+
+.partners-container .section-label,
+.partners-container .section-main-title {
+    text-align: center;
 }
 
 .partners-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px 60px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .logo-item {
     border-left: #ccc 2px solid;
-    width: 300px;
     padding: 5px 0 5px 15px;
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: #555;
     transition: all 0.4s ease;
     cursor: default;
     display: flex;
@@ -462,64 +700,42 @@
 }
 
 .logo-item:hover {
-    color: #111;
     transform: translateX(5px);
     border-left: #111 2px solid;
 }
 
 .logo-item span {
-    font-size: 11px;
-    font-weight: 400;
-    margin-left: 8px;
-    letter-spacing: 0;
-    color: #777;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #555;
+    transition: color 0.4s ease;
 }
 
 .logo-item:hover span {
-    color: #222;
+    color: #111;
 }
 
-.partners-footer {
-    margin-top: 70px;
-    text-align: center;
-}
-
-.view-all-link {
-    display: inline-block;
-    font-size: 11px;
-    color: #777;
-    text-decoration: none;
-    letter-spacing: 0.3em;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #eee;
-    transition: all 0.3s ease;
-}
-
-.view-all-link:hover {
-    color: #333;
-    border-bottom: 1px solid #333;
-}
-
-.view-all-link .arrow {
-    font-size: 13px;
-    margin-left: 7px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.view-all-link:hover .arrow {
-    transform: translateX(5px);
+.partners-note {
+    margin-top: 40px;
+    text-align: right;
+    font-size: 17px;
+    color: #888;
+    letter-spacing: 0.1em;
 }
 
 
 /* ============================================================
-   6. 厳選ソリューション（产品网格）
+   7. 厳選ソリューション（产品网格）
    HTML: <section class="products-section">
    ============================================================ */
 
 .products-section {
     padding: 120px 8%;
+    background-color: #FFFFFF;
     border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .product-grid {
@@ -592,7 +808,7 @@
 
 
 /* ============================================================
-   7. お知らせ（新闻板块）
+   8. お知らせ（新闻板块）
    HTML: <section class="topic_section">
    ============================================================ */
 
@@ -600,7 +816,9 @@
     padding: 100px 8%;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #F8F6F1;
     border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .topic_header {
@@ -672,14 +890,16 @@
 
 
 /* ============================================================
-   8. アクセス（访问信息）
+   9. アクセス（访问信息）
    HTML: <section class="access_section">
    ============================================================ */
 
 .access_section {
     padding: 120px 8%;
     max-width: 1400px;
+    background-color: #FFFFFF;
     border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
     margin: 0 auto;
 }
 
@@ -754,13 +974,15 @@
 
 
 /* ============================================================
-   9. お問い合わせ（联系表单）
+  10. お問い合わせ（联系表单）
    HTML: <section id="contact" class="contact_section">
    ============================================================ */
 
 .contact_section {
     padding: 120px 8%;
     background: #F7F3EC;
+    border-top: 1px solid rgba(200, 169, 110, 0.25);
+    border-bottom: 1px solid #ede8df;
 }
 
 .contact_container {
@@ -929,7 +1151,7 @@
     background: #b85450;
     padding: 1px 6px;
     border-radius: 2px;
-    margin-left: auto;
+    margin-left: 6px;
     letter-spacing: 0.1em;
 }
 
@@ -1051,7 +1273,7 @@ textarea {
 
 
 /* ============================================================
-   10. オンライン店舗（フッター上の大型バナー）
+   11. オンライン店舗（フッター上の大型バナー）
    HTML: <section class="online-store-section">
    ============================================================ */
 
@@ -1128,7 +1350,7 @@ textarea {
 
 
 /* ============================================================
-   11. 案例详情ページ（for case_study_001/002/003.html）
+   12. 案例详情ページ（for case_study_001/002/003.html）
    注：仅案例详情页使用，不在 index.html 主流程中
    ============================================================ */
 
@@ -1276,7 +1498,7 @@ textarea {
     }
 
     .story-image-box {
-        height: 300px;
+        height: 420px;
     }
 
     .story-image-section::after {
@@ -1323,6 +1545,25 @@ textarea {
         color: #666;
         font-size: 0.9rem;
         letter-spacing: 0.1em;
+    }
+
+    /* --- 4. ご挨拶 --- */
+    .president-message {
+        padding: 80px 6%;
+    }
+
+    .pm-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .pm-photo-frame {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .pm-name {
+        font-size: 18px;
     }
 
     /* --- 共通タイトル --- */
@@ -1381,7 +1622,7 @@ textarea {
         padding: 25px 20px;
     }
 
-    /* --- 4. 導入事例 --- */
+    /* --- 5. 導入事例 --- */
     .philosophy-section {
         padding: 60px 5%;
     }
@@ -1400,7 +1641,7 @@ textarea {
         margin-bottom: 12px;
     }
 
-    /* --- 5. 取引先 --- */
+    /* --- 6. 取引先 --- */
     .partners-section {
         padding: 60px 5%;
     }
@@ -1415,7 +1656,7 @@ textarea {
         padding: 4px 0 4px 10px;
     }
 
-    /* --- 6. 製品グリッド --- */
+    /* --- 7. 製品グリッド --- */
     .products-section {
         padding: 60px 5%;
     }
@@ -1429,7 +1670,7 @@ textarea {
         font-size: 14px;
     }
 
-    /* --- 7. トピック --- */
+    /* --- 8. トピック --- */
     .topic_section {
         padding: 60px 5%;
     }
@@ -1460,7 +1701,7 @@ textarea {
         line-height: 1.7;
     }
 
-    /* --- 8. アクセス --- */
+    /* --- 9. アクセス --- */
     .access_section {
         padding: 60px 5%;
     }
@@ -1479,7 +1720,7 @@ textarea {
         height: 220px;
     }
 
-    /* --- 9. お問い合わせ --- */
+    /* --- 10. お問い合わせ --- */
     .contact_section {
         padding: 60px 5%;
     }
@@ -1515,7 +1756,7 @@ textarea {
         margin-bottom: 18px;
     }
 
-    /* --- 10. オンライン店舗（フッター上） --- */
+    /* --- 11. オンライン店舗（フッター上） --- */
     .online-store-section {
         padding: 60px 5%;
     }

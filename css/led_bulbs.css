@@ -1,0 +1,201 @@
+/* ============================================================
+   調光対応LED電球一覧ページ
+   HTML: <main class="recruit-main-section"> ... <div class="recruit-item led-bulb-item">
+   採用 recruit.html 的卡片样式 + 灯泡图片位置
+   ============================================================ */
+
+/* --- LED電球紹介セクション（左图右文・full width） --- */
+
+.led-bulbs-hero {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #4a4a4a;
+}
+
+.led-bulbs-hero-bg {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5ede0;
+}
+
+.led-bulbs-hero-bg img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.led-bulbs-hero-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(to right, transparent 0%, #4a4a4a 100%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.led-bulbs-hero-text {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.led-bulbs-hero-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    font-family: Arial, sans-serif;
+    color: #E8D5A8;
+    margin-bottom: 20px;
+    border-left: 2px solid #C8A96E;
+    padding-left: 12px;
+}
+
+.led-bulbs-hero-title {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    line-height: 1.7;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.led-bulbs-hero-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 2;
+    letter-spacing: 0.05em;
+}
+
+/* 复用 recruit 的容器样式 */
+.led-bulbs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* --- 単一灯泡カード --- */
+
+.led-bulb-item {
+    /* 覆盖 recruit-item 的 padding，让图片有空间 */
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+/* --- 写真エリア --- */
+
+.led-bulb-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #f9f7f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid #f0ebe3;
+}
+
+.led-bulb-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.led-bulb-base {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 56px;
+    height: 56px;
+    background: #B8944F;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.05em;
+}
+
+/* --- カード内容の余白調整 --- */
+
+.led-bulb-item .recruit-head {
+    padding: 25px 35px 15px;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 15px;
+}
+
+.led-bulb-item .recruit-dl {
+    padding: 0 35px 30px;
+}
+
+/* ============================================================
+   レスポンシブ
+   ============================================================ */
+
+@media screen and (max-width: 767px) {
+    .led-bulbs-hero {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .led-bulbs-hero-bg {
+        width: 100%;
+        height: 350px;
+        background-color: #f5ede0;
+    }
+
+    .led-bulbs-hero-bg::after {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent 80%, #4a4a4a 100%);
+    }
+
+    .led-bulbs-hero-text {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .led-bulbs-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .led-bulb-base {
+        width: 46px;
+        height: 46px;
+        font-size: 14px;
+    }
+
+    .led-bulb-item .recruit-head {
+        padding: 20px 22px 12px;
+    }
+
+    .led-bulb-item .recruit-dl {
+        padding: 0 22px 22px;
+    }
+}

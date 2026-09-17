@@ -1,25 +1,44 @@
 @charset "utf-8";
 
-/* ==========================================
-   Company Page - Custom Header (Overrides)
-   ========================================= */
+/* ============================================================
+   Company Page Stylesheet
+   ページ内の section 順に合わせて整列
+   ============================================================
 
-/* Company 页面的自定义背景色 */
+   目次:
+   0. ページヘッダー (page-header)
+   1. HERO (company-hero)             ← 会社第一印象
+   2. 代表挨拶 (president-message)    ← 社長メッセージ
+   3. 企業情報 (corporate-data)       ← 会社概要
+   4. 拠点一覧 (locations)            ← 本社・営業所
+   5. 会社沿革 (history)              ← 沿革
+   6. 取引先 (partners-detail)        ← パートナー・銀行
+   7. レスポンシブ (@media)
+
+   ============================================================ */
+
+
+/* ============================================================
+   0. ページヘッダー (page-header)
+   ============================================================ */
+
 .page-header{
     background: linear-gradient(to right, #edf0f4 0%, #fff 40%);
 }
 
-/* Company 页面的自定义副标题 */
 .header-sub{
     font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Company 页面的自定义标题 */
 .header-jp {
     font-weight: 400;
 }
 
-/* --- Corporate Data Section --- */
+
+/* ============================================================
+   1. HERO (company-hero)
+   ページ上部の大きなビジュアル＋メインメッセージ
+   ============================================================ */
 
 .company-hero {
     position: relative;
@@ -27,29 +46,28 @@
     min-height: 500px;
     overflow: hidden;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-between;
+    align-items: stretch;
     background-color: #4a4a4a;
 }
 
 .company-hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: relative;
+    width: 50%;
     height: 100%;
     z-index: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    background-color: #f5ede0;
 }
 
 .company-hero-bg img {
-    width: auto;
-    height: 100%;
-    max-width: 55%;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
     object-fit: contain;
-    object-position: left center;
+    object-position: center;
     display: block;
 }
 
@@ -57,19 +75,22 @@
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 150px;
     height: 100%;
-    background: linear-gradient(to right, transparent 35%, #4a4a4a 55%);
+    background: linear-gradient(to right, transparent 0%, #4a4a4a 100%);
     pointer-events: none;
+    z-index: 10;
 }
 
 .company-hero-text {
     position: relative;
     z-index: 1;
-    width: 42%;
-    padding: 40px 5%;
-    margin-right: 6%;
+    width: 50%;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: #fff;
 }
 
@@ -96,45 +117,82 @@
 .hero-desc {
     font-size: 14px;
     color: rgba(255,255,255,0.8);
-    line-height: 2;
-    letter-spacing: 0.05em;
 }
 
-@media screen and (max-width: 767px) {
-    .company-hero {
-        min-height: auto;
-        flex-direction: column;
-        justify-content: center;
-        background-color: #fff;
-    }
-    .company-hero-bg {
-        position: relative;
-        height: 300px;
-        background-color: #4a4a4a;
-    }
-    .company-hero-bg::after {
-        display: none;
-    }
-    .company-hero-bg img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        max-width: 100%;
-    }
-    .company-hero-text {
-        width: 100%;
-        padding: 35px 8%;
-        margin-right: 0;
-        color: #333;
-    }
-    .hero-text {
-        font-size: 20px;
-        color: #222;
-    }
-    .hero-desc {
-        color: #666;
-    }
+
+/* ============================================================
+   2. 代表挨拶 (president-message)
+   社長の顔写真と挨拶文（左写真・右テキストの2カラム）
+   ============================================================ */
+
+.president-message-section {
+    padding: 100px 8%;
+    background-color: #faf7f1;
+    border-bottom: 1px solid #ede8df;
 }
+
+.president-message-inner {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.president-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #e0d8c8;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    background-color: #f9f7f4;
+}
+
+.president-message-text p {
+    font-size: 15px;
+    line-height: 2.2;
+    color: #555;
+    margin-bottom: 22px;
+}
+
+.president-lead {
+    font-size: 17px !important;
+    color: #333 !important;
+    font-weight: 500;
+    line-height: 2 !important;
+    margin-bottom: 30px !important;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e8e0d4;
+}
+
+.president-signature {
+    text-align: right;
+    margin-top: 40px;
+    margin-bottom: 0 !important;
+    padding-top: 25px;
+    border-top: 1px solid #e8e0d4;
+}
+
+.president-title {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+}
+
+.president-name {
+    display: block;
+    font-size: 22px;
+    color: #222;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+}
+
+
+/* ============================================================
+   3. 企業情報 (corporate-data)  ※旧 Corporate Data Section
+   ============================================================ */
 
 .corporate-data-section{
     padding: 100px 8% 150px;
@@ -306,6 +364,15 @@
     break-inside: avoid;
 }
 
+/* 順不同 注釈（ホームと同一スタイル） */
+.partners-note {
+    margin-top: 30px;
+    text-align: right;
+    font-size: 17px;
+    color: #888;
+    letter-spacing: 0.1em;
+}
+
 .banks-block{
     background: #fff;
     border: 1px solid #ede8df;
@@ -343,5 +410,19 @@
     .partners-block,
     .banks-block {
         padding: 30px 22px;
+    }
+
+    .president-message-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .president-photo {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .president-signature {
+        text-align: left;
     }
 }

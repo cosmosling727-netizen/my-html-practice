@@ -1,10 +1,15 @@
 ﻿@charset "utf-8";
 
 /* ============================================================
-   INTERIOR LIGHTING — 統一スタイルシート
-   照明器具専用スタイル（product_dimmer.css と構造は統一、命名は照明用に分離）
-   使用ページ:
-     product_interior_lighting.html    (サブカテゴリ選択ページ)
+   INTERIOR LIGHTING — 室内照明専用追加スタイル
+   ============================================================
+   product_dimmer.css（共通）と併用する、capiz 等の
+   室内照明カテゴリ専用スタイルです。
+
+   使用ページ（product_dimmer.css と併用）:
+     product_interior_lighting.html  (サブカテゴリ選択ページ)
+     lighting_capiz.html              (capiz トップ)
+     lighting_capiz_4spot.html        (capiz 4灯 製品詳細)
    ============================================================ */
 
 
@@ -215,6 +220,19 @@
 .subcat-card-bar.capiz-pendant         { background: linear-gradient(to right, #d4a574, #e8c8a0); }
 .subcat-card-bar.capiz-table-light     { background: linear-gradient(to right, #8b6f47, #b08f6a); }
 
+/* ============================================================
+   電球カード専用：縦長画像（EDISON BULB 包装写真等）も
+   外枠サイズ（4:3）を変えずに全表示する。
+   - aspect-ratio は変えない
+   - object-fit: contain で切れずに表示
+   - padding 8px で画像の端と枠の隙間を確保
+   使用ページ: product_interior_lighting.html
+   ============================================================ */
+.subcat-card:has(.subcat-card-bar.bulb) .subcat-card-img img {
+    object-fit: contain;
+    padding: 8px;
+}
+
 /* 画像エリア */
 .subcat-card-img {
     width: 100%;
@@ -302,48 +320,29 @@
 
 
 /* ============================================================
-   4. OEM CTAセクション（共通）
+   4. OEM CTAセクション
    HTML: <section class="oem-cta">
-   ※ 別ファイル product_dimmer.css / oem.css でも同名クラス定義あり
+   基本スタイルは product_dimmer.css に集約。
+   ここでは照明カテゴリ用に背景のみ上書き。
    ============================================================ */
 
 .oem-cta {
     background: linear-gradient(135deg, #f5f0e8 0%, #fff 60%);
-    border-top: 1px solid #ede8df;
-    border-bottom: 1px solid #ede8df;
-    padding: 0;
 }
 
-.cta-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 8%;
-    text-align: center;
+
+/* ============================================================
+   4.5 Capiz 4-spot 専用：横長写真（4:3）を全て表示
+   HTML: lighting_capiz_4spot.html（<main class="capiz-4spot">）
+   ============================================================ */
+
+.capiz-4spot .detail-intro-img,
+.capiz-4spot .detail-card-img {
+    aspect-ratio: 4 / 3;
 }
 
-.cta-inner h3 {
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    color: #333;
-    margin-bottom: 28px;
-}
-
-.btn-oem {
-    display: inline-block;
-    padding: 14px 40px;
-    border: 1px solid #C8A96E;
-    color: #B8944F;
-    text-decoration: none;
-    font-size: 13px;
-    letter-spacing: 0.25em;
-    transition: all 0.3s;
-    background: transparent;
-}
-
-.btn-oem:hover {
-    background: #C8A96E;
-    color: #fff;
+.capiz-4spot .detail-card-img img {
+    object-fit: contain;
 }
 
 
@@ -428,4 +427,63 @@
         padding: 12px 28px;
         font-size: 12px;
     }
+}
+
+
+/* ============================================================
+   5. 製品購入リンク（カード内・強調版）
+   HTML: <p class="detail-card-buy">
+   位置：.detail-card-body 内、.detail-card-desc の直下
+   ============================================================ */
+
+.detail-card-buy {
+    font-size: 13px;
+    color: #5a3a1a;
+    margin: 0;
+    padding: 18px 0 6px;
+    border-top: 1px solid #e8e0d4;
+    letter-spacing: 0.15em;
+    text-align: left;
+    font-weight: 500;
+}
+
+.detail-card-buy::before {
+    content: "▸";
+    color: #C8A96E;
+    margin-right: 6px;
+    font-size: 11px;
+}
+
+.detail-card-buy a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(211, 47, 47, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid #fff;
+    outline: 1px solid #d32f2f;
+    outline-offset: 0;
+}
+
+.detail-card-buy a:hover {
+    background: linear-gradient(135deg, #b71c1c 0%, #8b0000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(211, 47, 47, 0.5);
+}
+
+.buy-arrow {
+    display: inline-block;
+    font-size: 15px;
+    transition: transform 0.3s ease;
+}
+
+.detail-card-buy a:hover .buy-arrow {
+    transform: translateX(4px);
 }

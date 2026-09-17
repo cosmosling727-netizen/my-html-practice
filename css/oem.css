@@ -36,29 +36,28 @@
     min-height: 500px;
     overflow: hidden;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-between;
+    align-items: stretch;
     background-color: #4a4a4a;
 }
 
 .oem-hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: relative;
+    width: 50%;
     height: 100%;
     z-index: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    background-color: #f5ede0;
 }
 
 .oem-hero-bg img {
-    width: auto;
-    height: 100%;
-    max-width: 55%;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
     object-fit: contain;
-    object-position: left center;
+    object-position: center;
     display: block;
 }
 
@@ -66,19 +65,22 @@
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 150px;
     height: 100%;
-    background: linear-gradient(to right, transparent 35%, #4a4a4a 55%);
+    background: linear-gradient(to right, transparent 0%, #4a4a4a 100%);
     pointer-events: none;
+    z-index: 10;
 }
 
 .oem-hero-text {
     position: relative;
     z-index: 1;
-    width: 42%;
-    padding: 40px 5%;
-    margin-right: 6%;
+    width: 50%;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: #fff;
 }
 
@@ -321,6 +323,7 @@
 }
 
 .oem-category-img {
+    position: relative;
     width: 100%;
     aspect-ratio: 3 / 4;
     background: #f9f7f4;
@@ -336,7 +339,33 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.4s ease;
+}
+
+/* ホバー時の画像切替（温熱器具OEM・照明器具OEMカード用） */
+.oem-category-img .img-default {
+    opacity: 1;
+}
+
+.oem-category-img .img-hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.oem-category-card:hover .oem-category-img .img-default {
+    opacity: 0;
+}
+
+.oem-category-card:hover .oem-category-img .img-hover-img {
+    opacity: 1;
 }
 
 .oem-category-card:hover .oem-category-img img {
@@ -490,14 +519,13 @@
 /* ============================================================
    6. OEM CTAセクション
    HTML: <section class="oem-cta">
-   oem.html / oem_dimmer / oem_lighting 全ページ末尾
+   oem.html / oem_dimmer / oem_lighting / oem_thermal 全ページ末尾
+   基本スタイルは product_dimmer.css に集約。
+   ここでは OEM カテゴリ用にマージン(上に引き上げ)のみ上書き。
    ============================================================ */
 
 .oem-cta {
-    background: #f9f7f4;
-    border-top: 1px solid #ede8df;
-    border-bottom: 1px solid #ede8df;
-    margin: 80px 0 0;
+    margin: 30px 0 0;
 }
 
 .oem-cta-inner {
@@ -521,23 +549,6 @@
     color: #666;
     line-height: 1.8;
     margin-bottom: 25px;
-}
-
-.oem-cta .btn-oem {
-    display: inline-block;
-    padding: 14px 40px;
-    border: 1px solid #C8A96E;
-    color: #B8944F;
-    text-decoration: none;
-    font-size: 13px;
-    letter-spacing: 0.25em;
-    transition: all 0.3s;
-    background: transparent;
-}
-
-.oem-cta .btn-oem:hover {
-    background: #C8A96E;
-    color: #fff;
 }
 
 

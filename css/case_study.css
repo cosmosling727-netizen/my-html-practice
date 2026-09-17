@@ -1,8 +1,34 @@
 @charset "utf-8";
 
-/* ==========================================
-   Case Study Pages - 事例詳細ページ
-   ========================================= */
+/* ============================================================
+   case_study.css — 導入事例 詳細ページ
+   使用ページ:
+     case_study_001.html  ホテル客室 調光システム導入
+     case_study_002.html  商業施設 照明リニューアル
+     case_study_003.html  照明メーカー OEM器具開発
+     case_study_004.html  医療福祉施設 OEM温熱マット
+   ============================================================
+
+
+   【目次】
+   1. ページ全体レイアウト
+   2. 見出し（OVERVIEW / タイトル）
+   3. メタ情報（業種 / 導入製品など）
+   4. 本文セクション（BACKGROUND / SOLUTION / RESULT）
+   5. 効果リスト
+   6. 戻るリンク
+   7. 写真スライダー（横スクロール）
+   8. 関連納入事例（.oem-cases-* は oem.css を参照）
+   9. レスポンシブ対応
+
+   ============================================================ */
+
+
+
+/* ============================================================
+   1. ページ全体レイアウト
+   HTML: <main class="case-detail"> <div class="case-container">
+   ============================================================ */
 
 .case-detail {
     padding: 60px 8% 100px;
@@ -13,7 +39,14 @@
     margin: 0 auto;
 }
 
-/* --- Overview --- */
+
+
+/* ============================================================
+   2. 見出し（OVERVIEW ラベル + 事例タイトル）
+   HTML: <section class="case-overview">
+            <div class="case-label">OVERVIEW</div>
+            <h2 class="case-company">...</h2>
+   ============================================================ */
 
 .case-overview {
     margin-bottom: 60px;
@@ -26,6 +59,7 @@
     letter-spacing: 0.4em;
     color: #B8944F;
     margin-bottom: 20px;
+    font-family: Arial, sans-serif;
 }
 
 .case-company {
@@ -36,6 +70,17 @@
     margin-bottom: 35px;
     line-height: 1.5;
 }
+
+
+
+/* ============================================================
+   3. メタ情報（業種 / 導入製品 / 契約形態 / 導入年度）
+   HTML: <div class="case-meta">
+            <div class="meta-item">
+                <span class="meta-key">...</span>
+                <span class="meta-value">...</span>
+            </div>
+   ============================================================ */
 
 .case-meta {
     display: grid;
@@ -65,7 +110,15 @@
     color: #333;
 }
 
-/* --- Content Sections --- */
+
+
+/* ============================================================
+   4. 本文セクション（BACKGROUND / SOLUTION など）
+   HTML: <section class="case-section">
+            <div class="case-section-label">BACKGROUND</div>
+            <h3 class="case-section-title">...</h3>
+            <p class="case-section-text">...</p>
+   ============================================================ */
 
 .case-section {
     margin-bottom: 60px;
@@ -76,6 +129,7 @@
     letter-spacing: 0.4em;
     color: #B8944F;
     margin-bottom: 12px;
+    font-family: Arial, sans-serif;
 }
 
 .case-section-title {
@@ -94,7 +148,13 @@
     line-height: 2.2;
 }
 
-/* --- Result List --- */
+
+
+/* ============================================================
+   5. 効果リスト（RESULT 内のチェックリスト）
+   HTML: <ul class="result-list">
+            <li>...</li>
+   ============================================================ */
 
 .result-list {
     list-style: none;
@@ -119,7 +179,13 @@
     font-weight: bold;
 }
 
-/* --- Navigation --- */
+
+
+/* ============================================================
+   6. 戻るリンク（事例一覧へ）
+   HTML: <div class="case-nav">
+            <a href="..." class="back-link">← 導入事例一覧に戻る</a>
+   ============================================================ */
 
 .case-nav {
     margin-top: 80px;
@@ -140,18 +206,163 @@
     color: #B8944F;
 }
 
-/* --- Responsive --- */
+
+
+/* ============================================================
+   6.5 シンプル見出し（case_study_003.html 専用）
+   HTML: <section class="case-overview case-overview--simple">
+   メタ情報なし、タイトルだけで使う場合の緊密レイアウト
+   ============================================================ */
+
+.case-overview--simple {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+.case-overview--simple .case-label {
+    margin-bottom: 12px;
+}
+
+.case-overview--simple .case-company {
+    margin-bottom: 0;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0.2em;
+}
+
+.case-overview--simple .case-label,
+.case-overview--simple .case-company {
+    text-align: center;
+}
+
+
+
+/* ============================================================
+   7. 写真スライダー（自動再生 + ドットインジケーター）
+   HTML: <section class="case-photo-slider">
+            <div class="case-photo-slider-viewport">
+                <div class="case-photo-slider-track">
+                    <div class="case-photo-slide">...</div>
+                    ...
+                </div>
+            </div>
+            <div class="case-photo-dots">
+                <span class="case-photo-dot is-active"></span>
+                ...
+            </div>
+        </section>
+
+   使い方:
+   - 写真が用意できたら、占位 <div class="case-photo-placeholder">...</div> を
+     <img src="case03_01.jpg" alt="..."> に置き換える
+   - 枚数を変更する場合は、HTML の .case-photo-slide と .case-photo-dot を
+     増減（CSS は変更不要）
+   - 自動再生は 3 秒。マウスホバーで停止。
+   ============================================================ */
+
+.case-photo-slider {
+    position: relative;
+    width: 100%;
+    background: #faf7f2;
+    padding: 60px 0;
+    border-top: 1px solid rgba(200, 169, 110, 0.25);
+    border-bottom: 1px solid rgba(200, 169, 110, 0.25);
+}
+
+.case-photo-slider-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
+.case-photo-slider-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.6s ease;
+}
+
+.case-photo-slide {
+    flex: 0 0 100%;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.case-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0ebe3;
+    color: #B8944F;
+    font-size: 18px;
+    letter-spacing: 0.3em;
+    font-family: Arial, sans-serif;
+}
+
+.case-photo-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.case-photo-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.case-photo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(184, 148, 79, 0.35);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.case-photo-dot.is-active {
+    background: #B8944F;
+    width: 28px;
+    border-radius: 5px;
+}
+
+
+
+/* ============================================================
+   8. 関連納入事例
+   スタイルは oem.css の .oem-cases-* に集約
+   （事例ページ下部で oem.css を読み込んで表示）
+   ============================================================ */
+
+
+
+/* ============================================================
+   9. レスポンシブ対応（スマホ・タブレット）
+   ============================================================ */
 
 @media screen and (max-width: 767px) {
-    .case-meta {
-        grid-template-columns: 1fr;
+    .case-detail {
+        padding: 40px 5% 80px;
     }
 
     .case-company {
         font-size: 22px;
     }
 
-    .case-detail {
-        padding: 40px 5% 80px;
+    .case-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .case-photo-slide {
+        flex: 0 0 280px;
+        height: 200px;
     }
 }
